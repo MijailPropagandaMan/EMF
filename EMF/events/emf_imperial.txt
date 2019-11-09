@@ -1891,6 +1891,7 @@ character_event = {
 	only_rulers = yes
 
 	trigger = {
+		always = no
 		is_ruler = yes
 		in_revolt = no
 		NOT = { any_liege = { in_revolt = yes } }

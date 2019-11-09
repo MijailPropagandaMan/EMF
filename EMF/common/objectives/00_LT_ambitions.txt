@@ -3,8 +3,9 @@
 #Create a wonder
 obj_create_wonder = {
 	type = character
-	
+
 	potential = {
+		always = no
 		has_game_rule = {
 			name = wonder_rule
 			value = on
@@ -20,18 +21,18 @@ obj_create_wonder = {
 		is_landed = yes
 		independent = yes
 	}
-	
+
 	allow = {
 		NOT = {
 			is_inaccessible_trigger = yes
 		}
 		is_adult = yes
 	}
-	
+
 	chance = {
 		factor = 100
 	}
-	
+
 	creation_effect = {
 		if = {
 			limit = { ai = yes }
@@ -42,7 +43,7 @@ obj_create_wonder = {
 			}
 		}
 	}
-	
+
 	success = {
 		custom_tooltip = {
 			text = create_wonder_condition_tooltip
@@ -52,9 +53,9 @@ obj_create_wonder = {
 					character = ROOT
 				}
 			}
-		} 
-	}	
-	
+		}
+	}
+
 	abort = {
 		OR = {
 			is_incapable = yes
@@ -64,14 +65,14 @@ obj_create_wonder = {
 			}
 		}
 	}
-	
+
 	abort_effect = {
 		if = {
 			limit = { ai = yes }
 			remove_character_modifier = emf_objective_timer
 		}
 	}
-	
+
 	effect = {
 		custom_tooltip = {
 			text = create_wonder_effect_tooltip
@@ -103,7 +104,7 @@ obj_create_wonder = {
 						add_wonder_upgrade = upgrade_tower
 					}
 				}
-			
+
 			}
 		}
 		if = {

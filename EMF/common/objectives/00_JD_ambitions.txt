@@ -10,7 +10,7 @@
 # Strengthen Religion
 obj_strengthen_religion = {
 	type = character
-	
+
 	creation_effect = {
 		hidden_tooltip = {
 			set_variable = { which = strengthen_religion value = 0 }
@@ -25,8 +25,9 @@ obj_strengthen_religion = {
 			}
 		}
 	}
-	
+
 	potential = {
+		always = no
 		has_dlc = "Jade Dragon"
 		NOT = {
 			religion_authority = 0.3
@@ -46,7 +47,7 @@ obj_strengthen_religion = {
 			has_character_flag = strengthened_religion
 		}
 	}
-	
+
 	allow = {
 		independent = yes
 		is_adult = yes
@@ -57,7 +58,7 @@ obj_strengthen_religion = {
 			is_inaccessible_trigger = yes
 		}
 	}
-	
+
 	chance = {
 		factor = 50
 
@@ -84,7 +85,7 @@ obj_strengthen_religion = {
 			trait = cynical
 		}
 	}
-	
+
 	success = {
 		custom_tooltip = {
 			text = tooltip_obj_strengthen_religion
@@ -93,7 +94,7 @@ obj_strengthen_religion = {
 			}
 		}
 	}
-	
+
 	abort = {
 		OR = {
 			religion_authority = 0.50
@@ -103,14 +104,14 @@ obj_strengthen_religion = {
 			}
 		}
 	}
-	
+
 	abort_effect = {
 		if = {
 			limit = { ai = yes }
 			remove_character_modifier = emf_objective_timer
 		}
 	}
-	
+
 	effect = {
 		religion_authority = {
 			modifier = strengthened_religion

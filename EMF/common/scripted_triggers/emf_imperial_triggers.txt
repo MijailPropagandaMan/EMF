@@ -105,6 +105,7 @@ emf_imperial_valid_viceroy = {
 }
 
 emf_uses_imperial_decay = {
+	always = no
 	real_tier = EMPEROR
 	is_tribal = no
 	is_nomadic = no

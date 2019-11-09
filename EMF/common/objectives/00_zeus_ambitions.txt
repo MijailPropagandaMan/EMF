@@ -18,12 +18,12 @@ obj_land_for_son = {
 		is_playable = yes
 		independent = no
 		is_nomadic = no
-		NOT = { 
+		NOT = {
 			has_religion_feature = religion_matriarchal
 		}
 		liege = {
 			is_nomadic = no
-			NOT = { 
+			NOT = {
 				has_religion_feature = religion_matriarchal
 			}
 		}
@@ -187,19 +187,19 @@ obj_land_for_son = {
 # Gain land for daughter (disabled)
 obj_land_for_daughter = {
 	type = character
-	
+
 	potential = {
 		always = no
 		independent = no
 		is_nomadic = no
-		OR = { 
+		OR = {
 			has_religion_feature = religion_matriarchal
 			has_religion_feature = religion_equal
 			has_religion_feature = religion_feature_bon
 		}
 		liege = {
 			is_nomadic = no
-			OR = { 
+			OR = {
 				has_religion_feature = religion_matriarchal
 				has_religion_feature = religion_equal
 				has_religion_feature = religion_feature_bon
@@ -212,8 +212,8 @@ obj_land_for_daughter = {
 		has_dlc = "Zeus"
 		prisoner = no
 		is_adult = yes
-		NOR = { 
-			trait = incapable 
+		NOR = {
+			trait = incapable
 			has_character_flag = land_for_daughter_successful
 		}
 		any_child = {
@@ -232,10 +232,10 @@ obj_land_for_daughter = {
 			}
 		}
 	}
-	
+
 	chance = {
 		factor = 100
-		
+
 		modifier = {
 			factor = 0.5
 			trait = content
@@ -268,11 +268,11 @@ obj_land_for_daughter = {
 			factor = 1.5
 			diplomacy = 16
 		}
-		modifier = { 
+		modifier = {
 			factor = 10
 			is_councillor = yes
 		}
-		modifier = { 
+		modifier = {
 			factor = 5
 			relative_income_to_liege = 0.5
 		}
@@ -314,6 +314,7 @@ obj_build_a_war_chest = {
 	type = character
 
 	potential = {
+		always = no
 		has_dlc = "Zeus"
 		NOT = { has_character_modifier = war_chest_timer }
 		is_nomadic = no
@@ -537,6 +538,7 @@ obj_groom_an_heir = {
 	type = character
 
 	potential = {
+		always = no
 		has_dlc = "Zeus"
 		is_playable = yes
 		is_adult = yes

@@ -15,6 +15,7 @@ obj_become_chancellor = {
 	expectation_of_liege = yes
 
 	potential = {
+		always = no
 		independent = no
 		liege = {
 			is_playable = yes
@@ -222,6 +223,7 @@ obj_become_marshal = {
 	expectation_of_liege = yes
 
 	potential = {
+		always = no
 		independent = no
 		liege = {
 			is_playable = yes
@@ -428,6 +430,7 @@ obj_become_treasurer = {
 	expectation_of_liege = yes
 
 	potential = {
+		always = no
 		independent = no
 		liege = {
 			is_playable = yes
@@ -642,6 +645,7 @@ obj_become_spymaster = {
 	expectation_of_liege = yes
 
 	potential = {
+		always = no
 		independent = no
 		liege = {
 			is_playable = yes
@@ -864,6 +868,7 @@ obj_become_spiritual = {
 	expectation_of_liege = yes
 
 	potential = {
+		always = no
 		independent = no
 		liege = {
 			is_playable = yes
@@ -1078,6 +1083,7 @@ obj_get_married = {
 	type = character
 
 	potential = {
+		always = no
 		NOT = { has_landed_title = k_papal_state }
 		is_married = no
 		is_consort = no
@@ -1234,16 +1240,17 @@ obj_marry_ruler = {
 	type = character
 
 	potential = {
+		always = no
 		is_married = no
 		is_consort = no
 		can_marry = yes
 		practical_age < 45
 		OR = {
-			AND = { 
-				is_female = no 
+			AND = {
+				is_female = no
 				religion_scope = { has_religion_feature = religion_matriarchal }
 			}
-			AND = { 
+			AND = {
 				is_female = yes
 				NOT = { religion_scope = { has_religion_feature = religion_matriarchal } }
 			}
@@ -1258,11 +1265,11 @@ obj_marry_ruler = {
 		is_incapable = no
 		practical_age < 45
 		OR = {
-			AND = { 
-				is_female = no 
+			AND = {
+				is_female = no
 				has_religion_feature = religion_matriarchal
 			}
-			AND = { 
+			AND = {
 				is_female = yes
 				NOT = { has_religion_feature = religion_matriarchal }
 			}
@@ -1362,6 +1369,7 @@ obj_have_a_daughter = {
 	fertility = 0.1
 
 	potential = {
+		always = no
 		is_adult = yes
 		OR = {
 			is_married = yes
@@ -1485,6 +1493,7 @@ obj_have_a_son = {
 	fertility = 0.1
 
 	potential = {
+		always = no
 		is_adult = yes
 		OR = {
 			is_married = yes
@@ -1688,6 +1697,7 @@ obj_wants_landed_title = {
 	}
 
 	allow = {
+		always = no
 		prisoner = no
 		is_adult = yes
 		OR = {
@@ -1873,6 +1883,7 @@ obj_become_heir = {
 	type = character
 
 	potential = {
+		always = no
 		liege = { any_child = { character = ROOT } }
 		NAND = {
 			liege = { primary_title = { succ_law_title = { has_law = agnatic_succession } } }
@@ -2010,6 +2021,7 @@ obj_improve_martial = {
 	type = character
 
 	potential = {
+		always = no
 		is_adult = yes
 		OR = {
 			AND = {
@@ -2107,6 +2119,7 @@ obj_improve_stewardship = {
 	type = character
 
 	potential = {
+		always = no
 		is_adult = yes
 		OR = {
 			AND = {
@@ -2208,6 +2221,7 @@ obj_improve_learning = {
 	type = character
 
 	potential = {
+		always = no
 		is_adult = yes
 		OR = {
 			AND = {
@@ -2304,6 +2318,7 @@ obj_improve_diplomacy = {
 	type = character
 
 	potential = {
+		always = no
 		is_adult = yes
 		OR = {
 			AND = {
@@ -2400,6 +2415,7 @@ obj_improve_intrigue = {
 	type = character
 
 	potential = {
+		always = no
 		is_adult = yes
 		OR = {
 			AND = {
@@ -2500,6 +2516,7 @@ obj_become_king = {
 	ai_capital_kingdom_focus = yes # AI characters with this ambition will actually focus on taking the kingdom
 
 	potential = {
+		always = no
 		is_adult = yes
 		is_playable = yes
 		OR = {
@@ -2713,6 +2730,7 @@ obj_buddhist_stop_drinking = {
 	type = character
 
 	potential = {
+		always = no
 		religion = buddhist
 		trait = drunkard
 	}
@@ -2785,6 +2803,7 @@ obj_buddhist_reject_empty_pleasures = {
 	type = character
 
 	potential = {
+		always = no
 		religion = buddhist
 		trait = hedonist
 	}
@@ -2857,6 +2876,7 @@ obj_buddhist_abstain_sexual_excess = {
 	type = character
 
 	potential = {
+		always = no
 		religion = buddhist
 		trait = lustful
 	}
@@ -2929,6 +2949,7 @@ obj_buddhist_reject_cruelty = {
 	type = character
 
 	potential = {
+		always = no
 		religion = buddhist
 		OR = {
 			trait = impaler
@@ -3005,6 +3026,7 @@ obj_buddhist_temperance_food = {
 	type = character
 
 	potential = {
+		always = no
 		religion = buddhist
 		trait = gluttonous
 	}
@@ -3077,6 +3099,7 @@ obj_buddhist_reject_greed = {
 	type = character
 
 	potential = {
+		always = no
 		religion = buddhist
 		trait = greedy
 	}
@@ -3149,6 +3172,7 @@ obj_buddhist_reject_envy = {
 	type = character
 
 	potential = {
+		always = no
 		religion = buddhist
 		trait = envious
 	}
@@ -3222,6 +3246,7 @@ obj_buddhist_reject_hate = {
 	type = character
 
 	potential = {
+		always = no
 		religion = buddhist
 		trait = wroth
 	}
@@ -3294,6 +3319,7 @@ obj_buddhist_reject_pride = {
 	type = character
 
 	potential = {
+		always = no
 		religion = buddhist
 		trait = proud
 	}
@@ -3366,6 +3392,7 @@ obj_buddhist_defeat_fear = {
 	type = character
 
 	potential = {
+		always = no
 		religion = buddhist
 		OR = {
 			trait = paranoid
@@ -3443,6 +3470,7 @@ obj_become_paragon_of_enlightenment = {
 	type = character
 
 	potential = {
+		always = no
 		religion_group = indian_group
 	}
 
@@ -3650,6 +3678,7 @@ obj_see_the_realm_prosper = {
 	global_revolt_risk = -0.05
 
 	potential = {
+		always = no
 		has_dlc = "Reapers"
 		is_playable = yes
 		OR = {

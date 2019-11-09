@@ -58,5 +58,24 @@ Exception thrown at 0x00007FF7C69F3A72 in CK2game.exe:
 0xC0000005: Access violation reading location 0xFFFFFFFFFFFFFFFF. occurred
 
 Observe made it from 1066 to 1087 on E+S before:
+
 Exception thrown at 0x00007FF7C6B06501 in CK2game.exe:
 0xC0000005: Access violation reading location 0x00000000000001E9. occurred
+
+
+====== TEST CANDIDATE III ======
+Removal / disable log (in addition to previous version):
+- All vanilla plots and ambitions
+- Special title creation requirements' scripted triggers (in emf_title_triggers.txt)
+- Disabled emf_imperial.3299 (validate gov status)
+- Changed e_byzantium's title history to not use Imperial Administration, so effectively all the Imperial
+  Government code will not be executing
+- Disabled all imperial government potential clauses
+- Imperial decay (via emf_uses_imperial_decay)
+- DLCs (not part of EMF but will turn off a lot of intertwined functionality):
+  + Horse Lords
+  + Conclave
+  + Reaper's Due
+  + Monks & Mystics
+  + Jade Dragon
+  + Holy Fury

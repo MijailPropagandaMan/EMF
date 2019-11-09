@@ -298,6 +298,7 @@ plot_gain_vassal_title = {
 
 	# Plotter scope
 	potential = {
+		always = no
 		is_playable = yes
 		is_adult = yes
 		prisoner = no
@@ -805,6 +806,7 @@ plot_kill_character = {
 
 	# Plotter scope
 	potential = {
+		always = no
 		prisoner = no
 		is_adult = yes
 		is_incapable = no
@@ -1016,7 +1018,7 @@ plot_kill_character = {
 
 				# Get rid of the current heir to a title the character's spouse is a pretender to
 				AND = {
-					spouse = {	
+					spouse = {
 						any_pretender_title = {
 							current_heir = { character = ROOT }
 						}
@@ -1421,6 +1423,7 @@ plot_kill_spouse = {
 
 	# Plotter scope
 	potential = {
+		always = no
 		emf_isolated_character = no
 		prisoner = no
 		is_adult = yes
@@ -2050,6 +2053,7 @@ plot_gain_liege_title = {
 
 	# Plotter scope
 	potential = {
+		always = no
 		emf_isolated_character = no
 		is_playable = yes
 		prisoner = no
@@ -2075,7 +2079,7 @@ plot_gain_liege_title = {
 	}
 
 	target_potential = {
-		owner = { 
+		owner = {
 			emf_isolated_character = no
 		}
 		FROM = {
@@ -2299,6 +2303,7 @@ plot_gain_fellow_vassal_title = {
 
 	# Plotter scope
 	potential = {
+		always = no
 		is_playable = yes
 		prisoner = no
 		is_adult = yes
@@ -2544,6 +2549,7 @@ plot_seize_trade_post = {
 
 	# Plotter scope
 	potential = {
+		always = no
 		has_dlc = "The Republic"
 		is_patrician = yes
 		is_merchant_republic = no
@@ -2796,6 +2802,7 @@ plot_assassins_collect_debt = {
 
 	# Plotter scope
 	potential = {
+		always = no
 		prisoner = no
 		is_adult = yes
 		is_incapable = no
