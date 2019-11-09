@@ -3,9 +3,11 @@ of EMF. Then, the intention is to rapidly add features back into the mix, test f
 until crashes are encountered by something added. From there, significantly more drill-down will be necessary,
 but this is the best plan that I've got at this point.
 
-( This is very WIP. )
+( This document is very WIP and will be updating fairly rapidly. )
 
-Log of what's been removed or disabled so far:
+====== TEST CANDIDATE I ======
+
+Removal / disable log for this version:
 - All EMF ambitions have been disabled
 - All EMF plots have been disabled
 - All EMF & vanilla factions have been disabled through emf_faction_basic_vassal_requirements trigger
@@ -15,4 +17,9 @@ Log of what's been removed or disabled so far:
 - emf_dna (lots of nulling out of scripted effect contents, incl. codegen & of course disabling events)
 - emf_log on_actions
 
-None of this has yet been tested.
+Results:
+--------
+Observe made it from 1066 to 1087 before:
+
+Exception thrown at 0x00007FF7C6DE0631 in CK2game.exe:
+0xC0000005: Access violation reading location 0xFFFFFFFFFFFFFFFF. occurred
