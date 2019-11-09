@@ -16,6 +16,7 @@ focus_rulership = {
 	modifier_name = "RULERSHIP_FOCUS"
 
 	potential = {
+		always = no
 		emf_isolated_character = no # EMF
 		is_playable = yes
 	}
@@ -75,6 +76,7 @@ focus_rulership = {
 	}
 
 	abort = {
+		always = yes # FIXME AHAB
 		OR = {
 			emf_isolated_character = yes # EMF
 			prisoner = yes
@@ -97,6 +99,7 @@ focus_business = {
 	modifier_name = "BUSINESS_FOCUS"
 
 	potential = {
+		always = no
 		emf_isolated_character = no # EMF
 		is_playable = yes
 	}
@@ -173,6 +176,7 @@ focus_business = {
 	}
 
 	abort = {
+		always = yes # FIXME AHAB
 		OR = {
 			emf_isolated_character = yes # EMF
 			prisoner = yes
@@ -196,6 +200,7 @@ focus_seduction = {
 	modifier_name = "SEDUCTION_FOCUS"
 
 	potential = {
+		always = no
 		emf_isolated_character = no
 		is_playable = yes
 	}
@@ -226,7 +231,7 @@ focus_seduction = {
 	# AI Pick chance
 	chance = {
 		factor = 75
-		
+
 		modifier = {
 			factor = 0
 			is_female = yes
@@ -430,6 +435,7 @@ focus_seduction = {
 	}
 
 	abort = {
+		always = yes # FIXME AHAB
 		OR = {
 			emf_isolated_character = yes # EMF
 			is_incapable = yes
@@ -463,6 +469,7 @@ focus_intrigue = {
 	modifier_name = "INTRIGUE_FOCUS"
 
 	potential = {
+		always = no
 		emf_isolated_character = no # EMF
 		is_playable = yes
 	}
@@ -578,6 +585,7 @@ focus_intrigue = {
 	}
 
 	abort = {
+		always = yes # FIXME AHAB
 		OR = {
 			emf_isolated_character = yes # EMF
 			prisoner = yes
@@ -602,6 +610,7 @@ focus_hunting = {
 	modifier_name = "HUNTING_FOCUS"
 
 	potential = {
+		always = no
 		emf_isolated_character = no # EMF
 		is_playable = yes
 	}
@@ -678,6 +687,7 @@ focus_hunting = {
 	}
 
 	abort = {
+		always = yes # FIXME AHAB
 		OR = {
 			emf_isolated_character = yes # EMF
 			prisoner = yes
@@ -707,6 +717,7 @@ focus_war = {
 	modifier_name = "WAR_FOCUS"
 
 	potential = {
+		always = no
 		emf_isolated_character = no # EMF
 		is_playable = yes
 	}
@@ -819,6 +830,7 @@ focus_war = {
 	}
 
 	abort = {
+		always = yes # FIXME AHAB
 		OR = {
 			emf_isolated_character = yes # EMF
 			prisoner = yes
@@ -844,6 +856,7 @@ focus_carousing = {
 	modifier_name = "CAROUSING_FOCUS"
 
 	potential = {
+		always = no
 		emf_isolated_character = no # EMF
 		is_playable = yes
 	}
@@ -929,6 +942,7 @@ focus_carousing = {
 	}
 
 	abort = {
+		always = yes # FIXME AHAB
 		OR = {
 			emf_isolated_character = yes # EMF
 			prisoner = yes
@@ -966,6 +980,7 @@ focus_family = {
 	modifier_name = "FAMILY_FOCUS"
 
 	potential = {
+		always = no
 		emf_isolated_character = no # EMF
 		is_playable = yes
 	}
@@ -1075,6 +1090,7 @@ focus_family = {
 	}
 
 	abort = {
+		always = yes # FIXME AHAB
 		OR = {
 			emf_isolated_character = yes # EMF
 			prisoner = yes
@@ -1102,6 +1118,7 @@ focus_scholarship = {
 	modifier_name = "SCHOLARSHIP_FOCUS"
 
 	potential = {
+		always = no
 		emf_isolated_character = no # EMF
 		is_playable = yes
 	}
@@ -1208,6 +1225,7 @@ focus_scholarship = {
 	}
 
 	abort = {
+		always = yes # FIXME AHAB
 		OR = {
 			emf_isolated_character = yes # EMF
 			is_incapable = yes
@@ -1229,6 +1247,7 @@ focus_theology = {
 	modifier_name = "THEOLOGY_FOCUS"
 
 	potential = {
+		always = no
 		emf_isolated_character = no # EMF
 		is_playable = yes
 	}
@@ -1342,6 +1361,7 @@ focus_theology = {
 	}
 
 	abort = {
+		always = yes # FIXME AHAB
 		OR = {
 			emf_isolated_character = yes # EMF
 			is_incapable = yes

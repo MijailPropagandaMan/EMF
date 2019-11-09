@@ -1793,7 +1793,7 @@ character_event = {
 			plot_target_char = { character = ROOT }
 		}
 	}
-	
+
 	immediate = {
 		add_trait = excommunicated
 	}
@@ -5816,6 +5816,7 @@ character_event = {
 	has_dlc = "Way of Life"
 
 	trigger = {
+		always = no # FIXME AHAB
 		higher_tier_than = COUNT
 		intrigue = 8
 		any_dynasty_member = {
@@ -6847,6 +6848,7 @@ character_event = {
 	is_triggered_only = yes
 
 	trigger = {
+		always = no # FIXME AHAB
 		NOT = { religion_group = muslim }
 		FROM = {
 			higher_tier_than = COUNT
@@ -7290,6 +7292,7 @@ character_event = {
 	prisoner = no
 
 	trigger = {
+		always = no # FIXME AHAB
 		is_father_real_father = no
 		real_father_even_if_dead = {
 			is_alive = yes
@@ -8210,6 +8213,7 @@ character_event = {
 	is_triggered_only = yes
 
 	trigger = {
+		always = no # FIXME AHAB
 		real_father = {
 			is_alive = yes
 			ROOT = {

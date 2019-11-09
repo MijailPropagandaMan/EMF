@@ -5,7 +5,8 @@ but this is the best plan that I've got at this point.
 
 ( This document is very WIP and will be updating fairly rapidly. )
 
-====== TEST CANDIDATE I ======
+
+====== AHAB I ======
 
 Removal / disable log for this version:
 - All EMF ambitions have been disabled
@@ -25,7 +26,7 @@ Exception thrown at 0x00007FF7C6DE0631 in CK2game.exe:
 0xC0000005: Access violation reading location 0xFFFFFFFFFFFFFFFF. occurred
 
 
-====== TEST CANDIDATE II ======
+====== AHAB II ======
 
 Removal / disable log (in addition to previous version):
 - emf_borders (via on_actions & disabling emf_borders.0/1)
@@ -63,7 +64,7 @@ Exception thrown at 0x00007FF7C6B06501 in CK2game.exe:
 0xC0000005: Access violation reading location 0x00000000000001E9. occurred
 
 
-====== TEST CANDIDATE III ======
+====== AHAB III ======
 
 Removal / disable log (in addition to previous version):
 - All vanilla plots and ambitions
@@ -88,7 +89,8 @@ Observe made it from 1066 to 1068 on E+S before:
 Exception thrown at 0x00007FF7C6DE0631 in CK2game.exe:
 0xC0000005: Access violation reading location 0x000000F48C006217. occurred
 
-====== TEST CANDIDATE IV ======
+
+====== AHAB IV ======
 
 Removal / disable log (in addition to previous version):
 - on_employer_change/hip.2
@@ -102,3 +104,22 @@ Observe made it from 1066 to ... it never even made it to 1067 on E+V before:
 Exception thrown at 0x00007FF7C6B06C81 in CK2game.exe:
 0xC0000005: Access violation reading location 0x000000000000003F. occurred
 
+
+====== AHAB V ======
+
+Removal / disable log (in addition to previous version):
+- All adulthood focuses
+- emf_adventurer
+- emf_normans
+- emf_siege
+- emf_intrigue [points disabled explicitly, rest covered by lack of plots and foci: 300, 1360, 1370, 1502]
+- on_yearly_pulse/hip.0 [isis maintenance]
+- on_death/hip.5 [isis reincarnation]
+- is_valid forced to always = no for CBs overthrow_ruler and overthrow_ruler_no_calls (invoked by hard-code)
+- emf_seljuk_invasion/can_use <-- always = no (purely scripted CBs don't necessarily employ emf_cb_can_use)
+- emf_new_character_baby (missed references to emf_dna & emf_cadet in Ahab I)
+
+Addition / (re-)enable log (in addition to previous version):
+- DLCs:
+  + Horse Lords
+  + Reaper's Due

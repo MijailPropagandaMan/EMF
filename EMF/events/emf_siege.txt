@@ -3943,9 +3943,9 @@ character_event = {
 	id = emf_siege.200
 
 	is_triggered_only = yes
-	
+
 	hide_window = yes
-	
+
 	trigger = {
 		siege = {
 			is_attacker = no
@@ -4411,7 +4411,7 @@ character_event = {
 				enemy = {
 					leader = {
 						trait = viking
-					}				
+					}
 				}
 			}
 		}
@@ -4421,7 +4421,7 @@ character_event = {
 				enemy = {
 					leader = {
 						trait = raider
-					}			
+					}
 				}
 			}
 		}
@@ -4431,7 +4431,7 @@ character_event = {
 				enemy = {
 					leader = {
 						trait = ravager
-					}			
+					}
 				}
 			}
 		}
@@ -4451,7 +4451,7 @@ character_event = {
 				enemy = {
 					leader = {
 						trait = sea_queen
-					}	
+					}
 				}
 			}
 		}
@@ -4474,7 +4474,7 @@ character_event = {
 			}
 		}
 	}
-	
+
 	immediate = {
 		location = {
 			any_province_holding = {
@@ -4492,9 +4492,9 @@ character_event = {
 	id = emf_siege.201
 
 	is_triggered_only = yes
-	
+
 	hide_window = yes
-	
+
 	trigger = {
 		NOT = {
 			has_game_rule = {
@@ -4843,7 +4843,7 @@ character_event = {
 			}
 		}
 	}
-	
+
 	immediate = {
 		FROM = {
 			random_list = {
@@ -4884,13 +4884,13 @@ character_event = {
 						factor = 2
 						holding_type = castle
 					}
-					set_variable = { which = local_count value = 2 }					
+					set_variable = { which = local_count value = 2 }
 				}
 				10 = {
 					modifier = {
 						factor = 0
 						num_of_buildings < 3
-					}	
+					}
 					modifier = {
 						factor = 1.5
 						location = {
@@ -4899,8 +4899,8 @@ character_event = {
 							}
 							#is_occupied = yes
 						}
-					}		
-					set_variable = { which = local_count value = 3 }		
+					}
+					set_variable = { which = local_count value = 3 }
 				}
 				1 = {
 					modifier = {
@@ -4915,7 +4915,7 @@ character_event = {
 							}
 						}
 					}
-					set_variable = { which = local_count value = 4 }	
+					set_variable = { which = local_count value = 4 }
 				}
 			}
 			while = {
@@ -4935,14 +4935,14 @@ character_event = { # Notification event
 	id = emf_siege.202
 	desc = emf_siege.200.desc
 	title = emf_siege.200.title
-	
+
 	picture = GFX_evt_siege
 	border = GFX_event_normal_frame_war
 
 	is_triggered_only = yes
-	
+
 	notification = yes
-	
+
 	option = {
 		name = emf_siege.200.a
 		custom_tooltip = { text = emf_siege.200.a_tt }
