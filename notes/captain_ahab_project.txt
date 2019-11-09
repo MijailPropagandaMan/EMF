@@ -19,7 +19,7 @@ Removal / disable log for this version:
 
 Results:
 --------
-Observe made it from 1066 to 1087 before:
+Observe made it from 1066 to 1087 on E+S before:
 
 Exception thrown at 0x00007FF7C6DE0631 in CK2game.exe:
 0xC0000005: Access violation reading location 0xFFFFFFFFFFFFFFFF. occurred
@@ -28,7 +28,7 @@ Exception thrown at 0x00007FF7C6DE0631 in CK2game.exe:
 ====== TEST CANDIDATE II ======
 
 Removal / disable log (in addition to previous version):
-- emf_borders (via on_actions & disabling emf_borders.0 MTTH)
+- emf_borders (via on_actions & disabling emf_borders.0/1)
 - LATB (via setting emf_config_latb_disabled in emf_config)
 - antinomad (via setting emf_config_antinomad_disabled in emf_config)
 - settlement decisions:
@@ -45,7 +45,18 @@ Removal / disable log (in addition to previous version):
   + plus_on_actions.txt
   + plus_faction_decisions.txt
   + all of the plus_*.txt event files
+  + emf_faction_debug.txt
 - emf_maintenance_decisions (weather/emf_regional on quarterly & misc. on annual)
 - on_bi_yearly_pulse/emf_core.56 (uses arcane triggers and effects regarding vassal raised levy days opinion)
 - on_new_holder/emf_nomad.120
 
+Results:
+--------
+Observe made it from 1066 to 1074 on E+V before:
+
+Exception thrown at 0x00007FF7C69F3A72 in CK2game.exe:
+0xC0000005: Access violation reading location 0xFFFFFFFFFFFFFFFF. occurred
+
+Observe made it from 1066 to 1087 on E+S before:
+Exception thrown at 0x00007FF7C6B06501 in CK2game.exe:
+0xC0000005: Access violation reading location 0x00000000000001E9. occurred
