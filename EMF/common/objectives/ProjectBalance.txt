@@ -7,6 +7,9 @@
 obj_convert_a_province = {
 	type = character
 
+	potential = {
+		always = no
+	}
 	creation_effect = {
 		change_stewardship = -2
 		if = {

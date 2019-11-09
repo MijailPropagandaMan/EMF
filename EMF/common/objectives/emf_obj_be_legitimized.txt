@@ -4,6 +4,7 @@ obj_be_legitimized = {
 	type = character
 
 	potential = {
+		always = no
 		trait = bastard
 		OR = {
 			is_ruler = no

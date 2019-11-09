@@ -4,6 +4,7 @@ obj_become_duke = {
 	type = character
 
 	potential = {
+		always = no
 		is_playable = yes
 		is_patrician = no
 		real_tier = COUNT

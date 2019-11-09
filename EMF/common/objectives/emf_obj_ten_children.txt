@@ -8,6 +8,7 @@ obj_ten_children = {
 	fertility = 0.1
 
 	potential = {
+		always = no
 		OR = {
 			is_playable = yes
 			spouse = { is_playable = yes }

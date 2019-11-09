@@ -60,6 +60,7 @@ emf_faction_has_special_chance_blocker = {
 
 # THIS = vassal
 emf_faction_basic_vassal_requirements = {
+	always = no
 	is_playable = yes
 	independent = no
 	is_landed = yes

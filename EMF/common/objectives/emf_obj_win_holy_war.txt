@@ -3,7 +3,9 @@
 obj_win_holy_war = {
 	type = character
 
+	potential = { always = no }
 	allow = {
+		always = no
 		ai = no
 		prisoner = no
 		is_adult = yes

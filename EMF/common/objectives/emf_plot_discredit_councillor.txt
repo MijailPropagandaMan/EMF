@@ -7,6 +7,7 @@ plot_discredit_councillor = {
 
 	# Plotter scope
 	potential = {
+		always = no
 		prisoner = no
 		independent = no
 		is_adult = yes

@@ -8,6 +8,7 @@ obj_cta_0 = {
 	type = character
 
 	potential = {
+		always = no
 		is_adult = yes
 		practical_age < 50
 		OR = {
@@ -233,6 +234,7 @@ obj_cta_1 = {
 	type = character
 
 	potential = {
+		always = no
 		is_adult = yes
 		trait = poor_warrior
 		practical_age < 50
@@ -463,6 +465,7 @@ obj_cta_2 = {
 	type = character
 
 	potential = {
+		always = no
 		is_adult = yes
 		trait = trained_warrior
 		practical_age < 50
@@ -695,6 +698,7 @@ obj_cta_3 = {
 	type = character
 
 	potential = {
+		always = no
 		is_adult = yes
 		trait = skilled_warrior
 		practical_age < 50

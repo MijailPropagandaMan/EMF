@@ -4,6 +4,7 @@ obj_go_crusade = {
 	type = character
 
 	potential = {
+		always = no
 		ai = no
 		OR = {
 			religion = catholic

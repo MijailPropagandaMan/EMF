@@ -24,6 +24,8 @@ character_event = {
 	is_triggered_only = yes
 	hide_window = yes
 
+	trigger = { always = no }
+
 	immediate = {
 		# Create dummy placeholder parents for single-parent inheritance:
 		character_event = { id = emf_dna.2 }
@@ -69,6 +71,7 @@ character_event = {
 	hide_window = yes
 
 	trigger = {
+		always = no
 		NOR = {
 			has_flag = emf_dna_check
 			has_flag = emf_maybe_historical
@@ -99,6 +102,7 @@ character_event = {
 	religion = hip_religion
 
 	trigger = {
+		always = no
 		has_landed_title = e_hip
 		NAND = {
 			event_target:emf_global_dna_dad = { is_alive = yes }
@@ -207,6 +211,7 @@ character_event = {
 	hide_window = yes
 
 	trigger = {
+		always = no
 		NOT = { has_flag = emf_dna_check }
 	}
 
@@ -553,6 +558,8 @@ character_event = {
 	is_triggered_only = yes
 	hide_window = yes
 
+	trigger = { always = no }
+
 	immediate = {
 		set_flag = emf_dna_check
 		emf_dna_clear_flags_for_int = yes
@@ -771,6 +778,7 @@ character_event = {
 	hide_window = yes
 
 	trigger = {
+		always = no
 		NOT = { has_flag = emf_dna_check }
 		mother = {
 			character = yes
@@ -9879,6 +9887,8 @@ character_event = {
 	is_triggered_only = yes
 	hide_window = yes
 
+	trigger = { always = no }
+	
 	immediate = {
 		set_flag = emf_dna_check
 		random_list = {

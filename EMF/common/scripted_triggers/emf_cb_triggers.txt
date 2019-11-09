@@ -35,6 +35,7 @@ emf_cb_can_use_gui = {
 }
 
 emf_cb_can_use = {
+	always = no
 	ROOT = {
 		emf_cb_lacks_main_war_block = yes
 		emf_cb_is_war_legal = yes
@@ -42,6 +43,7 @@ emf_cb_can_use = {
 }
 
 emf_cb_can_use_title = {
+	always = no
 	OR = {
 		FROM = { ai = no }
 		ROOT = { ai = no }
@@ -74,6 +76,7 @@ emf_cb_can_use_title = {
 }
 
 emf_cb_can_use_de_jure_title = {
+	always = no
 	FROM = {
 		OR = {
 			ai = no
@@ -335,6 +338,7 @@ emf_cb_thirdparty_can_use = {
 }
 
 emf_cb_thirdparty_can_use_title = {
+	always = no
 	FROMFROM = {
 		emf_cb_lacks_main_war_block = yes
 		emf_cb_is_war_legal = yes
@@ -371,6 +375,7 @@ emf_cb_thirdparty_can_use_title = {
 }
 
 emf_cb_thirdparty_can_use_de_jure_title = {
+	always = no
 	FROMFROM = {
 		emf_cb_lacks_main_war_block = yes
 		emf_cb_is_war_legal = yes

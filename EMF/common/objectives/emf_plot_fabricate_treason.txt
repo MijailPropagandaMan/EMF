@@ -7,6 +7,7 @@ plot_fabricate_treason = {
 
 	# Plotter scope
 	potential = {
+		always = no
 		prisoner = no
 		is_adult = yes
 		is_playable = yes

@@ -1,0 +1,18 @@
+First, we're removing a vast bulk of EMF features from the mod in the hopes of achieving a crash-free version
+of EMF. Then, the intention is to rapidly add features back into the mix, test for crashes, rinse, and repeat
+until crashes are encountered by something added. From there, significantly more drill-down will be necessary,
+but this is the best plan that I've got at this point.
+
+( This is very WIP. )
+
+Log of what's been removed or disabled so far:
+- All EMF ambitions have been disabled
+- All EMF plots have been disabled
+- All EMF & vanilla factions have been disabled through emf_faction_basic_vassal_requirements trigger
+- All / almost all CBs cannot be used without forced invocation (via unsafe_war) due to a block upon emf_cb_can_use and friends
+- DynLevy (via disabling its on_actions)
+- Cadet system (via disabling on_actions)
+- emf_dna (lots of nulling out of scripted effect contents, incl. codegen & of course disabling events)
+- emf_log on_actions
+
+None of this has yet been tested.

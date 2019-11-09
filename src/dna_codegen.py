@@ -95,55 +95,56 @@ def print_set_flags_for_phenotype_effects(f):
 			continue
 		print(file=f)
 		print('# Set DNA for known phenotype: {}'.format(p.name), file=f)
-		print('''emf_dna_set_flags_for_{0} = {{
-	random_list = {{
-		{2} = {{
-			set_flag = {3}_aa
-		}}
-		{1} = {{
-			set_flag = {3}_Aa
-		}}
-	}}
-	random_list = {{
-		{2} = {{
-			set_flag = {3}_bb
-		}}
-		{1} = {{
-			set_flag = {3}_Bb
-		}}
-	}}
-	random_list = {{
-		{2} = {{
-			set_flag = {3}_cc
-		}}
-		{1} = {{
-			set_flag = {3}_Cc
-		}}
-	}}
-	if = {{
-		limit = {{
-			NOR = {{
-				has_flag = {3}_aa
-				has_flag = {3}_bb
-				has_flag = {3}_cc
-			}}
-		}}
-		random_list = {{
-			1 = {{
-				clr_flag = {3}_Aa
-				set_flag = {3}_aa
-			}}
-			1 = {{
-				clr_flag = {3}_Bb
-				set_flag = {3}_bb
-			}}
-			1 = {{
-				clr_flag = {3}_Cc
-				set_flag = {3}_cc
-			}}
-		}}
-	}}
-}}'''.format(p.id, p.gene_weights_if_trait[1], p.gene_weights_if_trait[2], p.prefix), file=f)
+		print('emf_dna_set_flags_for_{} = {{ }}'.format(p.id), file=f)
+# 		print('''emf_dna_set_flags_for_{0} = {{
+# 	random_list = {{
+# 		{2} = {{
+# 			set_flag = {3}_aa
+# 		}}
+# 		{1} = {{
+# 			set_flag = {3}_Aa
+# 		}}
+# 	}}
+# 	random_list = {{
+# 		{2} = {{
+# 			set_flag = {3}_bb
+# 		}}
+# 		{1} = {{
+# 			set_flag = {3}_Bb
+# 		}}
+# 	}}
+# 	random_list = {{
+# 		{2} = {{
+# 			set_flag = {3}_cc
+# 		}}
+# 		{1} = {{
+# 			set_flag = {3}_Cc
+# 		}}
+# 	}}
+# 	if = {{
+# 		limit = {{
+# 			NOR = {{
+# 				has_flag = {3}_aa
+# 				has_flag = {3}_bb
+# 				has_flag = {3}_cc
+# 			}}
+# 		}}
+# 		random_list = {{
+# 			1 = {{
+# 				clr_flag = {3}_Aa
+# 				set_flag = {3}_aa
+# 			}}
+# 			1 = {{
+# 				clr_flag = {3}_Bb
+# 				set_flag = {3}_bb
+# 			}}
+# 			1 = {{
+# 				clr_flag = {3}_Cc
+# 				set_flag = {3}_cc
+# 			}}
+# 		}}
+# 	}}
+# }}'''.format(p.id, p.gene_weights_if_trait[1], p.gene_weights_if_trait[2], p.prefix), file=f)
 
 
 def print_set_flags_for_phenotype_if_no_trait_effects(f):
@@ -152,65 +153,66 @@ def print_set_flags_for_phenotype_if_no_trait_effects(f):
 			continue
 		print(file=f)
 		print('# Set DNA for phenotype if no trait is expressed: {}'.format(p.name), file=f)
-		firstpart='''emf_dna_set_flags_for_{0}_if_no_trait = {{
-	random_list = {{
-		{1} = {{
-			set_flag = {4}_AA
-		}}
-		{2} = {{
-			set_flag = {4}_Aa
-		}}
-		{3} = {{
-			set_flag = {4}_aa
-		}}
-	}}
-	random_list = {{
-		{1} = {{
-			set_flag = {4}_BB
-		}}
-		{2} = {{
-			set_flag = {4}_Bb
-		}}
-		{3} = {{
-			set_flag = {4}_bb
-		}}
-	}}
-	random_list = {{
-		{1} = {{
-			set_flag = {4}_CC
-		}}
-		{2} = {{
-			set_flag = {4}_Cc
-		}}
-		{3} = {{
-			set_flag = {4}_cc
-		}}
-	}}'''.format(p.id, *p.gene_weights_if_no_trait, p.prefix)
-		if p.id == 'dwarf':
-			firstpart=firstpart+'''
-	if = {{
-		limit = {{
-			has_flag = {0}_aa
-			has_flag = {0}_bb
-			has_flag = {0}_cc
-		}}
-		random_list = {{
-			1 = {{
-				clr_flag = {0}_aa
-				set_flag = {0}_Aa
-			}}
-			1 = {{
-				clr_flag = {0}_bb
-				set_flag = {0}_Bb
-			}}
-			1 = {{
-				clr_flag = {0}_cc
-				set_flag = {0}_Cc
-			}}
-		}}
-	}}'''.format(p.prefix)
-		print(firstpart+'''
-}''', file=f)
+		print('emf_dna_set_flags_for_{}_if_no_trait = {{ }}'.format(p.id), file=f)
+# 		firstpart='''emf_dna_set_flags_for_{0}_if_no_trait = {{
+# 	random_list = {{
+# 		{1} = {{
+# 			set_flag = {4}_AA
+# 		}}
+# 		{2} = {{
+# 			set_flag = {4}_Aa
+# 		}}
+# 		{3} = {{
+# 			set_flag = {4}_aa
+# 		}}
+# 	}}
+# 	random_list = {{
+# 		{1} = {{
+# 			set_flag = {4}_BB
+# 		}}
+# 		{2} = {{
+# 			set_flag = {4}_Bb
+# 		}}
+# 		{3} = {{
+# 			set_flag = {4}_bb
+# 		}}
+# 	}}
+# 	random_list = {{
+# 		{1} = {{
+# 			set_flag = {4}_CC
+# 		}}
+# 		{2} = {{
+# 			set_flag = {4}_Cc
+# 		}}
+# 		{3} = {{
+# 			set_flag = {4}_cc
+# 		}}
+# 	}}'''.format(p.id, *p.gene_weights_if_no_trait, p.prefix)
+# 		if p.id == 'dwarf':
+# 			firstpart=firstpart+'''
+# 	if = {{
+# 		limit = {{
+# 			has_flag = {0}_aa
+# 			has_flag = {0}_bb
+# 			has_flag = {0}_cc
+# 		}}
+# 		random_list = {{
+# 			1 = {{
+# 				clr_flag = {0}_aa
+# 				set_flag = {0}_Aa
+# 			}}
+# 			1 = {{
+# 				clr_flag = {0}_bb
+# 				set_flag = {0}_Bb
+# 			}}
+# 			1 = {{
+# 				clr_flag = {0}_cc
+# 				set_flag = {0}_Cc
+# 			}}
+# 		}}
+# 	}}'''.format(p.prefix)
+# 		print(firstpart+'''
+# }''', file=f)
 
 
 def print_add_trait_with_genetics_effects(f):
@@ -219,11 +221,13 @@ def print_add_trait_with_genetics_effects(f):
 			continue
 		print(file=f)
 		print('# Add trait and reset DNA for known phenotype: {}'.format(p.name), file=f)
-		print('''emf_dna_add_trait_{0} = {{
-	emf_dna_clear_flags_for_{0} = yes
-	add_trait = {0}
-	emf_dna_set_flags_for_{0} = yes
-}}'''.format(p.id), file=f)
+
+		print('emf_dna_add_trait_{} = {{ }}'.format(p.id), file=f)
+# 		print('''emf_dna_add_trait_{0} = {{
+# 	emf_dna_clear_flags_for_{0} = yes
+# 	add_trait = {0}
+# 	emf_dna_set_flags_for_{0} = yes
+# }}'''.format(p.id), file=f)
 
 
 def print_remove_trait_with_genetics_effects(f):
@@ -232,39 +236,42 @@ def print_remove_trait_with_genetics_effects(f):
 			continue
 		print(file=f)
 		print('# Remove trait and reset DNA for known phenotype: {}'.format(p.name), file=f)
-		print('''emf_dna_remove_trait_{0} = {{
-	emf_dna_clear_flags_for_{0} = yes
-	remove_trait = {0}
-	emf_dna_set_flags_for_{0}_if_no_trait = yes
-}}'''.format(p.id), file=f)
+		print('emf_dna_remove_trait_{} = {{ }}'.format(p.id), file=f)
+# 		print('''emf_dna_remove_trait_{0} = {{
+# 	emf_dna_clear_flags_for_{0} = yes
+# 	remove_trait = {0}
+# 	emf_dna_set_flags_for_{0}_if_no_trait = yes
+# }}'''.format(p.id), file=f)
 
 def print_reverse_homozygous_recessive_effect(f):
 	print(file=f)
 	print('# Flip all homozygous recessive genes into homozygous dominant genes', file=f)
-	print('emf_dna_reverse_homozygous_recessive = {', file=f)
-	for p in phenotypes:
-		for rg in sorted(homozygous_recessive_to_dominant_genes):
-			print('\tif = {', file=f)
-			print('\t\tlimit = {{ has_flag = {}_{} }}'.format(p.prefix, rg), file=f)
-			print('\t\tclr_flag = {}_{}'.format(p.prefix, rg), file=f)
-			print('\t\tset_flag = {}_{}'.format(p.prefix, homozygous_recessive_to_dominant_genes[rg]), file=f)
-			print('\t}', file=f)
-	print('}', file=f)
+	print('emf_dna_reverse_homozygous_recessive = { }', file=f)
+	# print('emf_dna_reverse_homozygous_recessive = {', file=f)
+	# for p in phenotypes:
+	# 	for rg in sorted(homozygous_recessive_to_dominant_genes):
+	# 		print('\tif = {', file=f)
+	# 		print('\t\tlimit = {{ has_flag = {}_{} }}'.format(p.prefix, rg), file=f)
+	# 		print('\t\tclr_flag = {}_{}'.format(p.prefix, rg), file=f)
+	# 		print('\t\tset_flag = {}_{}'.format(p.prefix, homozygous_recessive_to_dominant_genes[rg]), file=f)
+	# 		print('\t}', file=f)
+	# print('}', file=f)
 
 
 def print_reset_flags_positively_effect(f):
 	ok_genes = [('AA', 'Aa'), ('BB', 'Bb'), ('CC', 'Cc')]
 	print(file=f)
 	print('# Reset genes to only be neutral or positive (do not modify any expressed phenotypes)', file=f)
-	print('emf_dna_reset_flags_positively = {', file=f)
-	for p in phenotypes:
-		print('\temf_dna_clear_flags_for_{} = yes'.format(p.id), file=f)
-		for g1, g2 in ok_genes:
-			print('\trandom_list = {', file=f)
-			print('\t\t1 = {{ set_flag = {}_{} }}'.format(p.prefix, g1), file=f)
-			print('\t\t1 = {{ set_flag = {}_{} }}'.format(p.prefix, g2), file=f)
-			print('\t}', file=f)
-	print('}', file=f)
+	print('emf_dna_reset_flags_positively = { }', file=f)
+	# print('emf_dna_reset_flags_positively = {', file=f)
+	# for p in phenotypes:
+	# 	print('\temf_dna_clear_flags_for_{} = yes'.format(p.id), file=f)
+	# 	for g1, g2 in ok_genes:
+	# 		print('\trandom_list = {', file=f)
+	# 		print('\t\t1 = {{ set_flag = {}_{} }}'.format(p.prefix, g1), file=f)
+	# 		print('\t\t1 = {{ set_flag = {}_{} }}'.format(p.prefix, g2), file=f)
+	# 		print('\t}', file=f)
+	# print('}', file=f)
 
 
 def	print_remove_negative_mendelian_traits_effect(f):
@@ -281,12 +288,13 @@ def	print_remove_negative_mendelian_traits_effect(f):
 def print_remove_negative_mendelian_traits_with_genetics_effect(f):
 	print(file=f)
 	print('# Remove all negative genetic traits subject to Mendelian inheritance and adjust genetics accordingly', file=f)
-	print('emf_dna_remove_negative_mendelian_traits_with_genetics = {', file=f)
-	for p in phenotypes:
-		if p.type != Phenotype.MENDELIAN:
-			continue
-		print('\temf_dna_remove_trait_{} = yes'.format(p.id), file=f)
-	print('}', file=f)
+	print('emf_dna_remove_negative_mendelian_traits_with_genetics = { }', file=f)
+	# print('emf_dna_remove_negative_mendelian_traits_with_genetics = {', file=f)
+	# for p in phenotypes:
+	# 	if p.type != Phenotype.MENDELIAN:
+	# 		continue
+	# 	print('\temf_dna_remove_trait_{} = yes'.format(p.id), file=f)
+	# print('}', file=f)
 
 
 def print_savecompat_shorten_flag_names(f):

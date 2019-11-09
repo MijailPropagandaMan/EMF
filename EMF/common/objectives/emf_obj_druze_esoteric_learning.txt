@@ -5,6 +5,7 @@
 obj_druze_esoteric_learning = {
 	type = character
 	potential = {
+		always = no
 		religion = druze
 		trait = druze_juhhal
 	}

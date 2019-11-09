@@ -8,6 +8,7 @@ plot_overthrow_empire = {
 
 	# Plotter scope
 	potential = {
+		always = no
 		prisoner = no
 		independent = no
 		is_adult = yes

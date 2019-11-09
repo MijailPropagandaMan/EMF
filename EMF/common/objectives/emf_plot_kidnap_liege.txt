@@ -8,6 +8,7 @@ plot_kidnap_liege = {
 
 	# Plotter scope
 	potential = {
+		always = no
 		prisoner = no
 		is_ruler = no
 		is_adult = yes

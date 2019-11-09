@@ -4,6 +4,7 @@ obj_independence = {
 	type = character
 
 	potential = {
+		always = no
 		ai = no
 		independent = no
 	}

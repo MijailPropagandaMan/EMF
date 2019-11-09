@@ -6,6 +6,7 @@ obj_increase_demesne_1 = {
 	type = character
 
 	potential = {
+		always = no
 		is_playable = yes
 		OR = {
 			is_landed = yes

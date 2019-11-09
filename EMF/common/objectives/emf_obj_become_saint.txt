@@ -4,6 +4,7 @@ obj_become_saint = {
 	type = character
 
 	potential = {
+		always = no
 		is_adult = yes
 		prisoner = no
 		is_heretic = no

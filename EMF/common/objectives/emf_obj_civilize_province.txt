@@ -4,6 +4,7 @@ obj_civilize_province = {
 	type = character
 
 	potential = {
+		always = no
 		ai = no
 		any_realm_province = {
 			NOR = {

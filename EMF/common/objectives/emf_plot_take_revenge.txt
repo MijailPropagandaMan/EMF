@@ -8,6 +8,7 @@ plot_take_revenge = {
 
 	# Plotter scope
 	potential = {
+		always = no
 		prisoner = no
 		is_adult = yes
 		is_incapable = no

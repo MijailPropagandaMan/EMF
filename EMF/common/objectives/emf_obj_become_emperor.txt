@@ -4,6 +4,7 @@ obj_become_emperor = {
 	type = character
 
 	potential = {
+		always = no
 		ai = no
 		OR = {
 			is_landed = yes

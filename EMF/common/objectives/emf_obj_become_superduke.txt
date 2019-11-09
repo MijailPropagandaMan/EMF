@@ -4,6 +4,7 @@ obj_become_superduke = {
 	type = character
 
 	potential = {
+		always = no
 		is_playable = yes
 		real_tier = DUKE
 		OR = {

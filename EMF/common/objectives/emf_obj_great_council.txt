@@ -4,6 +4,7 @@ obj_great_council = {
 	type = character
 
 	potential = {
+		always = no
 		ai = no
 		OR = {
 			independent = yes

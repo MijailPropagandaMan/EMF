@@ -7,6 +7,7 @@ obj_amass_wealth = {
 	type = character
 
 	potential = {
+		always = no
 		NOT = { has_character_flag = amassed_wealth }
 		NOT = { has_character_flag = amassed_fortune }
 		NOT = { has_character_flag = amassed_hoard }
@@ -110,6 +111,7 @@ obj_amass_fortune = {
 	type = character
 
 	potential = {
+		always = no
 		NOT = { has_character_flag = amassed_hoard }
 		NOT = { has_character_flag = amassed_fortune }
 	}
@@ -227,6 +229,7 @@ obj_amass_hoard = {
 	type = character
 
 	potential = {
+		always = no
 		NOT = { has_character_flag = amassed_hoard }
 	}
 	allow = {
@@ -349,6 +352,9 @@ obj_amass_hoard = {
 obj_publicly_pious = {
 	type = character
 
+	potential = { 
+		always = no
+	}
 	allow = {
 		is_adult = yes
 		is_playable = yes
@@ -435,6 +441,9 @@ obj_publicly_pious = {
 obj_known_for_virtue = {
 	type = character
 
+	potential = {
+		always = no
+	}
 	allow = {
 		is_adult = yes
 		is_playable = yes
@@ -553,6 +562,9 @@ obj_known_for_virtue = {
 obj_become_paragon_of_virtue = {
 	type = character
 
+	potential = {
+		always = no
+	}
 	allow = {
 		is_adult = yes
 		is_playable = yes
@@ -672,6 +684,9 @@ obj_become_paragon_of_virtue = {
 obj_become_distinguished = {
 	type = character
 
+	potential = {
+		always = no
+	}
 	allow = {
 		is_adult = yes
 		is_playable = yes
@@ -755,6 +770,9 @@ obj_become_distinguished = {
 obj_seek_fame_glory = {
 	type = character
 
+	potential = {
+		always = no
+	}
 	allow = {
 		is_adult = yes
 		is_playable = yes
@@ -871,6 +889,9 @@ obj_seek_fame_glory = {
 obj_become_exalted = {
 	type = character
 
+	potential = {
+		always = no
+	}
 	allow = {
 		is_adult = yes
 		is_playable = yes
