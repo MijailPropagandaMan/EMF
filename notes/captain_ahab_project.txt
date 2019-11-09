@@ -130,3 +130,8 @@ Observe made it from 1066 to 1069 on E+V before:
 
 Exception thrown at 0x00007FF7C6DE0631 in CK2game.exe:
 0xC0000005: Access violation reading location 0xFFFFFFFFFFFFFFFF. occurred
+
+Observe made it from 1066 to 1094 on E+S before:
+
+Exception thrown at 0x00007FF7C6DE0631 in CK2game.exe:
+0xC0000005: Access violation reading location 0xFFFFFFFFFFFFFFFF. occurred
