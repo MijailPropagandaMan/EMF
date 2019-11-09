@@ -23,3 +23,29 @@ Observe made it from 1066 to 1087 before:
 
 Exception thrown at 0x00007FF7C6DE0631 in CK2game.exe:
 0xC0000005: Access violation reading location 0xFFFFFFFFFFFFFFFF. occurred
+
+
+====== TEST CANDIDATE II ======
+
+Removal / disable log (in addition to previous version):
+- emf_borders (via on_actions & disabling emf_borders.0 MTTH)
+- LATB (via setting emf_config_latb_disabled in emf_config)
+- antinomad (via setting emf_config_antinomad_disabled in emf_config)
+- settlement decisions:
+  + emf_convert_tribal_to_temple
+  + convert_tribal_to_castle
+  + convert_tribal_to_city
+  + pillage_settlement
+  + stop_pillage_settlement
+- emf_heresy content (same religious setup & still the scripted effects for lateral conversion, however)
+  + disabled all on_actions
+  + blanked emf_heresy.txt
+  + blanked emf_heresy_decisions.txt
+- blanked rest of PlusFaction [moving] remnants and disabled ref to it in 00_job_actions.txt:
+  + plus_on_actions.txt
+  + plus_faction_decisions.txt
+  + all of the plus_*.txt event files
+- emf_maintenance_decisions (weather/emf_regional on quarterly & misc. on annual)
+- on_bi_yearly_pulse/emf_core.56 (uses arcane triggers and effects regarding vassal raised levy days opinion)
+- on_new_holder/emf_nomad.120
+

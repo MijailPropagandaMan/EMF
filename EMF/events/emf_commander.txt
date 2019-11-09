@@ -12,9 +12,9 @@ namespace = emf_commander
 # side of major battle, including flank commanders.
 character_event = {
 	id = emf_commander.0
-	desc = HIDE_EVENT
-	hide_window = yes
+
 	is_triggered_only = yes
+	hide_window = yes
 
 	option = {
 		name = OK
@@ -191,11 +191,9 @@ character_event = {
 character_event = {
 	id = emf_commander.100
 
-	is_triggered_only = yes
+	is_triggered_only = yes # on_yearly_pulse (but disabled, as this is for calibration)
 	hide_window = yes
 
-	only_independent = yes
-	only_playable = yes
 	religion = hip_religion
 
 	trigger = {
@@ -310,8 +308,8 @@ character_event = {
 		}
 
 		log = "COMMANDERS: christian: [Root.ch_cX.GetValue] | [Root.ch_c1.GetValue] / [Root.ch_c2.GetValue] / [Root.ch_c3.GetValue] / [Root.ch_c4.GetValue]"
-		log = "COMMANDERS: muslim:	[Root.mu_cX.GetValue] | [Root.mu_c1.GetValue] / [Root.mu_c2.GetValue] / [Root.mu_c3.GetValue] / [Root.mu_c4.GetValue]"
-		log = "COMMANDERS: pagan:	 [Root.pa_cX.GetValue] | [Root.pa_c1.GetValue] / [Root.pa_c2.GetValue] / [Root.pa_c3.GetValue] / [Root.pa_c4.GetValue]"
+		log = "COMMANDERS: muslim:	  [Root.mu_cX.GetValue] | [Root.mu_c1.GetValue] / [Root.mu_c2.GetValue] / [Root.mu_c3.GetValue] / [Root.mu_c4.GetValue]"
+		log = "COMMANDERS: pagan:	  [Root.pa_cX.GetValue] | [Root.pa_c1.GetValue] / [Root.pa_c2.GetValue] / [Root.pa_c3.GetValue] / [Root.pa_c4.GetValue]"
 	}
 }
 

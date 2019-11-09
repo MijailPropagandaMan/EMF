@@ -7,6 +7,7 @@ decisions = {
 		is_high_prio = yes
 
 		potential = {
+			always = no
 			has_landed_title = e_hip
 			OR = {
 				NOT = { has_global_flag = emf_quarter_pulse }
@@ -47,6 +48,7 @@ decisions = {
 	ai_annual_maintenance = {
 		only_independent = yes
 		potential = {
+			always = no
 			has_landed_title = e_hip
 			OR = {
 				NOT = { has_global_flag = emf_annual_pulse }

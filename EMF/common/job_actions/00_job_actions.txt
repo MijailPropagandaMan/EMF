@@ -379,7 +379,8 @@ action_uncover_plots = {
 
 	plot_discovery_chance = 0.015 # EMF
 
-	events = { 929 931 9000 9020 PlusFaction.134 }
+	#events = { 929 931 9000 9020 PlusFaction.134 }
+	events = { 929 931 9000 9020 } # FIXME AHAB
 }
 
 action_uncover_plots_offmap = {

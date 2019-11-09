@@ -297,8 +297,8 @@ character_event = {
 
 	immediate = {
 		any_vassal = {
-			limit = { is_playable = yes }
-			letter_event = { id = PlusFaction.403 }
+			limit = { is_playable = yes } # FIXME AHAB
+			#letter_event = { id = PlusFaction.403 }
 		}
 	}
 }

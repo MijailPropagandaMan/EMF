@@ -66,8 +66,8 @@ character_event = {
 		# EMF's LATB, you'll still have vanilla's Nomad Agitation active: LATB now only affects the behavior of
 		# nomads conquering nomadic provinces.
 		#
-		# set_global_flag = emf_config_latb_disabled
-		clr_global_flag = emf_config_latb_disabled
+		set_global_flag = emf_config_latb_disabled
+		# clr_global_flag = emf_config_latb_disabled
 		######## END ########
 
 		######## BEGIN:	[ emf_config_antinomad_disabled ]
@@ -89,8 +89,8 @@ character_event = {
 		# You might want to disable antinomad if you are also disabling LATB (presumably because you prefer the
 		# vanilla immediate province culture/religion change behavior), although the two are independent.
 		#
-		# set_global_flag = emf_config_antinomad_disabled
-		clr_global_flag = emf_config_antinomad_disabled
+		set_global_flag = emf_config_antinomad_disabled
+		# clr_global_flag = emf_config_antinomad_disabled
 		######## END ########
 	}
 

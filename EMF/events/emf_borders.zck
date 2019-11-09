@@ -11,8 +11,7 @@ character_event {
 	ai = yes
 
 	trigger {
-		war = no
-		ai = yes
+		always = no
 		OR {
 			independent = yes
 			NOT { any_liege { in_revolt = yes } }
@@ -96,11 +95,10 @@ character_event {
 	ai = yes
 
 	trigger {
+		always = no
 		tier == BARON
-		war = no
 		in_revolt = no
 		independent = no
-		ai = yes
 		is_patrician = no
 		is_merchant_republic = no
 		NOT {
@@ -329,6 +327,7 @@ character_event {
 	ai = yes
 
 	trigger {
+		always = no
 		tier > DUKE
 		primary_title.capital_scope {
 			de_jure_liege_or_above = PREVPREV # title's preferred capital hasn't drifted out of title

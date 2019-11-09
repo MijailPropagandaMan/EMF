@@ -678,6 +678,7 @@ character_event = {
 	is_triggered_only = yes
 
 	trigger = {
+		always = no
 		is_feudal = yes
 		is_landed = yes
 		over_max_demesne_size < 0 # has free capacity
