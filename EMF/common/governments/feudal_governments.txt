@@ -768,7 +768,6 @@ feudal_governments = {
 		}
 		frame_suffix = "_chineseimperial"
 		potential = {
-			always = no
 			tier = EMPEROR
 			primary_title = { has_title_flag = pretender_chinese_empire }
 			OR = {

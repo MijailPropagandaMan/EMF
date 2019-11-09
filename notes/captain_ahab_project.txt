@@ -64,6 +64,7 @@ Exception thrown at 0x00007FF7C6B06501 in CK2game.exe:
 
 
 ====== TEST CANDIDATE III ======
+
 Removal / disable log (in addition to previous version):
 - All vanilla plots and ambitions
 - Special title creation requirements' scripted triggers (in emf_title_triggers.txt)
@@ -79,3 +80,25 @@ Removal / disable log (in addition to previous version):
   + Monks & Mystics
   + Jade Dragon
   + Holy Fury
+
+Results:
+--------
+Observe made it from 1066 to 1068 on E+S before:
+
+Exception thrown at 0x00007FF7C6DE0631 in CK2game.exe:
+0xC0000005: Access violation reading location 0x000000F48C006217. occurred
+
+====== TEST CANDIDATE IV ======
+
+Removal / disable log (in addition to previous version):
+- on_employer_change/hip.2
+- on_host_change/hip.2
+- on_death/emf_gavelkind.0
+
+Results:
+--------
+Observe made it from 1066 to ... it never even made it to 1067 on E+V before:
+
+Exception thrown at 0x00007FF7C6B06C81 in CK2game.exe:
+0xC0000005: Access violation reading location 0x000000000000003F. occurred
+
