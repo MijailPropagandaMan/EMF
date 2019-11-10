@@ -9215,7 +9215,7 @@ peasant_revolt = {
 	is_independence = yes
 
 	can_use = {
-		emf_cb_can_use = yes
+		always = no # FIXME AHAB
 		ROOT = {
 			primary_title = { temporary = yes } # Revolter or adventurer trigger
 			war = no
@@ -9344,7 +9344,7 @@ heretic_revolt = {
 	check_de_jure_tier = DUKE
 
 	can_use = {
-		emf_cb_can_use = yes
+		always = no # FIXME AHAB
 		ROOT = { has_flag = heretic_revolter }
 	}
 
@@ -9538,7 +9538,7 @@ liberation_revolt = {
 	is_independence = yes
 
 	can_use = {
-		emf_cb_can_use = yes
+		always = no # FIXME AHAB
 		ROOT = { has_flag = nationalist_rebel }
 	}
 
@@ -9874,6 +9874,7 @@ kingdom_adventure = { # Used mainly for Muslims adventuring into India
 	check_de_jure_tier = KING # this scans all dejure duchies for the counties which are held by or vassals(or below) of selected character
 
 	can_use = {
+		always = no # FIXME AHAB
 		ROOT = {
 			OR = {
 				has_flag = duchy_adventurer
@@ -12038,7 +12039,7 @@ cb_install_antiking = {
 	attacker_rel_head_is_ally = yes # The attacker can call his (main) Pope into the war
 
 	can_use = {
-		emf_cb_can_use = yes
+		always = no # FIXME AHAB
 		ROOT = {
 			vassal_of = FROM
 			religion = FROM
@@ -14448,6 +14449,7 @@ cb_minor_clan_revolt = {
 	is_independence = yes
 
 	can_use = {
+		always = no # FIXME AHAB
 		ROOT = {
 			primary_title = { temporary = yes } # Revolter or adventurer trigger
 			war = no
@@ -19023,6 +19025,7 @@ hostages_cb = { # New5
 	}
 
 	can_use = {
+		ai = no
 		emf_cb_can_use = yes
 		ROOT = {
 			independent = yes
@@ -20517,7 +20520,7 @@ offmap_submission = {
 	defender_unoccupied_warscore = yes
 
 	can_use = {
-		emf_cb_can_use = yes
+		always = no # FIXME AHAB
 		ROOT = {
 			independent = yes
 			NOT = { same_realm = FROM }
@@ -21070,7 +21073,7 @@ tributary_offmap_cb = {
 	defender_unoccupied_warscore = yes
 
 	can_use = {
-		emf_cb_can_use = yes
+		always = no # FIXME AHAB
 		# NOTE: We do not use emf_cb_tributary_basic_can_use in this CB,
 		# because its use is purely scripted (i.e., it's not a permanent CB).
 		ROOT = {
@@ -21268,7 +21271,7 @@ dismantle_pretender_china_cb = {
 	defender_unoccupied_warscore = yes
 
 	can_use = {
-		emf_cb_can_use = yes
+		always = no # FIXME AHAB
 		ROOT = {
 			independent = yes
 			NOT = { same_realm = FROM }
@@ -21422,7 +21425,7 @@ force_open_china_cb = {
 	capturing_defender_is_complete_victory = no
 
 	can_use = {
-		emf_cb_can_use = yes
+		always = no # FIXME AHAB
 		ROOT = {
 			independent = yes
 			NOT = { same_realm = FROM }
@@ -21598,7 +21601,7 @@ destabilization_china_cb = {
 	defender_unoccupied_warscore = yes
 
 	can_use = {
-		emf_cb_can_use = yes
+		always = no # FIXME AHAB
 		ROOT = {
 			independent = yes
 			NOT = { same_realm = FROM }
@@ -21741,7 +21744,7 @@ invasion_of_china_cb = {
 	# defender_unoccupied_warscore = yes - If defender completely unoccupied, defender will get ticking warscore. Only works if no title is targetted
 
 	can_use = {
-		emf_cb_can_use = yes
+		always = no # FIXME AHAB
 		ROOT = {
 			independent = yes
 			NOT = { same_realm = FROM }
@@ -22084,6 +22087,7 @@ truebelievers_bid_for_independence = {
 	is_independence = yes
 
 	can_use = {
+		always = no # FIXME AHAB
 		ROOT = {
 			vassal_of = FROM
 		}
@@ -22851,6 +22855,7 @@ roman_christian_revolt = {
 	allow_whitepeace = no
 
 	can_use = {
+		always = no # FIXME AHAB
 		ROOT = { has_flag = roman_christian_revolter }
 	}
 
@@ -23004,6 +23009,7 @@ abrahamic_antihellenic_revolt = {
 	is_independence = yes
 
 	can_use = {
+		always = no # FIXME AHAB
 		ROOT = {
 			vassal_of = FROM
 		}
@@ -26102,7 +26108,7 @@ emf_decadence_revolt = {
 	is_independence = yes
 
 	can_use = {
-		emf_cb_can_use = yes
+		always = no # FIXME AHAB
 		ROOT = { has_flag = decadence_revolter }
 	}
 
@@ -28864,6 +28870,7 @@ emf_mongol_invasion = {
 	def_ticking_war_score_multiplier = 1.25 # Genghis must deliver quickly, or else
 
 	can_use = {
+		always = no # FIXME AHAB
 		ROOT = {
 			emf_mongol_invasion_mission = yes
 			NOT = { same_realm = FROM }
@@ -29390,7 +29397,7 @@ emf_ismaili_caliphate_rising = {
 	battle_warscore_mult = 1.5
 
 	can_use = {
-		emf_cb_can_use = yes
+		always = no # FIXME AHAB
 		ROOT = { has_flag = ismaili_caliphate_pretender }
 	}
 
@@ -31157,6 +31164,7 @@ emf_resist_viceroy_revocation = {
 	capturing_attacker_is_complete_victory = no
 
 	can_use = {
+		always = no # FIXME AHAB
 		ROOT = { de_facto_liege = FROM }
 	}
 
@@ -32438,7 +32446,7 @@ normandy_adventure = {
 	battle_warscore_mult = 1.5
 
 	can_use = {
-		emf_cb_can_use = yes
+		always = no # FIXME AHAB
 		ROOT = { has_flag = duchy_adventurer }
 	}
 
@@ -33067,6 +33075,7 @@ emf_lodbrok_invasion = {
 	}
 
 	is_valid = {
+		always = no # FIXME AHAB
 		ROOT = { religion = norse_pagan }
 	}
 
@@ -33620,6 +33629,7 @@ emf_revolt_religious = {
 	is_permanent = no
 
 	can_use = {
+		always = no # FIXME AHAB
 		ROOT = {
 			has_flag = emf_revolt_religious_leader
 			emf_hostile_religion_to_FROM = yes
@@ -33759,6 +33769,7 @@ emf_seljuk_adventure = {
 	capturing_attacker_is_complete_victory = no
 
 	can_use = {
+		always = no # FIXME AHAB
 		ROOT = { has_flag = emf_cb_pass_tmp }
 	}
 

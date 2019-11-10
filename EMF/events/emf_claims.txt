@@ -5,13 +5,14 @@ namespace = emf_claims
 # emf_claims.0 -- generate claims and justified claimants to feudal elective titles [on_death]
 character_event = {
 	id = emf_claims.0
-	
+
 	is_triggered_only = yes
 	hide_window = yes
-	
+
 	only_playable = yes
-	
+
 	trigger = {
+		always = no # FIXME AHAB
 		any_demesne_title = {
 			succ_law_title = {
 				OR = {
@@ -22,7 +23,7 @@ character_event = {
 			}
 		}
 	}
-	
+
 	immediate = {
 		log = "DEBUG: emf_claims.0: death of a holder of an Elective or Princely Elective title: [This.EMF_GetDebugName]"
 		# Progeny will get claims automatically, so simply setup justified claimants among them
@@ -155,7 +156,7 @@ character_event = {
 # the ordered list of pretenders, then we'd make #2 and #3 justified claimants (perhaps with further qualifications).
 character_event = {
 	id = emf_claims.1
-	
+
 	is_triggered_only = yes
 	hide_window = yes
 
@@ -190,6 +191,7 @@ character_event = {
 	only_men = yes
 
 	trigger = {
+		always = no # FIXME AHAB
 		mother_even_if_dead = {
 			any_claim = {
 				has_holder = yes
@@ -246,6 +248,7 @@ character_event = {
 	only_women = yes
 
 	trigger = {
+		always = no # FIXME AHAB
 		father_even_if_dead = {
 			any_claim = {
 				has_holder = yes
@@ -298,6 +301,7 @@ character_event = {
 	hide_window = yes
 
 	immediate = {
+		always = no # FIXME AHAB
 		any_character = {
 			limit = {
 				any_claim = {

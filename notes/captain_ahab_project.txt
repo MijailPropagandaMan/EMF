@@ -135,3 +135,13 @@ Observe made it from 1066 to 1094 on E+S before:
 
 Exception thrown at 0x00007FF7C6DE0631 in CK2game.exe:
 0xC0000005: Access violation reading location 0xFFFFFFFFFFFFFFFF. occurred
+
+
+====== AHAB VI ======
+
+Removal / disable log (in addition to previous version):
+- turned off all scripted (is_permanent=no) CBs
+- emf_sainthood.txt
+- virtually everything in emf_core.txt & emf_core_effects.zck (specifically fancy abdication for the ZCK)
+- most of the nonessential [to not crashing] parts of emf_startup
+- fixed a bug where set_graphical_culture could've been trying to use the culture of a seazone

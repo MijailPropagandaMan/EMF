@@ -54,6 +54,7 @@ character_event = {
 	only_playable = yes
 
 	trigger = {
+		always = no # FIXME AHAB
 		FROM = { # Title is...
 			higher_tier_than = COUNT
 			is_primary_holder_title = yes # Inheriting FROM caused it to become primary, so this matters.
@@ -120,6 +121,7 @@ character_event = {
 	only_playable = yes
 
 	trigger = {
+		always = no # FIXME AHAB
 		NOT = { religion_group = muslim }
 		is_theocracy = no
 		OR = {
@@ -238,6 +240,7 @@ character_event = {
 	religion_group = muslim
 
 	trigger = {
+		always = no # FIXME AHAB
 		is_theocracy = no
 		OR = {
 			is_republic = no
@@ -592,6 +595,7 @@ character_event = {
 	ai = yes
 
 	trigger = {
+		always = no # FIXME AHAB
 		higher_tier_than = COUNT
 		# war = no # commented-out so that it can be called immediately on war end
 		is_landed = yes
@@ -675,6 +679,7 @@ character_event = {
 	only_rulers = yes
 
 	trigger = {
+		always = no # FIXME AHAB
 		trait = peasant_leader
 		FROM = {
 			temporary = no
@@ -783,6 +788,7 @@ character_event = {
 	hide_window = yes
 
 	trigger = {
+		always = no # FIXME AHAB
 		FROM = { title = e_null }
 	}
 
@@ -797,7 +803,7 @@ character_event = {
 # emf_core.26
 #
 # Duke- or higher-tier AI ruler marries a lowborn (on_marriage)
-# 
+#
 # 1) Give the lowborn spouse a dynasty
 #
 # 2) In order to alleviate the extreme advantage players have over selecting good wives for their genes (or at
@@ -816,6 +822,7 @@ character_event = {
 	hide_window = yes
 
 	trigger = {
+		always = no # FIXME AHAB
 		new_character = {
 			is_lowborn = yes
 		}
@@ -852,6 +859,7 @@ character_event = {
 	hide_window = yes
 
 	trigger = {
+		always = no # FIXME AHAB
 		is_ascetic_trigger = yes
 	}
 
@@ -892,6 +900,7 @@ character_event = {
 	only_playable = yes
 
 	trigger = {
+		always = no # FIXME AHAB
 		OR = {
 			is_feudal = yes
 			is_tribal = yes
@@ -955,6 +964,10 @@ character_event = {
 	hide_window = yes
 	is_triggered_only = yes
 
+	trigger = {
+		always = no # FIXME AHAB
+	}
+
 	immediate = {
 		any_title_under = {
 			limit = {
@@ -981,6 +994,10 @@ character_event = {
 	id = emf_core.41
 	hide_window = yes
 	is_triggered_only = yes
+
+	trigger = {
+		always = no # FIXME AHAB
+	}
 
 	immediate = {
 		event_target:emf_refill_levy_title = {
@@ -1045,6 +1062,7 @@ character_event = {
 	ai = yes
 
 	trigger = {
+		always = no # FIXME AHAB
 		any_vassal = {
 			opinion_levy_raised_days = { who = ROOT days = 365 }
 			ai = yes
@@ -1075,6 +1093,7 @@ character_event = {
 	only_capable = yes
 
 	trigger = {
+		always = no # FIXME AHAB
 		ai = yes
 		NOR = {
 			trait = content
@@ -1173,6 +1192,7 @@ character_event = {
 	only_independent = yes # Note that this filters-out revolt top realms too, which is intentional
 
 	trigger = {
+		always = no # FIXME AHAB
 		capital_scope = { owner = { character = ROOT } }
 	}
 
@@ -1477,6 +1497,7 @@ character_event = {
 	ai = yes
 
 	trigger = {
+		always = no # FIXME AHAB
 		NOT = { has_flag = skip_titular_duchy }
 		any_demesne_title = { mercenary = yes }
 		FROM = {
@@ -1622,6 +1643,7 @@ character_event = {
 	only_independent = yes
 
 	trigger = {
+		always = no # FIXME AHAB
 		mercenary = no
 		current_heir = { is_alive = yes }
 		any_tributary = {
@@ -1722,7 +1744,7 @@ character_event = {
 			has_flag = nomadic_tribute_of_@event_target:emf_new_suzerain # Sanity check
 		}
 	}
-	
+
 	option = {
 		name = EVTOPTA_emf_core_93 # Accept tribute status
 		ai_chance = {
@@ -1988,8 +2010,8 @@ character_event = {
 
 	after = {
 		FROM = {
-			clr_flag = default_tribute_of_@ROOT 
-			clr_flag = nomadic_tribute_of_@ROOT 
+			clr_flag = default_tribute_of_@ROOT
+			clr_flag = nomadic_tribute_of_@ROOT
 		}
 	}
 }
@@ -2005,6 +2027,7 @@ character_event = {
 	war = no
 
 	trigger = {
+		always = no # FIXME AHAB
 		higher_tier_than = COUNT
 		any_demesne_title = {
 			emf_can_autodestroy_title = yes
@@ -2154,6 +2177,10 @@ character_event = {
 	is_triggered_only = yes
 	hide_window = yes
 
+	trigger = {
+		always = no # FIXME AHAB
+	}
+
 	immediate = {
 		log = "INFO: emf_core.110: ruler abdicating: [Root.GetTitledFirstName] [Root.GetOnlyDynastyName] of the [Root.PrimaryTitle.GetFullName] (#[Root.GetID]/[Root.PrimaryTitle.GetID])"
 		remove_trait = emf_crowned
@@ -2164,7 +2191,7 @@ character_event = {
 		remove_trait = crowned_by_bishop
 		remove_trait = crowned_by_pope
 		remove_trait = crowned_by_myself
-		remove_character_modifiers = { modifier = uncrowned_modifier amount = 30 } 	
+		remove_character_modifiers = { modifier = uncrowned_modifier amount = 30 }
 		set_variable = { which = uncrowned_count value = 0 }
 		remove_trait = karling_usurper
 		if = {

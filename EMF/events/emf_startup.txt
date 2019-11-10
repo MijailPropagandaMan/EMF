@@ -34,7 +34,7 @@ character_event = {
 
 		# Initialize genetics on randomly-generated rulers:
 		character_event = { id = emf_dna.0 }
-		
+
 		# Initialize dummy religion characters
 		character_event = { id = emf_religion_codegen.2 } # Compatibility sweep for older saves that already have dummy religion characters initialized, but saved as global event targets instead of persistent event targets
 		character_event = { id = emf_religion_codegen.0 }
@@ -62,8 +62,7 @@ character_event = {
 		# Add Court Anarchy trait during Anarchy at Samarra
 		if = {
 			limit = {
-				year >= 862
-				year < 870
+				start_date == 867.1.1
 				is_alternate_start = no
 			}
 			d_sunni = {
@@ -85,7 +84,10 @@ character_event = {
 		# via EMF's generalized Rollo mechanic. It's quite sad when the Great Heathen Army just all decides, "Fuck it,
 		# Odin never did anything for me anyway."
 		if = {
-			limit = { start_date == 867.1.1 }
+			limit = {
+				start_date == 867.1.1
+				is_alternate_start = no
+			}
 			c_163110 = { set_flag = emf_will_never_bend_the_knee } # Sigurdr
 			c_163111 = { set_flag = emf_will_never_bend_the_knee } # Ivar
 			c_163112 = { set_flag = emf_will_never_bend_the_knee } # Halfdan
@@ -107,7 +109,9 @@ character_event = {
 		}
 
 		# Ensure Varangian Guard is active and vassal to the ERE after 988
-		character_event = { id = emf_startup.50 }
+
+		# FIXME AHAB
+		#character_event = { id = emf_startup.50 }
 
 		# Rum's existence always consumes k_anatolia's de jure territory
 		if = {
@@ -155,9 +159,11 @@ character_event = {
 		}
 
 		# Initialize playable ruler demesne (limit random vassal barons)
-		any_playable_ruler = {
-			character_event = { id = emf_startup.15 }
-		}
+
+		# FIXME AHAB
+		#any_playable_ruler = {
+		#	character_event = { id = emf_startup.15 }
+		#}
 
 		# Track historical dynasties already in the game at start
 		# COMMENTED-OUT: the `has_flag = emf_maybe_historical` trigger no longer appears to be working correctly
@@ -189,10 +195,12 @@ character_event = {
 		event_target:emf_global_hre = { owner = { character_event = { id = emf_empires.71 } } }
 
 		# Combat & diplo trait distribution
-		any_character = {
-			character_event = { id = emf_startup.10 }
-			character_event = { id = emf_startup.11 }
-		}
+
+		# FIXME AHAB
+		#any_character = {
+		#	character_event = { id = emf_startup.10 }
+		#	character_event = { id = emf_startup.11 }
+		#}
 
 		# Apply Islamic handicap to religious authority
 		character_event = { id = emf_startup.41 }
@@ -207,16 +215,19 @@ character_event = {
 		e_byzantium = { owner = { character_event = { id = emf_imperial.1875 days = 1 } } }
 
 		# History's Forgotten Daughters
-		random_playable_ruler = {
-			limit = { emf_startup_ruler_needs_extra_daughter = yes }
-			character_event = { id = emf_startup.25 }
-		}
+
+		# FIXME AHAB
+		#random_playable_ruler = {
+		#	limit = { emf_startup_ruler_needs_extra_daughter = yes }
+		#	character_event = { id = emf_startup.25 }
+		#}
 
 		# Mongol startup event
 		character_event = { id = emf_mongol.100 }
 
 		# Norman startup event
-		character_event = { id = emf_adventurer.2749 }
+		# FIXME AHAB
+		#character_event = { id = emf_adventurer.2749 }
 
 		# Seljuk startup event
 		character_event = { id = emf_seljuk.3 }
@@ -225,30 +236,34 @@ character_event = {
 		emf_startup_init_marriage = yes
 
 		# Remove extranneous claims from all characters (unheld or held by the character)
-		character_event = { id = emf_claims.15 }
+		#character_event = { id = emf_claims.15 }
 
 		# Retroactively invoke weak, unpressed claim inheritance upon adulthood from mother's / father's strong
 		# claims for titles under male / female preference succession, respectively
-		any_character = {
-			limit = {
-				is_adult = yes
-				is_female = no
-			}
-			character_event = { id = emf_claims.10 }
-		}
-		any_character = {
-			limit = {
-				is_adult = yes
-				is_female = yes
-			}
-			character_event = { id = emf_claims.11 }
-		}
 
-		# Perform dynamic reassignment of HRE elector titles if necessary.
+		# FIXME AHAB
+		#any_character = {
+		#	limit = {
+		#		is_adult = yes
+		#		is_female = no
+		#	}
+		#	character_event = { id = emf_claims.10 }
+		#}
+		#any_character = {
+		#	limit = {
+		#		is_adult = yes
+		#		is_female = yes
+		#	}
+		#	character_event = { id = emf_claims.11 }
+		#}
+
+		# Perform dynamic reassignment of HRE elector titles.
 		event_target:emf_global_hre = { owner = { character_event = { id = emf_hre.60 } } }
 
 		# Initialize dynlevy
-		character_event = { id = emf_dynlevy.0 }
+
+		# FIXME AHAB
+		#character_event = { id = emf_dynlevy.0 }
 
 		# Primary startup is done, so we raise the EMF flag.
 		set_global_flag = EMF
@@ -377,6 +392,7 @@ character_event = {
 	min_age = 16
 
 	trigger = {
+		always = no # FIXME AHAB
 		has_warrior_skill_trigger = no
 		OR = {
 			is_playable = yes
@@ -521,6 +537,7 @@ character_event = {
 	min_age = 16
 
 	trigger = {
+		always = no # FIXME AHAB
 		has_diplomat_skill_trigger = no
 		OR = {
 			is_playable = yes
@@ -1099,6 +1116,7 @@ character_event = {
 	religion = hip_religion
 
 	trigger = {
+		always = no
 		has_landed_title = e_hip
 	}
 
@@ -1139,7 +1157,7 @@ character_event = {
 	is_triggered_only = yes
 
 	trigger = { has_random_religion_names = no }
-	
+
 	immediate = {
 		character_event = { id = emf_startup.42 } # Sunni
 		character_event = { id = emf_startup.43 } # Shi'ite
@@ -1290,7 +1308,7 @@ character_event = {
 			}
 		}
 	}
-	
+
 	immediate = {
 		if = {
 			limit = {
