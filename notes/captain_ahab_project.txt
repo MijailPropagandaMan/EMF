@@ -184,5 +184,7 @@ Addition / (re-)enable log (in addition to previous version):
 
 Results:
 --------
-Observe made it from 1066 to [...] on E+V before:
+Observe made it from 1066 to 1119 on E+V before it crashed:
 
+Exception thrown at 0x00007FF7C6B074DA in CK2game.exe:
+0xC0000005: Access violation reading location 0xFFFFFFFFFFFFFFFF. occurred
