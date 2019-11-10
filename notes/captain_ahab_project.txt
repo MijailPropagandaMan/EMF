@@ -214,4 +214,7 @@ Removal / disable log (in addition to previous version):
 
 Results:
 --------
-Observe made it from 1066 to [...] on E+V before:
+Observe made it from 1066 to 1081 on E+V before it crashed:
+
+Exception thrown at 0x00007FF7C6B05D51 in CK2game.exe:
+0xC0000005: Access violation reading location 0x00000000000001E9. occurred
