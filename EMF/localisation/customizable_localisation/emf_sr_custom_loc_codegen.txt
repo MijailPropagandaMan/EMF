@@ -47,23 +47,23 @@ defined_text = {
 		}
 	}
 	text = {
-		localisation_key = adoptionist
-		trigger = {
-			true_religion = adoptionist
-			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		}
-	}
-	text = {
-		localisation_key = arian
-		trigger = {
-			true_religion = arian
-			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		}
-	}
-	text = {
 		localisation_key = orthodox
 		trigger = {
 			true_religion = orthodox
+			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
+		}
+	}
+	text = {
+		localisation_key = miaphysite
+		trigger = {
+			true_religion = miaphysite
+			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
+		}
+	}
+	text = {
+		localisation_key = monophysite
+		trigger = {
+			true_religion = monophysite
 			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		}
 	}
@@ -89,51 +89,9 @@ defined_text = {
 		}
 	}
 	text = {
-		localisation_key = syriac
-		trigger = {
-			true_religion = syriac
-			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		}
-	}
-	text = {
-		localisation_key = maronite
-		trigger = {
-			true_religion = maronite
-			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		}
-	}
-	text = {
-		localisation_key = miaphysite
-		trigger = {
-			true_religion = miaphysite
-			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		}
-	}
-	text = {
-		localisation_key = monophysite
-		trigger = {
-			true_religion = monophysite
-			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		}
-	}
-	text = {
-		localisation_key = apostolic
-		trigger = {
-			true_religion = apostolic
-			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		}
-	}
-	text = {
 		localisation_key = paulician
 		trigger = {
 			true_religion = paulician
-			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		}
-	}
-	text = {
-		localisation_key = tondrakian
-		trigger = {
-			true_religion = tondrakian
 			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		}
 	}
@@ -166,16 +124,9 @@ defined_text = {
 		}
 	}
 	text = {
-		localisation_key = mahdiyya
+		localisation_key = yazidi
 		trigger = {
-			true_religion = mahdiyya
-			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		}
-	}
-	text = {
-		localisation_key = nabawiyya
-		trigger = {
-			true_religion = nabawiyya
+			true_religion = yazidi
 			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		}
 	}
@@ -194,13 +145,6 @@ defined_text = {
 		}
 	}
 	text = {
-		localisation_key = haruri
-		trigger = {
-			true_religion = haruri
-			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		}
-	}
-	text = {
 		localisation_key = shiite
 		trigger = {
 			true_religion = shiite
@@ -208,16 +152,9 @@ defined_text = {
 		}
 	}
 	text = {
-		localisation_key = waqifi
+		localisation_key = druze
 		trigger = {
-			true_religion = waqifi
-			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		}
-	}
-	text = {
-		localisation_key = zaydi
-		trigger = {
-			true_religion = zaydi
+			true_religion = druze
 			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		}
 	}
@@ -225,20 +162,6 @@ defined_text = {
 		localisation_key = hurufi
 		trigger = {
 			true_religion = hurufi
-			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		}
-	}
-	text = {
-		localisation_key = ismaili
-		trigger = {
-			true_religion = ismaili
-			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		}
-	}
-	text = {
-		localisation_key = druze
-		trigger = {
-			true_religion = druze
 			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		}
 	}
@@ -404,30 +327,9 @@ defined_text = {
 		}
 	}
 	text = {
-		localisation_key = zurvanist
-		trigger = {
-			true_religion = zurvanist
-			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		}
-	}
-	text = {
 		localisation_key = manichean
 		trigger = {
 			true_religion = manichean
-			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		}
-	}
-	text = {
-		localisation_key = mandaean
-		trigger = {
-			true_religion = mandaean
-			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		}
-	}
-	text = {
-		localisation_key = yazidi
-		trigger = {
-			true_religion = yazidi
 			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		}
 	}
@@ -531,23 +433,23 @@ defined_text = {
 		}
 	}
 	text = {
-		localisation_key = adoptionist
-		trigger = {
-			true_religion = adoptionist
-			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		}
-	}
-	text = {
-		localisation_key = arian
-		trigger = {
-			true_religion = arian
-			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		}
-	}
-	text = {
 		localisation_key = orthodox
 		trigger = {
 			true_religion = orthodox
+			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
+		}
+	}
+	text = {
+		localisation_key = miaphysite
+		trigger = {
+			true_religion = miaphysite
+			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
+		}
+	}
+	text = {
+		localisation_key = monophysite
+		trigger = {
+			true_religion = monophysite
 			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		}
 	}
@@ -573,51 +475,9 @@ defined_text = {
 		}
 	}
 	text = {
-		localisation_key = syriac
-		trigger = {
-			true_religion = syriac
-			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		}
-	}
-	text = {
-		localisation_key = maronite
-		trigger = {
-			true_religion = maronite
-			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		}
-	}
-	text = {
-		localisation_key = miaphysite
-		trigger = {
-			true_religion = miaphysite
-			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		}
-	}
-	text = {
-		localisation_key = monophysite
-		trigger = {
-			true_religion = monophysite
-			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		}
-	}
-	text = {
-		localisation_key = apostolic
-		trigger = {
-			true_religion = apostolic
-			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		}
-	}
-	text = {
 		localisation_key = paulician
 		trigger = {
 			true_religion = paulician
-			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		}
-	}
-	text = {
-		localisation_key = tondrakian
-		trigger = {
-			true_religion = tondrakian
 			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		}
 	}
@@ -650,16 +510,9 @@ defined_text = {
 		}
 	}
 	text = {
-		localisation_key = mahdiyya
+		localisation_key = yazidi
 		trigger = {
-			true_religion = mahdiyya
-			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		}
-	}
-	text = {
-		localisation_key = nabawiyya
-		trigger = {
-			true_religion = nabawiyya
+			true_religion = yazidi
 			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		}
 	}
@@ -678,13 +531,6 @@ defined_text = {
 		}
 	}
 	text = {
-		localisation_key = haruri
-		trigger = {
-			true_religion = haruri
-			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		}
-	}
-	text = {
 		localisation_key = shiite
 		trigger = {
 			true_religion = shiite
@@ -692,16 +538,9 @@ defined_text = {
 		}
 	}
 	text = {
-		localisation_key = waqifi
+		localisation_key = druze
 		trigger = {
-			true_religion = waqifi
-			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		}
-	}
-	text = {
-		localisation_key = zaydi
-		trigger = {
-			true_religion = zaydi
+			true_religion = druze
 			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		}
 	}
@@ -709,20 +548,6 @@ defined_text = {
 		localisation_key = hurufi
 		trigger = {
 			true_religion = hurufi
-			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		}
-	}
-	text = {
-		localisation_key = ismaili
-		trigger = {
-			true_religion = ismaili
-			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		}
-	}
-	text = {
-		localisation_key = druze
-		trigger = {
-			true_religion = druze
 			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		}
 	}
@@ -888,30 +713,9 @@ defined_text = {
 		}
 	}
 	text = {
-		localisation_key = zurvanist
-		trigger = {
-			true_religion = zurvanist
-			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		}
-	}
-	text = {
 		localisation_key = manichean
 		trigger = {
 			true_religion = manichean
-			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		}
-	}
-	text = {
-		localisation_key = mandaean
-		trigger = {
-			true_religion = mandaean
-			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		}
-	}
-	text = {
-		localisation_key = yazidi
-		trigger = {
-			true_religion = yazidi
 			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		}
 	}
@@ -1015,23 +819,23 @@ defined_text = {
 		}
 	}
 	text = {
-		localisation_key = adoptionist
-		trigger = {
-			religion = adoptionist
-			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		}
-	}
-	text = {
-		localisation_key = arian
-		trigger = {
-			religion = arian
-			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		}
-	}
-	text = {
 		localisation_key = orthodox
 		trigger = {
 			religion = orthodox
+			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
+		}
+	}
+	text = {
+		localisation_key = miaphysite
+		trigger = {
+			religion = miaphysite
+			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
+		}
+	}
+	text = {
+		localisation_key = monophysite
+		trigger = {
+			religion = monophysite
 			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		}
 	}
@@ -1057,51 +861,9 @@ defined_text = {
 		}
 	}
 	text = {
-		localisation_key = syriac
-		trigger = {
-			religion = syriac
-			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		}
-	}
-	text = {
-		localisation_key = maronite
-		trigger = {
-			religion = maronite
-			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		}
-	}
-	text = {
-		localisation_key = miaphysite
-		trigger = {
-			religion = miaphysite
-			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		}
-	}
-	text = {
-		localisation_key = monophysite
-		trigger = {
-			religion = monophysite
-			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		}
-	}
-	text = {
-		localisation_key = apostolic
-		trigger = {
-			religion = apostolic
-			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		}
-	}
-	text = {
 		localisation_key = paulician
 		trigger = {
 			religion = paulician
-			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		}
-	}
-	text = {
-		localisation_key = tondrakian
-		trigger = {
-			religion = tondrakian
 			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		}
 	}
@@ -1134,16 +896,9 @@ defined_text = {
 		}
 	}
 	text = {
-		localisation_key = mahdiyya
+		localisation_key = yazidi
 		trigger = {
-			religion = mahdiyya
-			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		}
-	}
-	text = {
-		localisation_key = nabawiyya
-		trigger = {
-			religion = nabawiyya
+			religion = yazidi
 			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		}
 	}
@@ -1162,13 +917,6 @@ defined_text = {
 		}
 	}
 	text = {
-		localisation_key = haruri
-		trigger = {
-			religion = haruri
-			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		}
-	}
-	text = {
 		localisation_key = shiite
 		trigger = {
 			religion = shiite
@@ -1176,16 +924,9 @@ defined_text = {
 		}
 	}
 	text = {
-		localisation_key = waqifi
+		localisation_key = druze
 		trigger = {
-			religion = waqifi
-			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		}
-	}
-	text = {
-		localisation_key = zaydi
-		trigger = {
-			religion = zaydi
+			religion = druze
 			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		}
 	}
@@ -1193,20 +934,6 @@ defined_text = {
 		localisation_key = hurufi
 		trigger = {
 			religion = hurufi
-			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		}
-	}
-	text = {
-		localisation_key = ismaili
-		trigger = {
-			religion = ismaili
-			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		}
-	}
-	text = {
-		localisation_key = druze
-		trigger = {
-			religion = druze
 			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		}
 	}
@@ -1372,30 +1099,9 @@ defined_text = {
 		}
 	}
 	text = {
-		localisation_key = zurvanist
-		trigger = {
-			religion = zurvanist
-			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		}
-	}
-	text = {
 		localisation_key = manichean
 		trigger = {
 			religion = manichean
-			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		}
-	}
-	text = {
-		localisation_key = mandaean
-		trigger = {
-			religion = mandaean
-			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
-		}
-	}
-	text = {
-		localisation_key = yazidi
-		trigger = {
-			religion = yazidi
 			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
 		}
 	}

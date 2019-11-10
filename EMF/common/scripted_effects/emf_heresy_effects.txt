@@ -192,8 +192,8 @@ emf_become_heretic = {
 				religion = fraticelli
 				religion = waldensian
 				religion = lollard
-				religion = adoptionist
-				religion = arian
+				#religion = adoptionist
+				#religion = arian
 			}
 		}
 		emf_catholic_conversion = yes
@@ -207,8 +207,8 @@ emf_become_heretic = {
 				religion = fraticelli
 				religion = waldensian
 				religion = lollard
-				religion = adoptionist
-				religion = arian
+				#religion = adoptionist
+				#religion = arian
 			}
 		}
 		emf_eastern_conversion = yes
@@ -320,64 +320,64 @@ emf_catholic_conversion = {
 			}
 			religion = lollard
 		}
-		50 = {
-			modifier = {
-				factor = 0
-				religion = adoptionist
-			}
-			modifier = {
-				factor = 0.5
-				has_global_flag = cathar_activated
-			}
-			modifier = {
-				factor = 0.5
-				has_global_flag = lollard_activated
-			}
-			modifier = {
-				factor = 0.5
-				has_global_flag = waldensian_activated
-			}
-			modifier = {
-				factor = 0.2
-				has_global_flag = adoptionist_deactivated
-			}
-			modifier = {
-				factor = 0.25
-				NOT = {
-					event_target:heretic_province = { region = world_europe_west_iberia }
-				}
-			}
-			religion = adoptionist
-		}
-		50 = {
-			modifier = {
-				factor = 0
-				religion = arian
-			}
-			modifier = {
-				factor = 0
-				has_global_flag = arian_deactivated
-			}
-			modifier = {
-				factor = 0.5
-				has_global_flag = cathar_activated
-			}
-			modifier = {
-				factor = 0.5
-				has_global_flag = lollard_activated
-			}
-			modifier = {
-				factor = 0.5
-				has_global_flag = waldensian_activated
-			}
-			modifier = {
-				factor = 0.25
-				NOT = {
-					event_target:heretic_province = { region = world_europe_west }
-				}
-			}
-			religion = arian
-		}
+		#50 = {
+		#	modifier = {
+		#		factor = 0
+		#		religion = adoptionist
+		#	}
+		#	modifier = {
+		#		factor = 0.5
+		#		has_global_flag = cathar_activated
+		#	}
+		#	modifier = {
+		#		factor = 0.5
+		#		has_global_flag = lollard_activated
+		#	}
+		#	modifier = {
+		#		factor = 0.5
+		#		has_global_flag = waldensian_activated
+		#	}
+		#	modifier = {
+		#		factor = 0.2
+		#		has_global_flag = adoptionist_deactivated
+		#	}
+		#	modifier = {
+		#		factor = 0.25
+		#		NOT = {
+		#			event_target:heretic_province = { region = world_europe_west_iberia }
+		#		}
+		#	}
+		#	religion = adoptionist
+		#}
+		#50 = {
+		#	modifier = {
+		#		factor = 0
+		#		religion = arian
+		#	}
+		#	modifier = {
+		#		factor = 0
+		#		has_global_flag = arian_deactivated
+		#	}
+		#	modifier = {
+		#		factor = 0.5
+		#		has_global_flag = cathar_activated
+		#	}
+		#	modifier = {
+		#		factor = 0.5
+		#		has_global_flag = lollard_activated
+		#	}
+		#	modifier = {
+		#		factor = 0.5
+		#		has_global_flag = waldensian_activated
+		#	}
+		#	modifier = {
+		#		factor = 0.25
+		#		NOT = {
+		#			event_target:heretic_province = { region = world_europe_west }
+		#		}
+		#	}
+		#	religion = arian
+		#}
 		25 = {
 			modifier = {
 				factor = 0
@@ -399,22 +399,22 @@ emf_catholic_conversion = {
 			}
 			religion = orthodox
 		}
-		25 = {
-			modifier = {
-				factor = 0
-				NOT = {
-					event_target:heretic_province = { region = world_middle_east_jerusalem }
-				}
-			}
-			modifier = {
-				factor = 0.25
-				NOR = {
-					event_target:heretic_province = { region = custom_lebanon }
-					culture = assyrian
-				}
-			}
-			religion = maronite
-		}
+		#25 = {
+		#	modifier = {
+		#		factor = 0
+		#		NOT = {
+		#			event_target:heretic_province = { region = world_middle_east_jerusalem }
+		#		}
+		#	}
+		#	modifier = {
+		#		factor = 0.25
+		#		NOR = {
+		#			event_target:heretic_province = { region = custom_lebanon }
+		#			culture = assyrian
+		#		}
+		#	}
+		#	religion = maronite
+		#}
 		# TODO: insert lateral conversion to syriac
 		25 = {
 			modifier = {
@@ -434,19 +434,19 @@ emf_catholic_conversion = {
 			}
 			religion = miaphysite
 		}
-		25 = {
-			modifier = {
-				factor = 0
-				NOT = {
-					event_target:heretic_province = { region = world_asia_minor }
-				}
-			}
-			modifier = {
-				factor = 0.25
-				NOT = { culture = armenian }
-			}
-			religion = apostolic
-		}
+		#25 = {
+		#	modifier = {
+		#		factor = 0
+		#		NOT = {
+		#			event_target:heretic_province = { region = world_asia_minor }
+		#		}
+		#	}
+		#	modifier = {
+		#		factor = 0.25
+		#		NOT = { culture = armenian }
+		#	}
+		#	religion = apostolic
+		#}
 		25 = {
 			modifier = {
 				factor = 0
@@ -1030,7 +1030,7 @@ emf_muslim_conversion = {
 				factor = 0
 				OR = {
 					religion = zaydi
-					religion = ismaili
+					religion = shiite
 					religion = druze
 					religion = qarmatian
 				}
@@ -1061,7 +1061,7 @@ emf_muslim_conversion = {
 					religion = waqifi
 					religion = zaydi
 					religion = hurufi
-					religion = ismaili
+					religion = shiite
 					religion = druze
 					religion = qarmatian
 				}
@@ -1092,7 +1092,7 @@ emf_muslim_conversion = {
 					religion = waqifi
 					religion = zaydi
 					religion = hurufi
-					religion = ismaili
+					religion = shiite
 					religion = druze
 					religion = qarmatian
 				}
@@ -1154,7 +1154,7 @@ emf_muslim_conversion = {
 					religion = waqifi
 					religion = zaydi
 					religion = hurufi
-					religion = ismaili
+					religion = shiite
 					religion = druze
 					religion = qarmatian
 				}
@@ -1181,7 +1181,7 @@ emf_muslim_conversion = {
 					religion = waqifi
 					religion = zaydi
 					religion = hurufi
-					religion = ismaili
+					religion = shiite
 					religion = druze
 					religion = qarmatian
 				}
@@ -1209,7 +1209,7 @@ emf_muslim_conversion = {
 					religion = waqifi
 					religion = zaydi
 					religion = hurufi
-					religion = ismaili
+					religion = shiite
 					religion = druze
 					religion = qarmatian
 				}
@@ -1256,7 +1256,7 @@ emf_muslim_conversion = {
 					religion = ibadi
 					religion = kharijite
 					religion = haruri
-					religion = ismaili
+					religion = shiite
 					religion = druze
 					religion = qarmatian
 				}
@@ -1274,7 +1274,7 @@ emf_muslim_conversion = {
 					religion = ibadi
 					religion = kharijite
 					religion = haruri
-					religion = ismaili
+					religion = shiite
 					religion = druze
 					religion = qarmatian
 				}
@@ -1308,7 +1308,7 @@ emf_muslim_conversion = {
 					religion = ibadi
 					religion = kharijite
 					religion = haruri
-					religion = ismaili
+					religion = shiite
 					religion = druze
 					religion = qarmatian
 				}
@@ -1322,7 +1322,7 @@ emf_muslim_conversion = {
 		75 = {
 			modifier = {
 				factor = 0
-				religion = ismaili
+				religion = shiite
 			}
 			modifier = {
 				factor = 0.5
@@ -1344,7 +1344,7 @@ emf_muslim_conversion = {
 				trait = sayyid
 				religion = sunni
 			}
-			religion = ismaili
+			religion = shiite
 		}
 		50 = {
 			modifier = {

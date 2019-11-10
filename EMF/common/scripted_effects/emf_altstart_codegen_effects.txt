@@ -31,24 +31,10 @@ emf_randomize_relhead_title_names = {
 		}
 	}
 	if = {
-		limit = { cathar = { is_name_randomized = yes } }
-		d_cathar = {
-			set_name = "ALT_CATHAR"
-			adjective = "ALT_CATHAR_ADJ"
-		}
-	}
-	if = {
 		limit = { catholic = { is_name_randomized = yes } }
 		k_papal_state = {
 			set_name = "ALT_CATHOLIC"
 			adjective = "ALT_CATHOLIC_ADJ"
-		}
-	}
-	if = {
-		limit = { druze = { is_name_randomized = yes } }
-		d_druze = {
-			set_name = "ALT_DRUZE"
-			adjective = "ALT_DRUZE_ADJ"
 		}
 	}
 	if = {
@@ -94,13 +80,6 @@ emf_randomize_relhead_title_names = {
 		}
 	}
 	if = {
-		limit = { ismaili = { is_name_randomized = yes } }
-		d_ismaili = {
-			set_name = "ALT_ISMAILI"
-			adjective = "ALT_ISMAILI_ADJ"
-		}
-	}
-	if = {
 		limit = { jewish = { is_name_randomized = yes } }
 		d_jewish = {
 			set_name = "ALT_JEWISH"
@@ -115,45 +94,10 @@ emf_randomize_relhead_title_names = {
 		}
 	}
 	if = {
-		limit = { lollard = { is_name_randomized = yes } }
-		d_lollard = {
-			set_name = "ALT_LOLLARD"
-			adjective = "ALT_LOLLARD_ADJ"
-		}
-	}
-	if = {
-		limit = { mahdiyya = { is_name_randomized = yes } }
-		d_mahdiyya = {
-			set_name = "ALT_MAHDIYYA"
-			adjective = "ALT_MAHDIYYA_ADJ"
-		}
-	}
-	if = {
 		limit = { manichean = { is_name_randomized = yes } }
 		d_manichean = {
 			set_name = "ALT_MANICHEAN"
 			adjective = "ALT_MANICHEAN_ADJ"
-		}
-	}
-	if = {
-		limit = { maronite = { is_name_randomized = yes } }
-		d_maronite = {
-			set_name = "ALT_MARONITE"
-			adjective = "ALT_MARONITE_ADJ"
-		}
-	}
-	if = {
-		limit = { mazdaki = { is_name_randomized = yes } }
-		d_mazdaki = {
-			set_name = "ALT_MAZDAKI"
-			adjective = "ALT_MAZDAKI_ADJ"
-		}
-	}
-	if = {
-		limit = { messalian = { is_name_randomized = yes } }
-		d_messalian = {
-			set_name = "ALT_MESSALIAN"
-			adjective = "ALT_MESSALIAN_ADJ"
 		}
 	}
 	if = {
@@ -175,13 +119,6 @@ emf_randomize_relhead_title_names = {
 		d_monothelite = {
 			set_name = "ALT_MONOTHELITE"
 			adjective = "ALT_MONOTHELITE_ADJ"
-		}
-	}
-	if = {
-		limit = { nabawiyya = { is_name_randomized = yes } }
-		d_nabawiyya = {
-			set_name = "ALT_NABAWIYYA"
-			adjective = "ALT_NABAWIYYA_ADJ"
 		}
 	}
 	if = {
@@ -234,24 +171,10 @@ emf_randomize_relhead_title_names = {
 		}
 	}
 	if = {
-		limit = { syriac = { is_name_randomized = yes } }
-		d_syriac = {
-			set_name = "ALT_SYRIAC"
-			adjective = "ALT_SYRIAC_ADJ"
-		}
-	}
-	if = {
 		limit = { tengri_pagan_reformed = { is_name_randomized = yes } }
 		d_tengri_pagan_reformed = {
 			set_name = "ALT_TENGRI"
 			adjective = "ALT_TENGRI_ADJ"
-		}
-	}
-	if = {
-		limit = { waldensian = { is_name_randomized = yes } }
-		d_waldensian = {
-			set_name = "ALT_WALDENSIAN"
-			adjective = "ALT_WALDENSIAN_ADJ"
 		}
 	}
 	if = {
@@ -266,13 +189,6 @@ emf_randomize_relhead_title_names = {
 		d_yazidi = {
 			set_name = "ALT_YAZIDI"
 			adjective = "ALT_YAZIDI_ADJ"
-		}
-	}
-	if = {
-		limit = { zaydi = { is_name_randomized = yes } }
-		d_zaydi = {
-			set_name = "ALT_ZAYDI"
-			adjective = "ALT_ZAYDI_ADJ"
 		}
 	}
 	if = {
@@ -292,10 +208,6 @@ emf_randomize_relhead_title_names = {
 }
 
 emf_activate_randomized_relhead_titles = {
-	# Cathar
-	cathar = { save_event_target_as = emf_rel }
-	d_cathar = { save_event_target_as = emf_rel_title }
-	emf_activate_randomized_relhead_title = yes
 	# Catholic
 	catholic = { save_event_target_as = emf_rel }
 	k_papal_state = { save_event_target_as = emf_rel_title }
@@ -316,25 +228,9 @@ emf_activate_randomized_relhead_titles = {
 	jewish = { save_event_target_as = emf_rel }
 	d_jewish = { save_event_target_as = emf_rel_title }
 	emf_activate_randomized_relhead_title = yes
-	# Lollard
-	lollard = { save_event_target_as = emf_rel }
-	d_lollard = { save_event_target_as = emf_rel_title }
-	emf_activate_randomized_relhead_title = yes
 	# Manichean
 	manichean = { save_event_target_as = emf_rel }
 	d_manichean = { save_event_target_as = emf_rel_title }
-	emf_activate_randomized_relhead_title = yes
-	# Maronite
-	maronite = { save_event_target_as = emf_rel }
-	d_maronite = { save_event_target_as = emf_rel_title }
-	emf_activate_randomized_relhead_title = yes
-	# Mazdaki
-	mazdaki = { save_event_target_as = emf_rel }
-	d_mazdaki = { save_event_target_as = emf_rel_title }
-	emf_activate_randomized_relhead_title = yes
-	# Messalian
-	messalian = { save_event_target_as = emf_rel }
-	d_messalian = { save_event_target_as = emf_rel_title }
 	emf_activate_randomized_relhead_title = yes
 	# Coptic
 	miaphysite = { save_event_target_as = emf_rel }
@@ -363,14 +259,6 @@ emf_activate_randomized_relhead_titles = {
 	# Shia
 	shiite = { save_event_target_as = emf_rel }
 	d_shiite = { save_event_target_as = emf_rel_title }
-	emf_activate_randomized_relhead_title = yes
-	# West Syriac
-	syriac = { save_event_target_as = emf_rel }
-	d_syriac = { save_event_target_as = emf_rel_title }
-	emf_activate_randomized_relhead_title = yes
-	# Waldensian
-	waldensian = { save_event_target_as = emf_rel }
-	d_waldensian = { save_event_target_as = emf_rel_title }
 	emf_activate_randomized_relhead_title = yes
 	# Zoroastrian
 	zoroastrian = { save_event_target_as = emf_rel }

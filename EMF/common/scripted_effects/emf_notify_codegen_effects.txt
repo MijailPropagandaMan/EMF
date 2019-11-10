@@ -30559,7 +30559,7 @@ emf_notify_remove_iconoclast_trait = {
 	}
 }
 
-#### [456] [ismaili.GetName] Claimant: imamah_claimant ####
+#### [456] [shiite.GetName] Claimant: imamah_claimant ####
 emf_notify_add_imamah_claimant = {
 	if = {
 		limit = { NOT = { trait = imamah_claimant } }

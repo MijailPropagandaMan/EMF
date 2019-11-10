@@ -6,7 +6,7 @@ decisions = {
 		is_high_prio = yes
 		only_independent = yes
 		ai_check_interval = 60
-		
+
 		potential = {
 			independent = yes
 			real_tier = DUKE
@@ -136,7 +136,7 @@ decisions = {
 		only_independent = yes
 		is_high_prio = yes
 		ai_check_interval = 60
-		
+
 		potential = {
 			independent = yes
 			tier = KING
@@ -577,7 +577,7 @@ decisions = {
 			}
 			c_amalfi = {
 				show_scope_change = no
-				de_jure_liege = d_amalfi 
+				de_jure_liege = d_amalfi
 			}
 			emf_add_extra_counties_to_amalfi = yes
 			d_amalfi = {
@@ -601,7 +601,7 @@ decisions = {
 				}
 			}
 			hidden_effect = {
-				# Deactivate the old duchy if it's no longer de jure and is unheld or held by ROOT 
+				# Deactivate the old duchy if it's no longer de jure and is unheld or held by ROOT
 				event_target:emf_old_duchy = {
 					if = {
 						limit = {
@@ -1593,7 +1593,7 @@ decisions = {
 						d_zaydi = { has_holder = yes }
 						d_nabawiyya = { has_holder = yes }
 						d_mahdiyya = { has_holder = yes }
-						d_ismaili = { has_holder = yes }
+						d_shiite = { has_holder = yes }
 						d_druze = { has_holder = yes }
 					}
 					NOR = {
@@ -1607,10 +1607,10 @@ decisions = {
 						d_zaydi = { owner = { ai = no } }
 						d_nabawiyya = { owner = { ai = no } }
 						d_mahdiyya = { owner = { ai = no } }
-						d_ismaili = { owner = { ai = no } }
+						d_shiite = { owner = { ai = no } }
 						d_druze = { owner = { ai = no } }
 					}
-						
+
 				}
 				custom_tooltip = {
 					text = destroy_muslim_leadership
@@ -1623,7 +1623,7 @@ decisions = {
 					d_zaydi = { emf_unsafe_destroy_title = yes }
 					d_nabawiyya = { emf_unsafe_destroy_title = yes }
 					d_mahdiyya = { emf_unsafe_destroy_title = yes }
-					d_ismaili = { emf_unsafe_destroy_title = yes }
+					d_shiite = { emf_unsafe_destroy_title = yes }
 					d_druze = { emf_unsafe_destroy_title = yes }
 					set_global_flag = destroyed_caliphates
 				}
@@ -2053,7 +2053,7 @@ decisions = {
 				30 = { give_nickname = nick_the_restorer }
 				30 = { give_nickname = nick_the_lawgiver }
 			}
-			
+
 			if = {
 				limit = {
 					character = 1282
@@ -2229,7 +2229,7 @@ decisions = {
 				20 = { give_nickname = nick_the_restorer }
 				20 = { give_nickname = nick_the_lawgiver }
 			}
-			
+
 			if = {
 				limit = {
 					character = 1282

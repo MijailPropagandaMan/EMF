@@ -70,16 +70,16 @@ emf_set_bloodline_founder_religion_flag = {
 		new_bloodline = { set_bloodline_flag = requires_lollard_religion }
 	}
 	else_if = {
-		limit = { religion = adoptionist }
-		new_bloodline = { set_bloodline_flag = requires_adoptionist_religion }
-	}
-	else_if = {
-		limit = { religion = arian }
-		new_bloodline = { set_bloodline_flag = requires_arian_religion }
-	}
-	else_if = {
 		limit = { religion = orthodox }
 		new_bloodline = { set_bloodline_flag = requires_orthodox_religion }
+	}
+	else_if = {
+		limit = { religion = miaphysite }
+		new_bloodline = { set_bloodline_flag = requires_miaphysite_religion }
+	}
+	else_if = {
+		limit = { religion = monophysite }
+		new_bloodline = { set_bloodline_flag = requires_monophysite_religion }
 	}
 	else_if = {
 		limit = { religion = bogomilist }
@@ -94,32 +94,8 @@ emf_set_bloodline_founder_religion_flag = {
 		new_bloodline = { set_bloodline_flag = requires_iconoclast_religion }
 	}
 	else_if = {
-		limit = { religion = syriac }
-		new_bloodline = { set_bloodline_flag = requires_syriac_religion }
-	}
-	else_if = {
-		limit = { religion = maronite }
-		new_bloodline = { set_bloodline_flag = requires_maronite_religion }
-	}
-	else_if = {
-		limit = { religion = miaphysite }
-		new_bloodline = { set_bloodline_flag = requires_miaphysite_religion }
-	}
-	else_if = {
-		limit = { religion = monophysite }
-		new_bloodline = { set_bloodline_flag = requires_monophysite_religion }
-	}
-	else_if = {
-		limit = { religion = apostolic }
-		new_bloodline = { set_bloodline_flag = requires_apostolic_religion }
-	}
-	else_if = {
 		limit = { religion = paulician }
 		new_bloodline = { set_bloodline_flag = requires_paulician_religion }
-	}
-	else_if = {
-		limit = { religion = tondrakian }
-		new_bloodline = { set_bloodline_flag = requires_tondrakian_religion }
 	}
 	else_if = {
 		limit = { religion = nestorian }
@@ -138,12 +114,8 @@ emf_set_bloodline_founder_religion_flag = {
 		new_bloodline = { set_bloodline_flag = requires_zikri_religion }
 	}
 	else_if = {
-		limit = { religion = mahdiyya }
-		new_bloodline = { set_bloodline_flag = requires_mahdiyya_religion }
-	}
-	else_if = {
-		limit = { religion = nabawiyya }
-		new_bloodline = { set_bloodline_flag = requires_nabawiyya_religion }
+		limit = { religion = yazidi }
+		new_bloodline = { set_bloodline_flag = requires_yazidi_religion }
 	}
 	else_if = {
 		limit = { religion = ibadi }
@@ -154,32 +126,16 @@ emf_set_bloodline_founder_religion_flag = {
 		new_bloodline = { set_bloodline_flag = requires_kharijite_religion }
 	}
 	else_if = {
-		limit = { religion = haruri }
-		new_bloodline = { set_bloodline_flag = requires_haruri_religion }
-	}
-	else_if = {
 		limit = { religion = shiite }
 		new_bloodline = { set_bloodline_flag = requires_shiite_religion }
 	}
 	else_if = {
-		limit = { religion = waqifi }
-		new_bloodline = { set_bloodline_flag = requires_waqifi_religion }
-	}
-	else_if = {
-		limit = { religion = zaydi }
-		new_bloodline = { set_bloodline_flag = requires_zaydi_religion }
+		limit = { religion = druze }
+		new_bloodline = { set_bloodline_flag = requires_druze_religion }
 	}
 	else_if = {
 		limit = { religion = hurufi }
 		new_bloodline = { set_bloodline_flag = requires_hurufi_religion }
-	}
-	else_if = {
-		limit = { religion = ismaili }
-		new_bloodline = { set_bloodline_flag = requires_ismaili_religion }
-	}
-	else_if = {
-		limit = { religion = druze }
-		new_bloodline = { set_bloodline_flag = requires_druze_religion }
 	}
 	else_if = {
 		limit = { religion = qarmatian }
@@ -194,20 +150,8 @@ emf_set_bloodline_founder_religion_flag = {
 		new_bloodline = { set_bloodline_flag = requires_mazdaki_religion }
 	}
 	else_if = {
-		limit = { religion = zurvanist }
-		new_bloodline = { set_bloodline_flag = requires_zurvanist_religion }
-	}
-	else_if = {
 		limit = { religion = manichean }
 		new_bloodline = { set_bloodline_flag = requires_manichean_religion }
-	}
-	else_if = {
-		limit = { religion = mandaean }
-		new_bloodline = { set_bloodline_flag = requires_mandaean_religion }
-	}
-	else_if = {
-		limit = { religion = yazidi }
-		new_bloodline = { set_bloodline_flag = requires_yazidi_religion }
 	}
 	else_if = {
 		limit = { religion = khurmazta }

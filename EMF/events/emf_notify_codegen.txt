@@ -5249,7 +5249,7 @@ character_event = {
 	}
 }
 
-# emf_notify.456 -- added imamah_claimant ([ismaili.GetName] Claimant)
+# emf_notify.456 -- added imamah_claimant ([shiite.GetName] Claimant)
 # Audax Validator "." Ignore_1005
 character_event = {
 	id = emf_notify.456
@@ -11118,7 +11118,7 @@ character_event = {
 	}
 }
 
-# emf_notify.1456 -- removed imamah_claimant ([ismaili.GetName] Claimant)
+# emf_notify.1456 -- removed imamah_claimant ([shiite.GetName] Claimant)
 # Audax Validator "." Ignore_1005
 character_event = {
 	id = emf_notify.1456
@@ -39499,7 +39499,7 @@ character_event = {
 	option = { name = OK }
 }
 
-# emf_notify.2456 -- added imamah_claimant ([ismaili.GetName] Claimant) to FROM [notification]
+# emf_notify.2456 -- added imamah_claimant ([shiite.GetName] Claimant) to FROM [notification]
 # Audax Validator "." Ignore_1005
 character_event = {
 	id = emf_notify.2456
@@ -70624,7 +70624,7 @@ character_event = {
 	option = { name = OK }
 }
 
-# emf_notify.3456 -- removed imamah_claimant ([ismaili.GetName] Claimant) from FROM [notification]
+# emf_notify.3456 -- removed imamah_claimant ([shiite.GetName] Claimant) from FROM [notification]
 # Audax Validator "." Ignore_1005
 character_event = {
 	id = emf_notify.3456

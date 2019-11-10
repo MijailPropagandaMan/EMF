@@ -21,32 +21,20 @@ emf_calc_realm_province_religion_breakdown_of_THIS_for_ROOT = {
 		set_variable = { which = r_prov_rel_waldensian_pct value = 0 }
 		set_variable = { which = r_prov_rel_lollard value = 0 }
 		set_variable = { which = r_prov_rel_lollard_pct value = 0 }
-		set_variable = { which = r_prov_rel_adoptionist value = 0 }
-		set_variable = { which = r_prov_rel_adoptionist_pct value = 0 }
-		set_variable = { which = r_prov_rel_arian value = 0 }
-		set_variable = { which = r_prov_rel_arian_pct value = 0 }
 		set_variable = { which = r_prov_rel_orthodox value = 0 }
 		set_variable = { which = r_prov_rel_orthodox_pct value = 0 }
+		set_variable = { which = r_prov_rel_miaphysite value = 0 }
+		set_variable = { which = r_prov_rel_miaphysite_pct value = 0 }
+		set_variable = { which = r_prov_rel_monophysite value = 0 }
+		set_variable = { which = r_prov_rel_monophysite_pct value = 0 }
 		set_variable = { which = r_prov_rel_bogomilist value = 0 }
 		set_variable = { which = r_prov_rel_bogomilist_pct value = 0 }
 		set_variable = { which = r_prov_rel_monothelite value = 0 }
 		set_variable = { which = r_prov_rel_monothelite_pct value = 0 }
 		set_variable = { which = r_prov_rel_iconoclast value = 0 }
 		set_variable = { which = r_prov_rel_iconoclast_pct value = 0 }
-		set_variable = { which = r_prov_rel_syriac value = 0 }
-		set_variable = { which = r_prov_rel_syriac_pct value = 0 }
-		set_variable = { which = r_prov_rel_maronite value = 0 }
-		set_variable = { which = r_prov_rel_maronite_pct value = 0 }
-		set_variable = { which = r_prov_rel_miaphysite value = 0 }
-		set_variable = { which = r_prov_rel_miaphysite_pct value = 0 }
-		set_variable = { which = r_prov_rel_monophysite value = 0 }
-		set_variable = { which = r_prov_rel_monophysite_pct value = 0 }
-		set_variable = { which = r_prov_rel_apostolic value = 0 }
-		set_variable = { which = r_prov_rel_apostolic_pct value = 0 }
 		set_variable = { which = r_prov_rel_paulician value = 0 }
 		set_variable = { which = r_prov_rel_paulician_pct value = 0 }
-		set_variable = { which = r_prov_rel_tondrakian value = 0 }
-		set_variable = { which = r_prov_rel_tondrakian_pct value = 0 }
 		set_variable = { which = r_prov_rel_nestorian value = 0 }
 		set_variable = { which = r_prov_rel_nestorian_pct value = 0 }
 		set_variable = { which = r_prov_rel_messalian value = 0 }
@@ -55,28 +43,18 @@ emf_calc_realm_province_religion_breakdown_of_THIS_for_ROOT = {
 		set_variable = { which = r_prov_rel_sunni_pct value = 0 }
 		set_variable = { which = r_prov_rel_zikri value = 0 }
 		set_variable = { which = r_prov_rel_zikri_pct value = 0 }
-		set_variable = { which = r_prov_rel_mahdiyya value = 0 }
-		set_variable = { which = r_prov_rel_mahdiyya_pct value = 0 }
-		set_variable = { which = r_prov_rel_nabawiyya value = 0 }
-		set_variable = { which = r_prov_rel_nabawiyya_pct value = 0 }
+		set_variable = { which = r_prov_rel_yazidi value = 0 }
+		set_variable = { which = r_prov_rel_yazidi_pct value = 0 }
 		set_variable = { which = r_prov_rel_ibadi value = 0 }
 		set_variable = { which = r_prov_rel_ibadi_pct value = 0 }
 		set_variable = { which = r_prov_rel_kharijite value = 0 }
 		set_variable = { which = r_prov_rel_kharijite_pct value = 0 }
-		set_variable = { which = r_prov_rel_haruri value = 0 }
-		set_variable = { which = r_prov_rel_haruri_pct value = 0 }
 		set_variable = { which = r_prov_rel_shiite value = 0 }
 		set_variable = { which = r_prov_rel_shiite_pct value = 0 }
-		set_variable = { which = r_prov_rel_waqifi value = 0 }
-		set_variable = { which = r_prov_rel_waqifi_pct value = 0 }
-		set_variable = { which = r_prov_rel_zaydi value = 0 }
-		set_variable = { which = r_prov_rel_zaydi_pct value = 0 }
-		set_variable = { which = r_prov_rel_hurufi value = 0 }
-		set_variable = { which = r_prov_rel_hurufi_pct value = 0 }
-		set_variable = { which = r_prov_rel_ismaili value = 0 }
-		set_variable = { which = r_prov_rel_ismaili_pct value = 0 }
 		set_variable = { which = r_prov_rel_druze value = 0 }
 		set_variable = { which = r_prov_rel_druze_pct value = 0 }
+		set_variable = { which = r_prov_rel_hurufi value = 0 }
+		set_variable = { which = r_prov_rel_hurufi_pct value = 0 }
 		set_variable = { which = r_prov_rel_qarmatian value = 0 }
 		set_variable = { which = r_prov_rel_qarmatian_pct value = 0 }
 		set_variable = { which = r_prov_rel_norse_pagan_reformed value = 0 }
@@ -123,14 +101,8 @@ emf_calc_realm_province_religion_breakdown_of_THIS_for_ROOT = {
 		set_variable = { which = r_prov_rel_zoroastrian_pct value = 0 }
 		set_variable = { which = r_prov_rel_mazdaki value = 0 }
 		set_variable = { which = r_prov_rel_mazdaki_pct value = 0 }
-		set_variable = { which = r_prov_rel_zurvanist value = 0 }
-		set_variable = { which = r_prov_rel_zurvanist_pct value = 0 }
 		set_variable = { which = r_prov_rel_manichean value = 0 }
 		set_variable = { which = r_prov_rel_manichean_pct value = 0 }
-		set_variable = { which = r_prov_rel_mandaean value = 0 }
-		set_variable = { which = r_prov_rel_mandaean_pct value = 0 }
-		set_variable = { which = r_prov_rel_yazidi value = 0 }
-		set_variable = { which = r_prov_rel_yazidi_pct value = 0 }
 		set_variable = { which = r_prov_rel_khurmazta value = 0 }
 		set_variable = { which = r_prov_rel_khurmazta_pct value = 0 }
 		set_variable = { which = r_prov_rel_jewish value = 0 }
@@ -189,23 +161,23 @@ emf_calc_realm_province_religion_breakdown_of_THIS_for_ROOT = {
 		any_realm_province = {
 			limit = {
 				owner_under_PREV = yes
-				religion = adoptionist
-			}
-			ROOT = { change_variable = { which = r_prov_rel_adoptionist value = 1 } }
-		}
-		any_realm_province = {
-			limit = {
-				owner_under_PREV = yes
-				religion = arian
-			}
-			ROOT = { change_variable = { which = r_prov_rel_arian value = 1 } }
-		}
-		any_realm_province = {
-			limit = {
-				owner_under_PREV = yes
 				religion = orthodox
 			}
 			ROOT = { change_variable = { which = r_prov_rel_orthodox value = 1 } }
+		}
+		any_realm_province = {
+			limit = {
+				owner_under_PREV = yes
+				religion = miaphysite
+			}
+			ROOT = { change_variable = { which = r_prov_rel_miaphysite value = 1 } }
+		}
+		any_realm_province = {
+			limit = {
+				owner_under_PREV = yes
+				religion = monophysite
+			}
+			ROOT = { change_variable = { which = r_prov_rel_monophysite value = 1 } }
 		}
 		any_realm_province = {
 			limit = {
@@ -231,51 +203,9 @@ emf_calc_realm_province_religion_breakdown_of_THIS_for_ROOT = {
 		any_realm_province = {
 			limit = {
 				owner_under_PREV = yes
-				religion = syriac
-			}
-			ROOT = { change_variable = { which = r_prov_rel_syriac value = 1 } }
-		}
-		any_realm_province = {
-			limit = {
-				owner_under_PREV = yes
-				religion = maronite
-			}
-			ROOT = { change_variable = { which = r_prov_rel_maronite value = 1 } }
-		}
-		any_realm_province = {
-			limit = {
-				owner_under_PREV = yes
-				religion = miaphysite
-			}
-			ROOT = { change_variable = { which = r_prov_rel_miaphysite value = 1 } }
-		}
-		any_realm_province = {
-			limit = {
-				owner_under_PREV = yes
-				religion = monophysite
-			}
-			ROOT = { change_variable = { which = r_prov_rel_monophysite value = 1 } }
-		}
-		any_realm_province = {
-			limit = {
-				owner_under_PREV = yes
-				religion = apostolic
-			}
-			ROOT = { change_variable = { which = r_prov_rel_apostolic value = 1 } }
-		}
-		any_realm_province = {
-			limit = {
-				owner_under_PREV = yes
 				religion = paulician
 			}
 			ROOT = { change_variable = { which = r_prov_rel_paulician value = 1 } }
-		}
-		any_realm_province = {
-			limit = {
-				owner_under_PREV = yes
-				religion = tondrakian
-			}
-			ROOT = { change_variable = { which = r_prov_rel_tondrakian value = 1 } }
 		}
 		any_realm_province = {
 			limit = {
@@ -308,16 +238,9 @@ emf_calc_realm_province_religion_breakdown_of_THIS_for_ROOT = {
 		any_realm_province = {
 			limit = {
 				owner_under_PREV = yes
-				religion = mahdiyya
+				religion = yazidi
 			}
-			ROOT = { change_variable = { which = r_prov_rel_mahdiyya value = 1 } }
-		}
-		any_realm_province = {
-			limit = {
-				owner_under_PREV = yes
-				religion = nabawiyya
-			}
-			ROOT = { change_variable = { which = r_prov_rel_nabawiyya value = 1 } }
+			ROOT = { change_variable = { which = r_prov_rel_yazidi value = 1 } }
 		}
 		any_realm_province = {
 			limit = {
@@ -336,13 +259,6 @@ emf_calc_realm_province_religion_breakdown_of_THIS_for_ROOT = {
 		any_realm_province = {
 			limit = {
 				owner_under_PREV = yes
-				religion = haruri
-			}
-			ROOT = { change_variable = { which = r_prov_rel_haruri value = 1 } }
-		}
-		any_realm_province = {
-			limit = {
-				owner_under_PREV = yes
 				religion = shiite
 			}
 			ROOT = { change_variable = { which = r_prov_rel_shiite value = 1 } }
@@ -350,16 +266,9 @@ emf_calc_realm_province_religion_breakdown_of_THIS_for_ROOT = {
 		any_realm_province = {
 			limit = {
 				owner_under_PREV = yes
-				religion = waqifi
+				religion = druze
 			}
-			ROOT = { change_variable = { which = r_prov_rel_waqifi value = 1 } }
-		}
-		any_realm_province = {
-			limit = {
-				owner_under_PREV = yes
-				religion = zaydi
-			}
-			ROOT = { change_variable = { which = r_prov_rel_zaydi value = 1 } }
+			ROOT = { change_variable = { which = r_prov_rel_druze value = 1 } }
 		}
 		any_realm_province = {
 			limit = {
@@ -367,20 +276,6 @@ emf_calc_realm_province_religion_breakdown_of_THIS_for_ROOT = {
 				religion = hurufi
 			}
 			ROOT = { change_variable = { which = r_prov_rel_hurufi value = 1 } }
-		}
-		any_realm_province = {
-			limit = {
-				owner_under_PREV = yes
-				religion = ismaili
-			}
-			ROOT = { change_variable = { which = r_prov_rel_ismaili value = 1 } }
-		}
-		any_realm_province = {
-			limit = {
-				owner_under_PREV = yes
-				religion = druze
-			}
-			ROOT = { change_variable = { which = r_prov_rel_druze value = 1 } }
 		}
 		any_realm_province = {
 			limit = {
@@ -546,30 +441,9 @@ emf_calc_realm_province_religion_breakdown_of_THIS_for_ROOT = {
 		any_realm_province = {
 			limit = {
 				owner_under_PREV = yes
-				religion = zurvanist
-			}
-			ROOT = { change_variable = { which = r_prov_rel_zurvanist value = 1 } }
-		}
-		any_realm_province = {
-			limit = {
-				owner_under_PREV = yes
 				religion = manichean
 			}
 			ROOT = { change_variable = { which = r_prov_rel_manichean value = 1 } }
-		}
-		any_realm_province = {
-			limit = {
-				owner_under_PREV = yes
-				religion = mandaean
-			}
-			ROOT = { change_variable = { which = r_prov_rel_mandaean value = 1 } }
-		}
-		any_realm_province = {
-			limit = {
-				owner_under_PREV = yes
-				religion = yazidi
-			}
-			ROOT = { change_variable = { which = r_prov_rel_yazidi value = 1 } }
 		}
 		any_realm_province = {
 			limit = {
@@ -659,22 +533,22 @@ emf_calc_realm_province_religion_breakdown_of_THIS_for_ROOT = {
 				divide_variable = { which = r_prov_rel_lollard_pct which = r_prov }
 			}
 			if = {
-				limit = { check_variable = { which = r_prov_rel_adoptionist value > 0 } }
-				set_variable = { which = r_prov_rel_adoptionist_pct which = r_prov_rel_adoptionist }
-				multiply_variable = { which = r_prov_rel_adoptionist_pct value = 100 }
-				divide_variable = { which = r_prov_rel_adoptionist_pct which = r_prov }
-			}
-			if = {
-				limit = { check_variable = { which = r_prov_rel_arian value > 0 } }
-				set_variable = { which = r_prov_rel_arian_pct which = r_prov_rel_arian }
-				multiply_variable = { which = r_prov_rel_arian_pct value = 100 }
-				divide_variable = { which = r_prov_rel_arian_pct which = r_prov }
-			}
-			if = {
 				limit = { check_variable = { which = r_prov_rel_orthodox value > 0 } }
 				set_variable = { which = r_prov_rel_orthodox_pct which = r_prov_rel_orthodox }
 				multiply_variable = { which = r_prov_rel_orthodox_pct value = 100 }
 				divide_variable = { which = r_prov_rel_orthodox_pct which = r_prov }
+			}
+			if = {
+				limit = { check_variable = { which = r_prov_rel_miaphysite value > 0 } }
+				set_variable = { which = r_prov_rel_miaphysite_pct which = r_prov_rel_miaphysite }
+				multiply_variable = { which = r_prov_rel_miaphysite_pct value = 100 }
+				divide_variable = { which = r_prov_rel_miaphysite_pct which = r_prov }
+			}
+			if = {
+				limit = { check_variable = { which = r_prov_rel_monophysite value > 0 } }
+				set_variable = { which = r_prov_rel_monophysite_pct which = r_prov_rel_monophysite }
+				multiply_variable = { which = r_prov_rel_monophysite_pct value = 100 }
+				divide_variable = { which = r_prov_rel_monophysite_pct which = r_prov }
 			}
 			if = {
 				limit = { check_variable = { which = r_prov_rel_bogomilist value > 0 } }
@@ -695,46 +569,10 @@ emf_calc_realm_province_religion_breakdown_of_THIS_for_ROOT = {
 				divide_variable = { which = r_prov_rel_iconoclast_pct which = r_prov }
 			}
 			if = {
-				limit = { check_variable = { which = r_prov_rel_syriac value > 0 } }
-				set_variable = { which = r_prov_rel_syriac_pct which = r_prov_rel_syriac }
-				multiply_variable = { which = r_prov_rel_syriac_pct value = 100 }
-				divide_variable = { which = r_prov_rel_syriac_pct which = r_prov }
-			}
-			if = {
-				limit = { check_variable = { which = r_prov_rel_maronite value > 0 } }
-				set_variable = { which = r_prov_rel_maronite_pct which = r_prov_rel_maronite }
-				multiply_variable = { which = r_prov_rel_maronite_pct value = 100 }
-				divide_variable = { which = r_prov_rel_maronite_pct which = r_prov }
-			}
-			if = {
-				limit = { check_variable = { which = r_prov_rel_miaphysite value > 0 } }
-				set_variable = { which = r_prov_rel_miaphysite_pct which = r_prov_rel_miaphysite }
-				multiply_variable = { which = r_prov_rel_miaphysite_pct value = 100 }
-				divide_variable = { which = r_prov_rel_miaphysite_pct which = r_prov }
-			}
-			if = {
-				limit = { check_variable = { which = r_prov_rel_monophysite value > 0 } }
-				set_variable = { which = r_prov_rel_monophysite_pct which = r_prov_rel_monophysite }
-				multiply_variable = { which = r_prov_rel_monophysite_pct value = 100 }
-				divide_variable = { which = r_prov_rel_monophysite_pct which = r_prov }
-			}
-			if = {
-				limit = { check_variable = { which = r_prov_rel_apostolic value > 0 } }
-				set_variable = { which = r_prov_rel_apostolic_pct which = r_prov_rel_apostolic }
-				multiply_variable = { which = r_prov_rel_apostolic_pct value = 100 }
-				divide_variable = { which = r_prov_rel_apostolic_pct which = r_prov }
-			}
-			if = {
 				limit = { check_variable = { which = r_prov_rel_paulician value > 0 } }
 				set_variable = { which = r_prov_rel_paulician_pct which = r_prov_rel_paulician }
 				multiply_variable = { which = r_prov_rel_paulician_pct value = 100 }
 				divide_variable = { which = r_prov_rel_paulician_pct which = r_prov }
-			}
-			if = {
-				limit = { check_variable = { which = r_prov_rel_tondrakian value > 0 } }
-				set_variable = { which = r_prov_rel_tondrakian_pct which = r_prov_rel_tondrakian }
-				multiply_variable = { which = r_prov_rel_tondrakian_pct value = 100 }
-				divide_variable = { which = r_prov_rel_tondrakian_pct which = r_prov }
 			}
 			if = {
 				limit = { check_variable = { which = r_prov_rel_nestorian value > 0 } }
@@ -761,16 +599,10 @@ emf_calc_realm_province_religion_breakdown_of_THIS_for_ROOT = {
 				divide_variable = { which = r_prov_rel_zikri_pct which = r_prov }
 			}
 			if = {
-				limit = { check_variable = { which = r_prov_rel_mahdiyya value > 0 } }
-				set_variable = { which = r_prov_rel_mahdiyya_pct which = r_prov_rel_mahdiyya }
-				multiply_variable = { which = r_prov_rel_mahdiyya_pct value = 100 }
-				divide_variable = { which = r_prov_rel_mahdiyya_pct which = r_prov }
-			}
-			if = {
-				limit = { check_variable = { which = r_prov_rel_nabawiyya value > 0 } }
-				set_variable = { which = r_prov_rel_nabawiyya_pct which = r_prov_rel_nabawiyya }
-				multiply_variable = { which = r_prov_rel_nabawiyya_pct value = 100 }
-				divide_variable = { which = r_prov_rel_nabawiyya_pct which = r_prov }
+				limit = { check_variable = { which = r_prov_rel_yazidi value > 0 } }
+				set_variable = { which = r_prov_rel_yazidi_pct which = r_prov_rel_yazidi }
+				multiply_variable = { which = r_prov_rel_yazidi_pct value = 100 }
+				divide_variable = { which = r_prov_rel_yazidi_pct which = r_prov }
 			}
 			if = {
 				limit = { check_variable = { which = r_prov_rel_ibadi value > 0 } }
@@ -785,46 +617,22 @@ emf_calc_realm_province_religion_breakdown_of_THIS_for_ROOT = {
 				divide_variable = { which = r_prov_rel_kharijite_pct which = r_prov }
 			}
 			if = {
-				limit = { check_variable = { which = r_prov_rel_haruri value > 0 } }
-				set_variable = { which = r_prov_rel_haruri_pct which = r_prov_rel_haruri }
-				multiply_variable = { which = r_prov_rel_haruri_pct value = 100 }
-				divide_variable = { which = r_prov_rel_haruri_pct which = r_prov }
-			}
-			if = {
 				limit = { check_variable = { which = r_prov_rel_shiite value > 0 } }
 				set_variable = { which = r_prov_rel_shiite_pct which = r_prov_rel_shiite }
 				multiply_variable = { which = r_prov_rel_shiite_pct value = 100 }
 				divide_variable = { which = r_prov_rel_shiite_pct which = r_prov }
 			}
 			if = {
-				limit = { check_variable = { which = r_prov_rel_waqifi value > 0 } }
-				set_variable = { which = r_prov_rel_waqifi_pct which = r_prov_rel_waqifi }
-				multiply_variable = { which = r_prov_rel_waqifi_pct value = 100 }
-				divide_variable = { which = r_prov_rel_waqifi_pct which = r_prov }
-			}
-			if = {
-				limit = { check_variable = { which = r_prov_rel_zaydi value > 0 } }
-				set_variable = { which = r_prov_rel_zaydi_pct which = r_prov_rel_zaydi }
-				multiply_variable = { which = r_prov_rel_zaydi_pct value = 100 }
-				divide_variable = { which = r_prov_rel_zaydi_pct which = r_prov }
+				limit = { check_variable = { which = r_prov_rel_druze value > 0 } }
+				set_variable = { which = r_prov_rel_druze_pct which = r_prov_rel_druze }
+				multiply_variable = { which = r_prov_rel_druze_pct value = 100 }
+				divide_variable = { which = r_prov_rel_druze_pct which = r_prov }
 			}
 			if = {
 				limit = { check_variable = { which = r_prov_rel_hurufi value > 0 } }
 				set_variable = { which = r_prov_rel_hurufi_pct which = r_prov_rel_hurufi }
 				multiply_variable = { which = r_prov_rel_hurufi_pct value = 100 }
 				divide_variable = { which = r_prov_rel_hurufi_pct which = r_prov }
-			}
-			if = {
-				limit = { check_variable = { which = r_prov_rel_ismaili value > 0 } }
-				set_variable = { which = r_prov_rel_ismaili_pct which = r_prov_rel_ismaili }
-				multiply_variable = { which = r_prov_rel_ismaili_pct value = 100 }
-				divide_variable = { which = r_prov_rel_ismaili_pct which = r_prov }
-			}
-			if = {
-				limit = { check_variable = { which = r_prov_rel_druze value > 0 } }
-				set_variable = { which = r_prov_rel_druze_pct which = r_prov_rel_druze }
-				multiply_variable = { which = r_prov_rel_druze_pct value = 100 }
-				divide_variable = { which = r_prov_rel_druze_pct which = r_prov }
 			}
 			if = {
 				limit = { check_variable = { which = r_prov_rel_qarmatian value > 0 } }
@@ -965,28 +773,10 @@ emf_calc_realm_province_religion_breakdown_of_THIS_for_ROOT = {
 				divide_variable = { which = r_prov_rel_mazdaki_pct which = r_prov }
 			}
 			if = {
-				limit = { check_variable = { which = r_prov_rel_zurvanist value > 0 } }
-				set_variable = { which = r_prov_rel_zurvanist_pct which = r_prov_rel_zurvanist }
-				multiply_variable = { which = r_prov_rel_zurvanist_pct value = 100 }
-				divide_variable = { which = r_prov_rel_zurvanist_pct which = r_prov }
-			}
-			if = {
 				limit = { check_variable = { which = r_prov_rel_manichean value > 0 } }
 				set_variable = { which = r_prov_rel_manichean_pct which = r_prov_rel_manichean }
 				multiply_variable = { which = r_prov_rel_manichean_pct value = 100 }
 				divide_variable = { which = r_prov_rel_manichean_pct which = r_prov }
-			}
-			if = {
-				limit = { check_variable = { which = r_prov_rel_mandaean value > 0 } }
-				set_variable = { which = r_prov_rel_mandaean_pct which = r_prov_rel_mandaean }
-				multiply_variable = { which = r_prov_rel_mandaean_pct value = 100 }
-				divide_variable = { which = r_prov_rel_mandaean_pct which = r_prov }
-			}
-			if = {
-				limit = { check_variable = { which = r_prov_rel_yazidi value > 0 } }
-				set_variable = { which = r_prov_rel_yazidi_pct which = r_prov_rel_yazidi }
-				multiply_variable = { which = r_prov_rel_yazidi_pct value = 100 }
-				divide_variable = { which = r_prov_rel_yazidi_pct which = r_prov }
 			}
 			if = {
 				limit = { check_variable = { which = r_prov_rel_khurmazta value > 0 } }

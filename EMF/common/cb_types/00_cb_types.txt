@@ -29386,7 +29386,7 @@ emf_norman_county_conquest = {
 	}
 }
 
-emf_ismaili_caliphate_rising = {
+emf_shiite_caliphate_rising = {
 	name = CB_NAME_ISMAILI_CALIPHATE_RISING
 	war_name = WAR_NAME_ISMAILI_CALIPHATE_RISING
 	sprite = 8
@@ -29398,12 +29398,12 @@ emf_ismaili_caliphate_rising = {
 
 	can_use = {
 		always = no # FIXME AHAB
-		ROOT = { has_flag = ismaili_caliphate_pretender }
+		ROOT = { has_flag = shiite_caliphate_pretender }
 	}
 
 	is_valid = {
-		ROOT = { has_flag = ismaili_caliphate_pretender }
-		d_ismaili = { has_holder = no }
+		ROOT = { has_flag = shiite_caliphate_pretender }
+		d_shiite = { has_holder = no }
 	}
 
 	is_valid_title = {
@@ -29411,27 +29411,27 @@ emf_ismaili_caliphate_rising = {
 	}
 
 	on_add = {
-		log = "CB(emf_ismaili_caliphate_rising): START: title=[FromFrom.GetID]: [Root.EMF_GetDebugName] vs. [From.EMF_GetDebugName]"
+		log = "CB(emf_shiite_caliphate_rising): START: title=[FromFrom.GetID]: [Root.EMF_GetDebugName] vs. [From.EMF_GetDebugName]"
 		emf_cb_on_add = yes
 	}
 
 	on_success = {
-		log = "CB(emf_ismaili_caliphate_rising): VICTORY: title=[FromFrom.GetID]: [Root.EMF_GetDebugName] vs. [From.EMF_GetDebugName]"
-		clr_global_flag = ismaili_caliphate_revolt_ongoing
+		log = "CB(emf_shiite_caliphate_rising): VICTORY: title=[FromFrom.GetID]: [Root.EMF_GetDebugName] vs. [From.EMF_GetDebugName]"
+		clr_global_flag = shiite_caliphate_revolt_ongoing
 		emf_cb_holy_victory = yes
 		emf_imperial_decay_major_victory = yes
-		set_parent_religion = { religion = ismaili parent = 0 }
+		set_parent_religion = { religion = shiite parent = 0 }
 		ROOT = {
 			piety = 500
-			religion_authority = { modifier = rise_of_the_ismaili_caliphate }
-			clr_flag = ismaili_caliphate_pretender
+			religion_authority = { modifier = rise_of_the_shiite_caliphate }
+			clr_flag = shiite_caliphate_pretender
 		}
 		FROM = {
 			piety = -500
-			religion_authority = { modifier = ismaili_victorious1 }
+			religion_authority = { modifier = shiite_victorious1 }
 		}
 		hidden_effect = {
-			set_parent_religion = { religion = qarmatian parent = ismaili }
+			set_parent_religion = { religion = qarmatian parent = shiite }
 			set_global_flag = druze_activated
 			set_global_flag = qarmatian_activated
 		}
@@ -29446,7 +29446,7 @@ emf_ismaili_caliphate_rising = {
 		custom_tooltip = {
 			text = other_invasion_succ_tip
 			hidden_tooltip = {
-				d_ismaili = {
+				d_shiite = {
 					usurp_title = { target = ROOT type = holy_war }
 				}
 				FROM = {
@@ -29530,23 +29530,23 @@ emf_ismaili_caliphate_rising = {
 	on_success_posttitle = { emf_cb_on_success_posttitle = yes }
 
 	on_fail = {
-		log = "CB(emf_ismaili_caliphate_rising): WHITEPEACE: title=[FromFrom.GetID]: [Root.EMF_GetDebugName] vs. [From.EMF_GetDebugName]"
-		clr_global_flag = ismaili_caliphate_revolt_ongoing
+		log = "CB(emf_shiite_caliphate_rising): WHITEPEACE: title=[FromFrom.GetID]: [Root.EMF_GetDebugName] vs. [From.EMF_GetDebugName]"
+		clr_global_flag = shiite_caliphate_revolt_ongoing
 		FROM = { piety = 250 }
 		ROOT = {
 			piety = -250
-			clr_flag = ismaili_caliphate_pretender
+			clr_flag = shiite_caliphate_pretender
 		}
 	}
 
 	on_reverse_demand = {
-		log = "CB(emf_ismaili_caliphate_rising): DEFEAT: title=[FromFrom.GetID]: [Root.EMF_GetDebugName] vs. [From.EMF_GetDebugName]"
-		clr_global_flag = ismaili_caliphate_revolt_ongoing
+		log = "CB(emf_shiite_caliphate_rising): DEFEAT: title=[FromFrom.GetID]: [Root.EMF_GetDebugName] vs. [From.EMF_GetDebugName]"
+		clr_global_flag = shiite_caliphate_revolt_ongoing
 		emf_cb_holy_defeat = yes
 		emf_imperial_decay_major_loss = yes
 		ROOT = {
 			piety = -500
-			clr_flag = ismaili_caliphate_pretender
+			clr_flag = shiite_caliphate_pretender
 			imprison = FROM
 		}
 		FROM = { piety = 250 }
@@ -29561,17 +29561,17 @@ emf_ismaili_caliphate_rising = {
 	}
 
 	on_attacker_leader_death = {
-		clr_global_flag = ismaili_caliphate_revolt_ongoing
-		clr_global_flag = ismaili_caliphate_revolt
-		ROOT = { clr_flag = ismaili_caliphate_pretender }
+		clr_global_flag = shiite_caliphate_revolt_ongoing
+		clr_global_flag = shiite_caliphate_revolt
+		ROOT = { clr_flag = shiite_caliphate_pretender }
 		end_war = invalid
 	}
 
 	on_invalidation = {
-		log = "CB(emf_ismaili_caliphate_rising): INVALIDATED: [Root.EMF_GetDebugName] vs. [From.EMF_GetDebugName]"
-		clr_global_flag = ismaili_caliphate_revolt_ongoing
-		clr_global_flag = ismaili_caliphate_revolt
-		ROOT = { clr_flag = ismaili_caliphate_pretender }
+		log = "CB(emf_shiite_caliphate_rising): INVALIDATED: [Root.EMF_GetDebugName] vs. [From.EMF_GetDebugName]"
+		clr_global_flag = shiite_caliphate_revolt_ongoing
+		clr_global_flag = shiite_caliphate_revolt
+		ROOT = { clr_flag = shiite_caliphate_pretender }
 	}
 
 	attacker_ai_victory_worth = {

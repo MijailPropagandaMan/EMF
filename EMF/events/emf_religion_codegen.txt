@@ -39,34 +39,23 @@ character_event = {
 			fraticelli = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } }
 			waldensian = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } }
 			lollard = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } }
-			adoptionist = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } }
-			arian = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } }
 			orthodox = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } }
+			miaphysite = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } }
+			monophysite = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } }
 			bogomilist = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } }
 			monothelite = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } }
 			iconoclast = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } }
-			syriac = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } }
-			maronite = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } }
-			miaphysite = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } }
-			monophysite = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } }
-			apostolic = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } }
 			paulician = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } }
-			tondrakian = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } }
 			nestorian = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } }
 			messalian = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } }
 			sunni = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } }
 			zikri = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } }
-			mahdiyya = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } }
-			nabawiyya = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } }
+			yazidi = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } }
 			ibadi = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } }
 			kharijite = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } }
-			haruri = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } }
 			shiite = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } }
-			waqifi = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } }
-			zaydi = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } }
-			hurufi = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } }
-			ismaili = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } }
 			druze = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } }
+			hurufi = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } }
 			qarmatian = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } }
 			norse_pagan_reformed = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } }
 			norse_pagan = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } }
@@ -90,10 +79,7 @@ character_event = {
 			bon = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } }
 			zoroastrian = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } }
 			mazdaki = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } }
-			zurvanist = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } }
 			manichean = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } }
-			mandaean = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } }
-			yazidi = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } }
 			khurmazta = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } }
 			jewish = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } }
 			samaritan = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } }
@@ -223,56 +209,56 @@ character_event = {
 		}
 
 		if = {
-			limit = { NOT = { adoptionist = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } } } }
-			create_character = {
-				dynasty = none
-				religion = adoptionist
-				trait = emf_isis_courtier
-				random_traits = no
-			}
-			new_character = {
-				set_immune_to_pruning = yes
-				diplomatic_immunity = yes
-				emf_do_not_disturb = yes
-				set_flag = no_court_invites # Instructs AI to never accept an invitation to another court
-				set_flag = ai_flag_refuse_conversion # Instructs AI to never accept Demand Religious Conversion
-				set_flag = emf_ai_never_convert_culture
-				set_flag = emf_isis_courtier
-				set_flag = emf_religion_dummy_character
-				religion_scope = {
-					save_persistent_event_target = { name = emf_religion_dummy_character scope = PREV }
-				}
-			}
-		}
-
-		if = {
-			limit = { NOT = { arian = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } } } }
-			create_character = {
-				dynasty = none
-				religion = arian
-				trait = emf_isis_courtier
-				random_traits = no
-			}
-			new_character = {
-				set_immune_to_pruning = yes
-				diplomatic_immunity = yes
-				emf_do_not_disturb = yes
-				set_flag = no_court_invites # Instructs AI to never accept an invitation to another court
-				set_flag = ai_flag_refuse_conversion # Instructs AI to never accept Demand Religious Conversion
-				set_flag = emf_ai_never_convert_culture
-				set_flag = emf_isis_courtier
-				set_flag = emf_religion_dummy_character
-				religion_scope = {
-					save_persistent_event_target = { name = emf_religion_dummy_character scope = PREV }
-				}
-			}
-		}
-
-		if = {
 			limit = { NOT = { orthodox = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } } } }
 			create_character = {
 				dynasty = none
 				religion = orthodox
+				trait = emf_isis_courtier
+				random_traits = no
+			}
+			new_character = {
+				set_immune_to_pruning = yes
+				diplomatic_immunity = yes
+				emf_do_not_disturb = yes
+				set_flag = no_court_invites # Instructs AI to never accept an invitation to another court
+				set_flag = ai_flag_refuse_conversion # Instructs AI to never accept Demand Religious Conversion
+				set_flag = emf_ai_never_convert_culture
+				set_flag = emf_isis_courtier
+				set_flag = emf_religion_dummy_character
+				religion_scope = {
+					save_persistent_event_target = { name = emf_religion_dummy_character scope = PREV }
+				}
+			}
+		}
+
+		if = {
+			limit = { NOT = { miaphysite = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } } } }
+			create_character = {
+				dynasty = none
+				religion = miaphysite
+				trait = emf_isis_courtier
+				random_traits = no
+			}
+			new_character = {
+				set_immune_to_pruning = yes
+				diplomatic_immunity = yes
+				emf_do_not_disturb = yes
+				set_flag = no_court_invites # Instructs AI to never accept an invitation to another court
+				set_flag = ai_flag_refuse_conversion # Instructs AI to never accept Demand Religious Conversion
+				set_flag = emf_ai_never_convert_culture
+				set_flag = emf_isis_courtier
+				set_flag = emf_religion_dummy_character
+				religion_scope = {
+					save_persistent_event_target = { name = emf_religion_dummy_character scope = PREV }
+				}
+			}
+		}
+
+		if = {
+			limit = { NOT = { monophysite = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } } } }
+			create_character = {
+				dynasty = none
+				religion = monophysite
 				trait = emf_isis_courtier
 				random_traits = no
 			}
@@ -361,148 +347,10 @@ character_event = {
 		}
 
 		if = {
-			limit = { NOT = { syriac = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } } } }
-			create_character = {
-				dynasty = none
-				religion = syriac
-				trait = emf_isis_courtier
-				random_traits = no
-			}
-			new_character = {
-				set_immune_to_pruning = yes
-				diplomatic_immunity = yes
-				emf_do_not_disturb = yes
-				set_flag = no_court_invites # Instructs AI to never accept an invitation to another court
-				set_flag = ai_flag_refuse_conversion # Instructs AI to never accept Demand Religious Conversion
-				set_flag = emf_ai_never_convert_culture
-				set_flag = emf_isis_courtier
-				set_flag = emf_religion_dummy_character
-				religion_scope = {
-					save_persistent_event_target = { name = emf_religion_dummy_character scope = PREV }
-				}
-			}
-		}
-
-		if = {
-			limit = { NOT = { maronite = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } } } }
-			create_character = {
-				dynasty = none
-				religion = maronite
-				trait = emf_isis_courtier
-				random_traits = no
-			}
-			new_character = {
-				set_immune_to_pruning = yes
-				diplomatic_immunity = yes
-				emf_do_not_disturb = yes
-				set_flag = no_court_invites # Instructs AI to never accept an invitation to another court
-				set_flag = ai_flag_refuse_conversion # Instructs AI to never accept Demand Religious Conversion
-				set_flag = emf_ai_never_convert_culture
-				set_flag = emf_isis_courtier
-				set_flag = emf_religion_dummy_character
-				religion_scope = {
-					save_persistent_event_target = { name = emf_religion_dummy_character scope = PREV }
-				}
-			}
-		}
-
-		if = {
-			limit = { NOT = { miaphysite = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } } } }
-			create_character = {
-				dynasty = none
-				religion = miaphysite
-				trait = emf_isis_courtier
-				random_traits = no
-			}
-			new_character = {
-				set_immune_to_pruning = yes
-				diplomatic_immunity = yes
-				emf_do_not_disturb = yes
-				set_flag = no_court_invites # Instructs AI to never accept an invitation to another court
-				set_flag = ai_flag_refuse_conversion # Instructs AI to never accept Demand Religious Conversion
-				set_flag = emf_ai_never_convert_culture
-				set_flag = emf_isis_courtier
-				set_flag = emf_religion_dummy_character
-				religion_scope = {
-					save_persistent_event_target = { name = emf_religion_dummy_character scope = PREV }
-				}
-			}
-		}
-
-		if = {
-			limit = { NOT = { monophysite = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } } } }
-			create_character = {
-				dynasty = none
-				religion = monophysite
-				trait = emf_isis_courtier
-				random_traits = no
-			}
-			new_character = {
-				set_immune_to_pruning = yes
-				diplomatic_immunity = yes
-				emf_do_not_disturb = yes
-				set_flag = no_court_invites # Instructs AI to never accept an invitation to another court
-				set_flag = ai_flag_refuse_conversion # Instructs AI to never accept Demand Religious Conversion
-				set_flag = emf_ai_never_convert_culture
-				set_flag = emf_isis_courtier
-				set_flag = emf_religion_dummy_character
-				religion_scope = {
-					save_persistent_event_target = { name = emf_religion_dummy_character scope = PREV }
-				}
-			}
-		}
-
-		if = {
-			limit = { NOT = { apostolic = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } } } }
-			create_character = {
-				dynasty = none
-				religion = apostolic
-				trait = emf_isis_courtier
-				random_traits = no
-			}
-			new_character = {
-				set_immune_to_pruning = yes
-				diplomatic_immunity = yes
-				emf_do_not_disturb = yes
-				set_flag = no_court_invites # Instructs AI to never accept an invitation to another court
-				set_flag = ai_flag_refuse_conversion # Instructs AI to never accept Demand Religious Conversion
-				set_flag = emf_ai_never_convert_culture
-				set_flag = emf_isis_courtier
-				set_flag = emf_religion_dummy_character
-				religion_scope = {
-					save_persistent_event_target = { name = emf_religion_dummy_character scope = PREV }
-				}
-			}
-		}
-
-		if = {
 			limit = { NOT = { paulician = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } } } }
 			create_character = {
 				dynasty = none
 				religion = paulician
-				trait = emf_isis_courtier
-				random_traits = no
-			}
-			new_character = {
-				set_immune_to_pruning = yes
-				diplomatic_immunity = yes
-				emf_do_not_disturb = yes
-				set_flag = no_court_invites # Instructs AI to never accept an invitation to another court
-				set_flag = ai_flag_refuse_conversion # Instructs AI to never accept Demand Religious Conversion
-				set_flag = emf_ai_never_convert_culture
-				set_flag = emf_isis_courtier
-				set_flag = emf_religion_dummy_character
-				religion_scope = {
-					save_persistent_event_target = { name = emf_religion_dummy_character scope = PREV }
-				}
-			}
-		}
-
-		if = {
-			limit = { NOT = { tondrakian = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } } } }
-			create_character = {
-				dynasty = none
-				religion = tondrakian
 				trait = emf_isis_courtier
 				random_traits = no
 			}
@@ -614,33 +462,10 @@ character_event = {
 		}
 
 		if = {
-			limit = { NOT = { mahdiyya = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } } } }
+			limit = { NOT = { yazidi = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } } } }
 			create_character = {
 				dynasty = none
-				religion = mahdiyya
-				trait = emf_isis_courtier
-				random_traits = no
-			}
-			new_character = {
-				set_immune_to_pruning = yes
-				diplomatic_immunity = yes
-				emf_do_not_disturb = yes
-				set_flag = no_court_invites # Instructs AI to never accept an invitation to another court
-				set_flag = ai_flag_refuse_conversion # Instructs AI to never accept Demand Religious Conversion
-				set_flag = emf_ai_never_convert_culture
-				set_flag = emf_isis_courtier
-				set_flag = emf_religion_dummy_character
-				religion_scope = {
-					save_persistent_event_target = { name = emf_religion_dummy_character scope = PREV }
-				}
-			}
-		}
-
-		if = {
-			limit = { NOT = { nabawiyya = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } } } }
-			create_character = {
-				dynasty = none
-				religion = nabawiyya
+				religion = yazidi
 				trait = emf_isis_courtier
 				random_traits = no
 			}
@@ -706,29 +531,6 @@ character_event = {
 		}
 
 		if = {
-			limit = { NOT = { haruri = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } } } }
-			create_character = {
-				dynasty = none
-				religion = haruri
-				trait = emf_isis_courtier
-				random_traits = no
-			}
-			new_character = {
-				set_immune_to_pruning = yes
-				diplomatic_immunity = yes
-				emf_do_not_disturb = yes
-				set_flag = no_court_invites # Instructs AI to never accept an invitation to another court
-				set_flag = ai_flag_refuse_conversion # Instructs AI to never accept Demand Religious Conversion
-				set_flag = emf_ai_never_convert_culture
-				set_flag = emf_isis_courtier
-				set_flag = emf_religion_dummy_character
-				religion_scope = {
-					save_persistent_event_target = { name = emf_religion_dummy_character scope = PREV }
-				}
-			}
-		}
-
-		if = {
 			limit = { NOT = { shiite = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } } } }
 			create_character = {
 				dynasty = none
@@ -752,33 +554,10 @@ character_event = {
 		}
 
 		if = {
-			limit = { NOT = { waqifi = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } } } }
+			limit = { NOT = { druze = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } } } }
 			create_character = {
 				dynasty = none
-				religion = waqifi
-				trait = emf_isis_courtier
-				random_traits = no
-			}
-			new_character = {
-				set_immune_to_pruning = yes
-				diplomatic_immunity = yes
-				emf_do_not_disturb = yes
-				set_flag = no_court_invites # Instructs AI to never accept an invitation to another court
-				set_flag = ai_flag_refuse_conversion # Instructs AI to never accept Demand Religious Conversion
-				set_flag = emf_ai_never_convert_culture
-				set_flag = emf_isis_courtier
-				set_flag = emf_religion_dummy_character
-				religion_scope = {
-					save_persistent_event_target = { name = emf_religion_dummy_character scope = PREV }
-				}
-			}
-		}
-
-		if = {
-			limit = { NOT = { zaydi = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } } } }
-			create_character = {
-				dynasty = none
-				religion = zaydi
+				religion = druze
 				trait = emf_isis_courtier
 				random_traits = no
 			}
@@ -802,52 +581,6 @@ character_event = {
 			create_character = {
 				dynasty = none
 				religion = hurufi
-				trait = emf_isis_courtier
-				random_traits = no
-			}
-			new_character = {
-				set_immune_to_pruning = yes
-				diplomatic_immunity = yes
-				emf_do_not_disturb = yes
-				set_flag = no_court_invites # Instructs AI to never accept an invitation to another court
-				set_flag = ai_flag_refuse_conversion # Instructs AI to never accept Demand Religious Conversion
-				set_flag = emf_ai_never_convert_culture
-				set_flag = emf_isis_courtier
-				set_flag = emf_religion_dummy_character
-				religion_scope = {
-					save_persistent_event_target = { name = emf_religion_dummy_character scope = PREV }
-				}
-			}
-		}
-
-		if = {
-			limit = { NOT = { ismaili = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } } } }
-			create_character = {
-				dynasty = none
-				religion = ismaili
-				trait = emf_isis_courtier
-				random_traits = no
-			}
-			new_character = {
-				set_immune_to_pruning = yes
-				diplomatic_immunity = yes
-				emf_do_not_disturb = yes
-				set_flag = no_court_invites # Instructs AI to never accept an invitation to another court
-				set_flag = ai_flag_refuse_conversion # Instructs AI to never accept Demand Religious Conversion
-				set_flag = emf_ai_never_convert_culture
-				set_flag = emf_isis_courtier
-				set_flag = emf_religion_dummy_character
-				religion_scope = {
-					save_persistent_event_target = { name = emf_religion_dummy_character scope = PREV }
-				}
-			}
-		}
-
-		if = {
-			limit = { NOT = { druze = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } } } }
-			create_character = {
-				dynasty = none
-				religion = druze
 				trait = emf_isis_courtier
 				random_traits = no
 			}
@@ -1396,79 +1129,10 @@ character_event = {
 		}
 
 		if = {
-			limit = { NOT = { zurvanist = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } } } }
-			create_character = {
-				dynasty = none
-				religion = zurvanist
-				trait = emf_isis_courtier
-				random_traits = no
-			}
-			new_character = {
-				set_immune_to_pruning = yes
-				diplomatic_immunity = yes
-				emf_do_not_disturb = yes
-				set_flag = no_court_invites # Instructs AI to never accept an invitation to another court
-				set_flag = ai_flag_refuse_conversion # Instructs AI to never accept Demand Religious Conversion
-				set_flag = emf_ai_never_convert_culture
-				set_flag = emf_isis_courtier
-				set_flag = emf_religion_dummy_character
-				religion_scope = {
-					save_persistent_event_target = { name = emf_religion_dummy_character scope = PREV }
-				}
-			}
-		}
-
-		if = {
 			limit = { NOT = { manichean = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } } } }
 			create_character = {
 				dynasty = none
 				religion = manichean
-				trait = emf_isis_courtier
-				random_traits = no
-			}
-			new_character = {
-				set_immune_to_pruning = yes
-				diplomatic_immunity = yes
-				emf_do_not_disturb = yes
-				set_flag = no_court_invites # Instructs AI to never accept an invitation to another court
-				set_flag = ai_flag_refuse_conversion # Instructs AI to never accept Demand Religious Conversion
-				set_flag = emf_ai_never_convert_culture
-				set_flag = emf_isis_courtier
-				set_flag = emf_religion_dummy_character
-				religion_scope = {
-					save_persistent_event_target = { name = emf_religion_dummy_character scope = PREV }
-				}
-			}
-		}
-
-		if = {
-			limit = { NOT = { mandaean = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } } } }
-			create_character = {
-				dynasty = none
-				religion = mandaean
-				trait = emf_isis_courtier
-				random_traits = no
-			}
-			new_character = {
-				set_immune_to_pruning = yes
-				diplomatic_immunity = yes
-				emf_do_not_disturb = yes
-				set_flag = no_court_invites # Instructs AI to never accept an invitation to another court
-				set_flag = ai_flag_refuse_conversion # Instructs AI to never accept Demand Religious Conversion
-				set_flag = emf_ai_never_convert_culture
-				set_flag = emf_isis_courtier
-				set_flag = emf_religion_dummy_character
-				religion_scope = {
-					save_persistent_event_target = { name = emf_religion_dummy_character scope = PREV }
-				}
-			}
-		}
-
-		if = {
-			limit = { NOT = { yazidi = { persistent_event_target:emf_religion_dummy_character = { is_alive = yes } } } }
-			create_character = {
-				dynasty = none
-				religion = yazidi
 				trait = emf_isis_courtier
 				random_traits = no
 			}
@@ -1710,34 +1374,23 @@ character_event = {
 			event_target:emf_global_fraticelli_dummy = { is_alive = yes }
 			event_target:emf_global_waldensian_dummy = { is_alive = yes }
 			event_target:emf_global_lollard_dummy = { is_alive = yes }
-			event_target:emf_global_adoptionist_dummy = { is_alive = yes }
-			event_target:emf_global_arian_dummy = { is_alive = yes }
 			event_target:emf_global_orthodox_dummy = { is_alive = yes }
+			event_target:emf_global_miaphysite_dummy = { is_alive = yes }
+			event_target:emf_global_monophysite_dummy = { is_alive = yes }
 			event_target:emf_global_bogomilist_dummy = { is_alive = yes }
 			event_target:emf_global_monothelite_dummy = { is_alive = yes }
 			event_target:emf_global_iconoclast_dummy = { is_alive = yes }
-			event_target:emf_global_syriac_dummy = { is_alive = yes }
-			event_target:emf_global_maronite_dummy = { is_alive = yes }
-			event_target:emf_global_miaphysite_dummy = { is_alive = yes }
-			event_target:emf_global_monophysite_dummy = { is_alive = yes }
-			event_target:emf_global_apostolic_dummy = { is_alive = yes }
 			event_target:emf_global_paulician_dummy = { is_alive = yes }
-			event_target:emf_global_tondrakian_dummy = { is_alive = yes }
 			event_target:emf_global_nestorian_dummy = { is_alive = yes }
 			event_target:emf_global_messalian_dummy = { is_alive = yes }
 			event_target:emf_global_sunni_dummy = { is_alive = yes }
 			event_target:emf_global_zikri_dummy = { is_alive = yes }
-			event_target:emf_global_mahdiyya_dummy = { is_alive = yes }
-			event_target:emf_global_nabawiyya_dummy = { is_alive = yes }
+			event_target:emf_global_yazidi_dummy = { is_alive = yes }
 			event_target:emf_global_ibadi_dummy = { is_alive = yes }
 			event_target:emf_global_kharijite_dummy = { is_alive = yes }
-			event_target:emf_global_haruri_dummy = { is_alive = yes }
 			event_target:emf_global_shiite_dummy = { is_alive = yes }
-			event_target:emf_global_waqifi_dummy = { is_alive = yes }
-			event_target:emf_global_zaydi_dummy = { is_alive = yes }
-			event_target:emf_global_hurufi_dummy = { is_alive = yes }
-			event_target:emf_global_ismaili_dummy = { is_alive = yes }
 			event_target:emf_global_druze_dummy = { is_alive = yes }
+			event_target:emf_global_hurufi_dummy = { is_alive = yes }
 			event_target:emf_global_qarmatian_dummy = { is_alive = yes }
 			event_target:emf_global_norse_pagan_reformed_dummy = { is_alive = yes }
 			event_target:emf_global_norse_pagan_dummy = { is_alive = yes }
@@ -1761,10 +1414,7 @@ character_event = {
 			event_target:emf_global_bon_dummy = { is_alive = yes }
 			event_target:emf_global_zoroastrian_dummy = { is_alive = yes }
 			event_target:emf_global_mazdaki_dummy = { is_alive = yes }
-			event_target:emf_global_zurvanist_dummy = { is_alive = yes }
 			event_target:emf_global_manichean_dummy = { is_alive = yes }
-			event_target:emf_global_mandaean_dummy = { is_alive = yes }
-			event_target:emf_global_yazidi_dummy = { is_alive = yes }
 			event_target:emf_global_khurmazta_dummy = { is_alive = yes }
 			event_target:emf_global_jewish_dummy = { is_alive = yes }
 			event_target:emf_global_samaritan_dummy = { is_alive = yes }
@@ -1803,19 +1453,19 @@ character_event = {
 			clear_global_event_target = emf_global_lollard_dummy
 		}
 		if = {
-			limit = { event_target:emf_global_adoptionist_dummy = { is_alive = yes } }
-			adoptionist = { save_persistent_event_target = { name = emf_religion_dummy_character scope = event_target:emf_global_adoptionist_dummy } }
-			clear_global_event_target = emf_global_adoptionist_dummy
-		}
-		if = {
-			limit = { event_target:emf_global_arian_dummy = { is_alive = yes } }
-			arian = { save_persistent_event_target = { name = emf_religion_dummy_character scope = event_target:emf_global_arian_dummy } }
-			clear_global_event_target = emf_global_arian_dummy
-		}
-		if = {
 			limit = { event_target:emf_global_orthodox_dummy = { is_alive = yes } }
 			orthodox = { save_persistent_event_target = { name = emf_religion_dummy_character scope = event_target:emf_global_orthodox_dummy } }
 			clear_global_event_target = emf_global_orthodox_dummy
+		}
+		if = {
+			limit = { event_target:emf_global_miaphysite_dummy = { is_alive = yes } }
+			miaphysite = { save_persistent_event_target = { name = emf_religion_dummy_character scope = event_target:emf_global_miaphysite_dummy } }
+			clear_global_event_target = emf_global_miaphysite_dummy
+		}
+		if = {
+			limit = { event_target:emf_global_monophysite_dummy = { is_alive = yes } }
+			monophysite = { save_persistent_event_target = { name = emf_religion_dummy_character scope = event_target:emf_global_monophysite_dummy } }
+			clear_global_event_target = emf_global_monophysite_dummy
 		}
 		if = {
 			limit = { event_target:emf_global_bogomilist_dummy = { is_alive = yes } }
@@ -1833,39 +1483,9 @@ character_event = {
 			clear_global_event_target = emf_global_iconoclast_dummy
 		}
 		if = {
-			limit = { event_target:emf_global_syriac_dummy = { is_alive = yes } }
-			syriac = { save_persistent_event_target = { name = emf_religion_dummy_character scope = event_target:emf_global_syriac_dummy } }
-			clear_global_event_target = emf_global_syriac_dummy
-		}
-		if = {
-			limit = { event_target:emf_global_maronite_dummy = { is_alive = yes } }
-			maronite = { save_persistent_event_target = { name = emf_religion_dummy_character scope = event_target:emf_global_maronite_dummy } }
-			clear_global_event_target = emf_global_maronite_dummy
-		}
-		if = {
-			limit = { event_target:emf_global_miaphysite_dummy = { is_alive = yes } }
-			miaphysite = { save_persistent_event_target = { name = emf_religion_dummy_character scope = event_target:emf_global_miaphysite_dummy } }
-			clear_global_event_target = emf_global_miaphysite_dummy
-		}
-		if = {
-			limit = { event_target:emf_global_monophysite_dummy = { is_alive = yes } }
-			monophysite = { save_persistent_event_target = { name = emf_religion_dummy_character scope = event_target:emf_global_monophysite_dummy } }
-			clear_global_event_target = emf_global_monophysite_dummy
-		}
-		if = {
-			limit = { event_target:emf_global_apostolic_dummy = { is_alive = yes } }
-			apostolic = { save_persistent_event_target = { name = emf_religion_dummy_character scope = event_target:emf_global_apostolic_dummy } }
-			clear_global_event_target = emf_global_apostolic_dummy
-		}
-		if = {
 			limit = { event_target:emf_global_paulician_dummy = { is_alive = yes } }
 			paulician = { save_persistent_event_target = { name = emf_religion_dummy_character scope = event_target:emf_global_paulician_dummy } }
 			clear_global_event_target = emf_global_paulician_dummy
-		}
-		if = {
-			limit = { event_target:emf_global_tondrakian_dummy = { is_alive = yes } }
-			tondrakian = { save_persistent_event_target = { name = emf_religion_dummy_character scope = event_target:emf_global_tondrakian_dummy } }
-			clear_global_event_target = emf_global_tondrakian_dummy
 		}
 		if = {
 			limit = { event_target:emf_global_nestorian_dummy = { is_alive = yes } }
@@ -1888,14 +1508,9 @@ character_event = {
 			clear_global_event_target = emf_global_zikri_dummy
 		}
 		if = {
-			limit = { event_target:emf_global_mahdiyya_dummy = { is_alive = yes } }
-			mahdiyya = { save_persistent_event_target = { name = emf_religion_dummy_character scope = event_target:emf_global_mahdiyya_dummy } }
-			clear_global_event_target = emf_global_mahdiyya_dummy
-		}
-		if = {
-			limit = { event_target:emf_global_nabawiyya_dummy = { is_alive = yes } }
-			nabawiyya = { save_persistent_event_target = { name = emf_religion_dummy_character scope = event_target:emf_global_nabawiyya_dummy } }
-			clear_global_event_target = emf_global_nabawiyya_dummy
+			limit = { event_target:emf_global_yazidi_dummy = { is_alive = yes } }
+			yazidi = { save_persistent_event_target = { name = emf_religion_dummy_character scope = event_target:emf_global_yazidi_dummy } }
+			clear_global_event_target = emf_global_yazidi_dummy
 		}
 		if = {
 			limit = { event_target:emf_global_ibadi_dummy = { is_alive = yes } }
@@ -1908,39 +1523,19 @@ character_event = {
 			clear_global_event_target = emf_global_kharijite_dummy
 		}
 		if = {
-			limit = { event_target:emf_global_haruri_dummy = { is_alive = yes } }
-			haruri = { save_persistent_event_target = { name = emf_religion_dummy_character scope = event_target:emf_global_haruri_dummy } }
-			clear_global_event_target = emf_global_haruri_dummy
-		}
-		if = {
 			limit = { event_target:emf_global_shiite_dummy = { is_alive = yes } }
 			shiite = { save_persistent_event_target = { name = emf_religion_dummy_character scope = event_target:emf_global_shiite_dummy } }
 			clear_global_event_target = emf_global_shiite_dummy
 		}
 		if = {
-			limit = { event_target:emf_global_waqifi_dummy = { is_alive = yes } }
-			waqifi = { save_persistent_event_target = { name = emf_religion_dummy_character scope = event_target:emf_global_waqifi_dummy } }
-			clear_global_event_target = emf_global_waqifi_dummy
-		}
-		if = {
-			limit = { event_target:emf_global_zaydi_dummy = { is_alive = yes } }
-			zaydi = { save_persistent_event_target = { name = emf_religion_dummy_character scope = event_target:emf_global_zaydi_dummy } }
-			clear_global_event_target = emf_global_zaydi_dummy
+			limit = { event_target:emf_global_druze_dummy = { is_alive = yes } }
+			druze = { save_persistent_event_target = { name = emf_religion_dummy_character scope = event_target:emf_global_druze_dummy } }
+			clear_global_event_target = emf_global_druze_dummy
 		}
 		if = {
 			limit = { event_target:emf_global_hurufi_dummy = { is_alive = yes } }
 			hurufi = { save_persistent_event_target = { name = emf_religion_dummy_character scope = event_target:emf_global_hurufi_dummy } }
 			clear_global_event_target = emf_global_hurufi_dummy
-		}
-		if = {
-			limit = { event_target:emf_global_ismaili_dummy = { is_alive = yes } }
-			ismaili = { save_persistent_event_target = { name = emf_religion_dummy_character scope = event_target:emf_global_ismaili_dummy } }
-			clear_global_event_target = emf_global_ismaili_dummy
-		}
-		if = {
-			limit = { event_target:emf_global_druze_dummy = { is_alive = yes } }
-			druze = { save_persistent_event_target = { name = emf_religion_dummy_character scope = event_target:emf_global_druze_dummy } }
-			clear_global_event_target = emf_global_druze_dummy
 		}
 		if = {
 			limit = { event_target:emf_global_qarmatian_dummy = { is_alive = yes } }
@@ -2058,24 +1653,9 @@ character_event = {
 			clear_global_event_target = emf_global_mazdaki_dummy
 		}
 		if = {
-			limit = { event_target:emf_global_zurvanist_dummy = { is_alive = yes } }
-			zurvanist = { save_persistent_event_target = { name = emf_religion_dummy_character scope = event_target:emf_global_zurvanist_dummy } }
-			clear_global_event_target = emf_global_zurvanist_dummy
-		}
-		if = {
 			limit = { event_target:emf_global_manichean_dummy = { is_alive = yes } }
 			manichean = { save_persistent_event_target = { name = emf_religion_dummy_character scope = event_target:emf_global_manichean_dummy } }
 			clear_global_event_target = emf_global_manichean_dummy
-		}
-		if = {
-			limit = { event_target:emf_global_mandaean_dummy = { is_alive = yes } }
-			mandaean = { save_persistent_event_target = { name = emf_religion_dummy_character scope = event_target:emf_global_mandaean_dummy } }
-			clear_global_event_target = emf_global_mandaean_dummy
-		}
-		if = {
-			limit = { event_target:emf_global_yazidi_dummy = { is_alive = yes } }
-			yazidi = { save_persistent_event_target = { name = emf_religion_dummy_character scope = event_target:emf_global_yazidi_dummy } }
-			clear_global_event_target = emf_global_yazidi_dummy
 		}
 		if = {
 			limit = { event_target:emf_global_khurmazta_dummy = { is_alive = yes } }

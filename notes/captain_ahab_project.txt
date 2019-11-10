@@ -254,3 +254,29 @@ Observe made it from 1066 to 1075 on E+V before it crashed:
 
 Exception thrown at 0x00007FF7C6A6522C in CK2game.exe:
 0xC0000005: Access violation reading location 0x0000000000000028. occurred
+
+
+====== AHAB XI ======
+
+Removal / disable log (in addition to previous version):
+- fully out-commented emf_new_character[_baby]
+- EMF/history/titles (sans e_hip.txt)
+- common/societies
+- common/religion_modifiers
+- common/religions
+- common/religious_titles
+- common/religion_features
+- [E+V-focused] landed title & other various references to custom religions or orders, ismaili->shiite
+- E+V history/characters
+- E+V history/provinces
+- out-commented zz_emf_heresy_titles sans d_shiite
+- emf_holy_order + decisions
+- emf_ai_wrong_religion_liege decision
+- emf_vanilla.10
+- reran religion_codegen.py & revolt_codegen.py
+- emf_holy_order_triggers
+- deleted 00_factions, so now it's vanilla -- previously it was all disabled but we had no faction_lower_tribal_organization
+
+Results:
+--------
+Observe made it from 1066 to ?? on E+V before it ??

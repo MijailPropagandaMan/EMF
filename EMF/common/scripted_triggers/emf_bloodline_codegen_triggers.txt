@@ -101,21 +101,21 @@ emf_religion_same_as_bloodline_founder = {
 	}
 	trigger_if = {
 		limit = {
-			FROM = { has_bloodline_flag = requires_adoptionist_religion }
-		}
-		ROOT = { show_scope_change = no religion = adoptionist }
-	}
-	trigger_if = {
-		limit = {
-			FROM = { has_bloodline_flag = requires_arian_religion }
-		}
-		ROOT = { show_scope_change = no religion = arian }
-	}
-	trigger_if = {
-		limit = {
 			FROM = { has_bloodline_flag = requires_orthodox_religion }
 		}
 		ROOT = { show_scope_change = no religion = orthodox }
+	}
+	trigger_if = {
+		limit = {
+			FROM = { has_bloodline_flag = requires_miaphysite_religion }
+		}
+		ROOT = { show_scope_change = no religion = miaphysite }
+	}
+	trigger_if = {
+		limit = {
+			FROM = { has_bloodline_flag = requires_monophysite_religion }
+		}
+		ROOT = { show_scope_change = no religion = monophysite }
 	}
 	trigger_if = {
 		limit = {
@@ -137,45 +137,9 @@ emf_religion_same_as_bloodline_founder = {
 	}
 	trigger_if = {
 		limit = {
-			FROM = { has_bloodline_flag = requires_syriac_religion }
-		}
-		ROOT = { show_scope_change = no religion = syriac }
-	}
-	trigger_if = {
-		limit = {
-			FROM = { has_bloodline_flag = requires_maronite_religion }
-		}
-		ROOT = { show_scope_change = no religion = maronite }
-	}
-	trigger_if = {
-		limit = {
-			FROM = { has_bloodline_flag = requires_miaphysite_religion }
-		}
-		ROOT = { show_scope_change = no religion = miaphysite }
-	}
-	trigger_if = {
-		limit = {
-			FROM = { has_bloodline_flag = requires_monophysite_religion }
-		}
-		ROOT = { show_scope_change = no religion = monophysite }
-	}
-	trigger_if = {
-		limit = {
-			FROM = { has_bloodline_flag = requires_apostolic_religion }
-		}
-		ROOT = { show_scope_change = no religion = apostolic }
-	}
-	trigger_if = {
-		limit = {
 			FROM = { has_bloodline_flag = requires_paulician_religion }
 		}
 		ROOT = { show_scope_change = no religion = paulician }
-	}
-	trigger_if = {
-		limit = {
-			FROM = { has_bloodline_flag = requires_tondrakian_religion }
-		}
-		ROOT = { show_scope_change = no religion = tondrakian }
 	}
 	trigger_if = {
 		limit = {
@@ -203,15 +167,9 @@ emf_religion_same_as_bloodline_founder = {
 	}
 	trigger_if = {
 		limit = {
-			FROM = { has_bloodline_flag = requires_mahdiyya_religion }
+			FROM = { has_bloodline_flag = requires_yazidi_religion }
 		}
-		ROOT = { show_scope_change = no religion = mahdiyya }
-	}
-	trigger_if = {
-		limit = {
-			FROM = { has_bloodline_flag = requires_nabawiyya_religion }
-		}
-		ROOT = { show_scope_change = no religion = nabawiyya }
+		ROOT = { show_scope_change = no religion = yazidi }
 	}
 	trigger_if = {
 		limit = {
@@ -227,45 +185,21 @@ emf_religion_same_as_bloodline_founder = {
 	}
 	trigger_if = {
 		limit = {
-			FROM = { has_bloodline_flag = requires_haruri_religion }
-		}
-		ROOT = { show_scope_change = no religion = haruri }
-	}
-	trigger_if = {
-		limit = {
 			FROM = { has_bloodline_flag = requires_shiite_religion }
 		}
 		ROOT = { show_scope_change = no religion = shiite }
 	}
 	trigger_if = {
 		limit = {
-			FROM = { has_bloodline_flag = requires_waqifi_religion }
+			FROM = { has_bloodline_flag = requires_druze_religion }
 		}
-		ROOT = { show_scope_change = no religion = waqifi }
-	}
-	trigger_if = {
-		limit = {
-			FROM = { has_bloodline_flag = requires_zaydi_religion }
-		}
-		ROOT = { show_scope_change = no religion = zaydi }
+		ROOT = { show_scope_change = no religion = druze }
 	}
 	trigger_if = {
 		limit = {
 			FROM = { has_bloodline_flag = requires_hurufi_religion }
 		}
 		ROOT = { show_scope_change = no religion = hurufi }
-	}
-	trigger_if = {
-		limit = {
-			FROM = { has_bloodline_flag = requires_ismaili_religion }
-		}
-		ROOT = { show_scope_change = no religion = ismaili }
-	}
-	trigger_if = {
-		limit = {
-			FROM = { has_bloodline_flag = requires_druze_religion }
-		}
-		ROOT = { show_scope_change = no religion = druze }
 	}
 	trigger_if = {
 		limit = {
@@ -287,27 +221,9 @@ emf_religion_same_as_bloodline_founder = {
 	}
 	trigger_if = {
 		limit = {
-			FROM = { has_bloodline_flag = requires_zurvanist_religion }
-		}
-		ROOT = { show_scope_change = no religion = zurvanist }
-	}
-	trigger_if = {
-		limit = {
 			FROM = { has_bloodline_flag = requires_manichean_religion }
 		}
 		ROOT = { show_scope_change = no religion = manichean }
-	}
-	trigger_if = {
-		limit = {
-			FROM = { has_bloodline_flag = requires_mandaean_religion }
-		}
-		ROOT = { show_scope_change = no religion = mandaean }
-	}
-	trigger_if = {
-		limit = {
-			FROM = { has_bloodline_flag = requires_yazidi_religion }
-		}
-		ROOT = { show_scope_change = no religion = yazidi }
 	}
 	trigger_if = {
 		limit = {

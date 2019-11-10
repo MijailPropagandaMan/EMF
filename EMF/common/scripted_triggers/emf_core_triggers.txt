@@ -77,8 +77,8 @@ emf_western_christian_religion = {
 			religion = fraticelli
 			religion = waldensian
 			religion = lollard
-			religion = adoptionist
-			religion = arian
+			#religion = adoptionist
+			#religion = arian
 		}
 	}
 }
@@ -159,7 +159,7 @@ emf_not_antifeminist_religion = {
 	}
 }
 
-# Whether a province has a feminist religion. PREV = province 
+# Whether a province has a feminist religion. PREV = province
 emf_province_feminist_religion = {
 	custom_tooltip = {
 		text = RELIGION_IS_FEMINIST
@@ -297,9 +297,9 @@ emf_religion_can_excommunicate = {
 					religion = iconoclast
 					religion = miaphysite
 					religion = monophysite
-					religion = apostolic
+					#religion = apostolic
 					religion = nestorian
-					religion = syriac
+					#religion = syriac
 				}
 			}
 		}
@@ -339,11 +339,11 @@ emf_religion_head_can_divorce = {
 					religion = bogomilist
 					religion = monothelite
 					religion = iconoclast
-					religion = syriac
-					religion = maronite
+					#religion = syriac
+					#religion = maronite
 					religion = miaphysite
 					religion = monophysite
-					religion = apostolic
+					#religion = apostolic
 					religion = nestorian
 					religion = zoroastrian
 					religion = mazdaki
@@ -466,8 +466,8 @@ emf_jizya_religion = {
 				OR = {
 					religion = sunni
 					religion = zikri
-					religion = mahdiyya
-					religion = nabawiyya
+					#religion = mahdiyya
+					#religion = nabawiyya
 					religion = ibadi
 					religion = kharijite
 					religion = haruri
@@ -475,7 +475,7 @@ emf_jizya_religion = {
 					religion = waqifi
 					religion = zaydi
 					religion = hurufi
-					religion = ismaili
+					religion = shiite
 				}
 			}
 		}
@@ -2165,11 +2165,11 @@ emf_has_any_succ_law = {
 		has_law = succ_primogeniture
 		has_law = succ_feudal_elective
 		has_law = succ_hre_elective
-		has_law = succ_aztec_elective
+		#has_law = succ_aztec_elective
 		has_law = succ_byzantine_elective
 		has_law = succ_tanistry
-		has_law = succ_pictish_elective
-		has_law = succ_dynastic_elective
+		#has_law = succ_pictish_elective
+		#has_law = succ_dynastic_elective
 		has_law = succ_ultimogeniture
 #		has_law = succ_mirath
 		has_law = succ_turkish_succession

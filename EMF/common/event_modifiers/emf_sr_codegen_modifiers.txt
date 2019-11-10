@@ -27,17 +27,17 @@ secret_lollard_community = {
 	icon = 18
 	is_visible = { society_member_of = secret_religious_society_lollard }
 }
-secret_adoptionist_community = {
-	icon = 18
-	is_visible = { society_member_of = secret_religious_society_adoptionist }
-}
-secret_arian_community = {
-	icon = 18
-	is_visible = { society_member_of = secret_religious_society_arian }
-}
 secret_orthodox_community = {
 	icon = 18
 	is_visible = { society_member_of = secret_religious_society_orthodox }
+}
+secret_miaphysite_community = {
+	icon = 18
+	is_visible = { society_member_of = secret_religious_society_miaphysite }
+}
+secret_monophysite_community = {
+	icon = 18
+	is_visible = { society_member_of = secret_religious_society_monophysite }
 }
 secret_bogomilist_community = {
 	icon = 18
@@ -51,33 +51,9 @@ secret_iconoclast_community = {
 	icon = 18
 	is_visible = { society_member_of = secret_religious_society_iconoclast }
 }
-secret_syriac_community = {
-	icon = 18
-	is_visible = { society_member_of = secret_religious_society_syriac }
-}
-secret_maronite_community = {
-	icon = 18
-	is_visible = { society_member_of = secret_religious_society_maronite }
-}
-secret_miaphysite_community = {
-	icon = 18
-	is_visible = { society_member_of = secret_religious_society_miaphysite }
-}
-secret_monophysite_community = {
-	icon = 18
-	is_visible = { society_member_of = secret_religious_society_monophysite }
-}
-secret_apostolic_community = {
-	icon = 18
-	is_visible = { society_member_of = secret_religious_society_apostolic }
-}
 secret_paulician_community = {
 	icon = 18
 	is_visible = { society_member_of = secret_religious_society_paulician }
-}
-secret_tondrakian_community = {
-	icon = 18
-	is_visible = { society_member_of = secret_religious_society_tondrakian }
 }
 secret_nestorian_community = {
 	icon = 18
@@ -95,13 +71,9 @@ secret_zikri_community = {
 	icon = 18
 	is_visible = { society_member_of = secret_religious_society_zikri }
 }
-secret_mahdiyya_community = {
+secret_yazidi_community = {
 	icon = 18
-	is_visible = { society_member_of = secret_religious_society_mahdiyya }
-}
-secret_nabawiyya_community = {
-	icon = 18
-	is_visible = { society_member_of = secret_religious_society_nabawiyya }
+	is_visible = { society_member_of = secret_religious_society_yazidi }
 }
 secret_ibadi_community = {
 	icon = 18
@@ -111,33 +83,17 @@ secret_kharijite_community = {
 	icon = 18
 	is_visible = { society_member_of = secret_religious_society_kharijite }
 }
-secret_haruri_community = {
-	icon = 18
-	is_visible = { society_member_of = secret_religious_society_haruri }
-}
 secret_shiite_community = {
 	icon = 18
 	is_visible = { society_member_of = secret_religious_society_shiite }
 }
-secret_waqifi_community = {
+secret_druze_community = {
 	icon = 18
-	is_visible = { society_member_of = secret_religious_society_waqifi }
-}
-secret_zaydi_community = {
-	icon = 18
-	is_visible = { society_member_of = secret_religious_society_zaydi }
+	is_visible = { society_member_of = secret_religious_society_druze }
 }
 secret_hurufi_community = {
 	icon = 18
 	is_visible = { society_member_of = secret_religious_society_hurufi }
-}
-secret_ismaili_community = {
-	icon = 18
-	is_visible = { society_member_of = secret_religious_society_ismaili }
-}
-secret_druze_community = {
-	icon = 18
-	is_visible = { society_member_of = secret_religious_society_druze }
 }
 secret_qarmatian_community = {
 	icon = 18
@@ -231,21 +187,9 @@ secret_mazdaki_community = {
 	icon = 18
 	is_visible = { society_member_of = secret_religious_society_mazdaki }
 }
-secret_zurvanist_community = {
-	icon = 18
-	is_visible = { society_member_of = secret_religious_society_zurvanist }
-}
 secret_manichean_community = {
 	icon = 18
 	is_visible = { society_member_of = secret_religious_society_manichean }
-}
-secret_mandaean_community = {
-	icon = 18
-	is_visible = { society_member_of = secret_religious_society_mandaean }
-}
-secret_yazidi_community = {
-	icon = 18
-	is_visible = { society_member_of = secret_religious_society_yazidi }
 }
 secret_khurmazta_community = {
 	icon = 18

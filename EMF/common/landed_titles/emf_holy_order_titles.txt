@@ -52,7 +52,7 @@ d_saqaliba = {
 	culture = serbian
 
 	# Parent Religion
-	religion = ismaili
+	religion = shiite
 
 	# Cannot be held as a secondary title
 	primary = yes

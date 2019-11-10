@@ -149,7 +149,7 @@ muslim = {
 		uses_piety = yes
 	}
 
-	ismaili = {
+	shiite = {
 		color = { 0.3 0.9 0.4 }
 		icon = 6
 		country = {

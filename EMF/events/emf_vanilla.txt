@@ -383,714 +383,714 @@ character_event = {
 ## Holy Order related
 ## 10-19 reserved
 # Holy Order Volunteer Handler Event - relies on modified soa_holy_order_events.txt
-character_event = {
-	id = emf_vanilla.10
-	hide_window = yes
+#character_event = {
+#	id = emf_vanilla.10
+#	hide_window = yes
 
-	min_age = 16
-	only_capable = yes
-	prisoner = no
-	has_dlc = "Sons of Abraham"
+#	min_age = 16
+#	only_capable = yes
+#	prisoner = no
+#	has_dlc = "Sons of Abraham"
 
-	trigger = {
-		NOT = { practical_age = 45 }
-		OR = {
-			is_female = no
-			trait = shieldmaiden
-			has_religion_feature = religion_equal
-			has_religion_feature = religion_feature_bon
-			has_religion_feature = religion_matriarchal
-			religion = bon
-			AND = {
-				religion = bon_reformed
-				has_religion_features = no
-			}
-		}
-		is_ruler = no
-		is_heretic = no
-		martial = 5
-		OR = {
-			father_even_if_dead = {
-				primary_title = { higher_tier_than = BARON }
-			}
-			mother_even_if_dead = {
-				primary_title = { higher_tier_than = BARON }
-			}
-		}
-		liege = {
-			holy_order = no
-			NOT = { any_liege = { holy_order = yes } }
-		}
-		OR = { # Either not married, or older spouse and without any young children
-			is_married = no
-			AND = {
-				spouse = { practical_age = 35 }
-				NOT = {
-					any_child = {
-						NOT = { is_marriage_adult = yes }
-					}
-				}
-			}
-		}
-		NOT = { # No spouse who is pregnant with your child
-			any_spouse = {
-				is_pregnant = yes
-				father_of_unborn = { character = ROOT } # Won't happen if spouse is pregnant with non-bastard child
-			}
-		}
-		OR = {
-			AND = { # Catholic
-				OR = {
-					religion = catholic
-					religion = cathar
-					religion = fraticelli
-					religion = waldensian
-					religion = lollard
-					religion = adoptionist
-					religion = arian
-				}
-				OR = {
-					is_title_active = d_knights_templar
-					is_title_active = d_knights_hospitaler
-					is_title_active = d_teutonic_order
-					is_title_active = d_knights_santiago
-					is_title_active = d_knights_calatrava
-					is_title_active = d_holy_sepulchre
-				}
-			}
-			AND = { # Orthodox
-				OR = {
-					religion = orthodox
-					religion = bogomilist
-					religion = monothelite
-					religion = iconoclast
-				}
-				is_title_active = d_holy_sepulchre
-			}
-			AND = {
-				OR = {
-					religion = apostolic
-					religion = paulician
-					religion = tondrakian
-				}
-				is_title_active = d_saint_blaise
-			}
-			AND = { # Miaphysite
-				OR = {
-					religion = miaphysite
-					religion = monophysite
-				}
-				OR = {
-					is_title_active = d_saint_anthony
-					is_title_active = d_knights_saint_mark
-				}
-			}
-			AND = { # Nestorian
-				OR = {
-					religion = nestorian
-					religion = messalian
-				}
-				is_title_active = d_saint_addai
-			}
-			AND = {
-				religion = messalian
-				is_title_active = d_army_lucifer
-			}
-			AND = { # Sunni
-				OR = {
-					religion = sunni
-					religion = zikri
-					religion = mahdiyya
-					religion = nabawiyya
-				}
-				OR = {
-					is_title_active = d_bektashi
-					is_title_active = d_arsiyah
-				}
-			}
-			AND = { # Ismaili
-				OR = {
-					religion = ismaili
-					religion = druze
-					religion = qarmatian
-				}
-				OR = {
-					is_title_active = d_hashshashin
-					is_title_active = d_saqaliba
-				}
-			}
-			AND = { # Norse
-				OR = {
-					religion = norse_pagan
-					religion = norse_pagan_reformed
-				}
-				is_title_active = d_jomsvikings
-			}
-			AND = { # Tengri
-				religion = tengri_pagan_reformed
-				is_title_active = d_sky_lords
-			}
-			AND = { # West African
-				religion = west_african_pagan_reformed
-				is_title_active = d_spirit_guardians
-			}
-			AND = { # Slavic
-				religion = slavic_pagan_reformed
-				is_title_active = d_warriors_perun
-			}
-			AND = { # Baltic
-				religion = baltic_pagan_reformed
-				is_title_active = d_chosen_perkunas
-			}
-			AND = { # Finnish
-				religion = finnish_pagan_reformed
-				is_title_active = d_sons_kaleva
-			}
-			AND = { # Aztec
-				religion = aztec_reformed
-				is_title_active = d_huitzilopochtli
-			}
-			AND = { # Zoroastrian
-				religion_group = zoroastrian_group
-				is_title_active = d_immortals
-			}
-			AND = { # Manichean
-				religion = manichean
-				is_title_active = d_army_light
-			}
-			AND = { # Jewish
-				religion_group = jewish_group
-				is_title_active = d_zealots
-			}
-		}
-	}
+#	trigger = {
+#		NOT = { practical_age = 45 }
+#		OR = {
+#			is_female = no
+#			trait = shieldmaiden
+#			has_religion_feature = religion_equal
+#			has_religion_feature = religion_feature_bon
+#			has_religion_feature = religion_matriarchal
+#			religion = bon
+#			AND = {
+#				religion = bon_reformed
+#				has_religion_features = no
+#			}
+#		}
+#		is_ruler = no
+#		is_heretic = no
+#		martial = 5
+#		OR = {
+#			father_even_if_dead = {
+#				primary_title = { higher_tier_than = BARON }
+#			}
+#			mother_even_if_dead = {
+#				primary_title = { higher_tier_than = BARON }
+#			}
+#		}
+#		liege = {
+#			holy_order = no
+#			NOT = { any_liege = { holy_order = yes } }
+#		}
+#		OR = { # Either not married, or older spouse and without any young children
+#			is_married = no
+#			AND = {
+#				spouse = { practical_age = 35 }
+#				NOT = {
+#					any_child = {
+#						NOT = { is_marriage_adult = yes }
+#					}
+#				}
+#			}
+#		}
+#		NOT = { # No spouse who is pregnant with your child
+#			any_spouse = {
+#				is_pregnant = yes
+#				father_of_unborn = { character = ROOT } # Won't happen if spouse is pregnant with non-bastard child
+#			}
+#		}
+#		OR = {
+#			AND = { # Catholic
+#				OR = {
+#					religion = catholic
+#					religion = cathar
+#					religion = fraticelli
+#					religion = waldensian
+#					religion = lollard
+#					religion = adoptionist
+#					religion = arian
+#				}
+#				OR = {
+#					is_title_active = d_knights_templar
+#					is_title_active = d_knights_hospitaler
+#					is_title_active = d_teutonic_order
+#					is_title_active = d_knights_santiago
+#					is_title_active = d_knights_calatrava
+#					is_title_active = d_holy_sepulchre
+#				}
+#			}
+#			AND = { # Orthodox
+#				OR = {
+#					religion = orthodox
+#					religion = bogomilist
+#					religion = monothelite
+#					religion = iconoclast
+#				}
+#				is_title_active = d_holy_sepulchre
+#			}
+#			AND = {
+#				OR = {
+#					religion = apostolic
+#					religion = paulician
+#					religion = tondrakian
+#				}
+#				is_title_active = d_saint_blaise
+#			}
+#			AND = { # Miaphysite
+#				OR = {
+#					religion = miaphysite
+#					religion = monophysite
+#				}
+#				OR = {
+#					is_title_active = d_saint_anthony
+#					is_title_active = d_knights_saint_mark
+#				}
+#			}
+#			AND = { # Nestorian
+#				OR = {
+#					religion = nestorian
+#					religion = messalian
+#				}
+#				is_title_active = d_saint_addai
+#			}
+#			AND = {
+#				religion = messalian
+#				is_title_active = d_army_lucifer
+#			}
+#			AND = { # Sunni
+#				OR = {
+#					religion = sunni
+#					religion = zikri
+#					religion = mahdiyya
+#					religion = nabawiyya
+#				}
+#				OR = {
+#					is_title_active = d_bektashi
+#					is_title_active = d_arsiyah
+#				}
+#			}
+#			AND = { # Ismaili
+#				OR = {
+#					religion = shiite
+#					religion = druze
+#					religion = qarmatian
+#				}
+#				OR = {
+#					is_title_active = d_hashshashin
+#					is_title_active = d_saqaliba
+#				}
+#			}
+#			AND = { # Norse
+#				OR = {
+#					religion = norse_pagan
+#					religion = norse_pagan_reformed
+#				}
+#				is_title_active = d_jomsvikings
+#			}
+#			AND = { # Tengri
+#				religion = tengri_pagan_reformed
+#				is_title_active = d_sky_lords
+#			}
+#			AND = { # West African
+#				religion = west_african_pagan_reformed
+#				is_title_active = d_spirit_guardians
+#			}
+#			AND = { # Slavic
+#				religion = slavic_pagan_reformed
+#				is_title_active = d_warriors_perun
+#			}
+#			AND = { # Baltic
+#				religion = baltic_pagan_reformed
+#				is_title_active = d_chosen_perkunas
+#			}
+#			AND = { # Finnish
+#				religion = finnish_pagan_reformed
+#				is_title_active = d_sons_kaleva
+#			}
+#			AND = { # Aztec
+#				religion = aztec_reformed
+#				is_title_active = d_huitzilopochtli
+#			}
+#			AND = { # Zoroastrian
+#				religion_group = zoroastrian_group
+#				is_title_active = d_immortals
+#			}
+#			AND = { # Manichean
+#				religion = manichean
+#				is_title_active = d_army_light
+#			}
+#			AND = { # Jewish
+#				religion_group = jewish_group
+#				is_title_active = d_zealots
+#			}
+#		}
+#	}
 
-	mean_time_to_happen = {
-		years = 100
-		modifier = { # Catholics have a lot of holy orders
-			factor = 0.75
-			religion = catholic
-		}
-		modifier = {
-			factor = 0.25
-			trait = zealous
-		}
-		modifier = {
-			factor = 0.25
-			trait = celibate
-		}
-		modifier = {
-			factor = 0.5
-			trait = homosexual
-		}
-		modifier = {
-			factor = 0.7
-			trait = content
-		}
-		modifier = {
-			factor = 0.75
-			trait = chaste
-		}
-		modifier = {
-			factor = 0.75
-			NOT = { age = 25 }
-		}
-		modifier = {
-			factor = 0.75
-			NOT = { age = 20 }
-		}
-		modifier = {
-			factor = 1.5
-			trait = slothful
-		}
-		modifier = {
-			factor = 2.0
-			trait = lustful
-		}
-		modifier = {
-			factor = 2.0
-			trait = cynical
-		}
-		modifier = {
-			factor = 2.0
-			trait = hedonist
-		}
-		modifier = {
-			factor = 2.0
-			trait = ambitious
-		}
-		modifier = {
-			factor = 2.0
-			any_heir_title = { always = yes }
-		}
-		modifier = {
-			factor = 2.0
-			is_primary_heir = yes
-		}
-		modifier = {
-			factor = 2
-			any_spouse = {
-				reverse_opinion = { who = ROOT value = 100 }
-			}
-		}
-	}
+#	mean_time_to_happen = {
+#		years = 100
+#		modifier = { # Catholics have a lot of holy orders
+#			factor = 0.75
+#			religion = catholic
+#		}
+#		modifier = {
+#			factor = 0.25
+#			trait = zealous
+#		}
+#		modifier = {
+#			factor = 0.25
+#			trait = celibate
+#		}
+#		modifier = {
+#			factor = 0.5
+#			trait = homosexual
+#		}
+#		modifier = {
+#			factor = 0.7
+#			trait = content
+#		}
+#		modifier = {
+#			factor = 0.75
+#			trait = chaste
+#		}
+#		modifier = {
+#			factor = 0.75
+#			NOT = { age = 25 }
+#		}
+#		modifier = {
+#			factor = 0.75
+#			NOT = { age = 20 }
+#		}
+#		modifier = {
+#			factor = 1.5
+#			trait = slothful
+#		}
+#		modifier = {
+#			factor = 2.0
+#			trait = lustful
+#		}
+#		modifier = {
+#			factor = 2.0
+#			trait = cynical
+#		}
+#		modifier = {
+#			factor = 2.0
+#			trait = hedonist
+#		}
+#		modifier = {
+#			factor = 2.0
+#			trait = ambitious
+#		}
+#		modifier = {
+#			factor = 2.0
+#			any_heir_title = { always = yes }
+#		}
+#		modifier = {
+#			factor = 2.0
+#			is_primary_heir = yes
+#		}
+#		modifier = {
+#			factor = 2
+#			any_spouse = {
+#				reverse_opinion = { who = ROOT value = 100 }
+#			}
+#		}
+#	}
 
-	# Christian - Catholic
-	option = { # Knights Templar
-		trigger = {
-			OR = {
-				religion = catholic
-				religion = cathar
-				religion = fraticelli
-				religion = waldensian
-				religion = lollard
-				religion = adoptionist
-				religion = arian
-			}
-			is_title_active = d_knights_templar
-		}
-		ai_chance = {
-			factor = 100
-			modifier = {
-				factor = 0.33 # Prefer the Teutonic Order
-				OR = {
-					culture_group = north_germanic
-					culture_group = central_germanic
-					culture_group = magyar
-					culture_group = south_slavic
-					culture_group = west_slavic
-				}
-			}
-		}
-		name = OK
+#	# Christian - Catholic
+#	option = { # Knights Templar
+#		trigger = {
+#			OR = {
+#				religion = catholic
+#				religion = cathar
+#				religion = fraticelli
+#				religion = waldensian
+#				religion = lollard
+#				religion = adoptionist
+#				religion = arian
+#			}
+#			is_title_active = d_knights_templar
+#		}
+#		ai_chance = {
+#			factor = 100
+#			modifier = {
+#				factor = 0.33 # Prefer the Teutonic Order
+#				OR = {
+#					culture_group = north_germanic
+#					culture_group = central_germanic
+#					culture_group = magyar
+#					culture_group = south_slavic
+#					culture_group = west_slavic
+#				}
+#			}
+#		}
+#		name = OK
 
-		character_event = { id = SoA.1030 }
-	}
-	option = { # Knights of St John
-		trigger = {
-			OR = {
-				religion = catholic
-				religion = cathar
-				religion = fraticelli
-				religion = waldensian
-				religion = lollard
-				religion = adoptionist
-				religion = arian
-			}
-			is_title_active = d_knights_hospitaler
-		}
-		ai_chance = {
-			factor = 100
-			modifier = {
-				factor = 0.33 # Prefer the Teutonic Order
-				OR = {
-					culture_group = north_germanic
-					culture_group = central_germanic
-					culture_group = magyar
-					culture_group = south_slavic
-					culture_group = west_slavic
-				}
-			}
-		}
-		name = OK
+#		character_event = { id = SoA.1030 }
+#	}
+#	option = { # Knights of St John
+#		trigger = {
+#			OR = {
+#				religion = catholic
+#				religion = cathar
+#				religion = fraticelli
+#				religion = waldensian
+#				religion = lollard
+#				religion = adoptionist
+#				religion = arian
+#			}
+#			is_title_active = d_knights_hospitaler
+#		}
+#		ai_chance = {
+#			factor = 100
+#			modifier = {
+#				factor = 0.33 # Prefer the Teutonic Order
+#				OR = {
+#					culture_group = north_germanic
+#					culture_group = central_germanic
+#					culture_group = magyar
+#					culture_group = south_slavic
+#					culture_group = west_slavic
+#				}
+#			}
+#		}
+#		name = OK
 
-		character_event = { id = SoA.1130 }
-	}
-	option = { # Teutonic Order
-		trigger = {
-			OR = {
-				religion = catholic
-				religion = cathar
-				religion = fraticelli
-				religion = waldensian
-				religion = lollard
-				religion = adoptionist
-				religion = arian
-			}
-			is_title_active = d_teutonic_order
-		}
-		ai_chance = {
-			factor = 100
-			modifier = {
-				factor = 0.33 # Prefer the other Holy Orders
-				NOT = {
-					OR = {
-						culture_group = north_germanic
-						culture_group = central_germanic
-						culture_group = magyar
-						culture_group = south_slavic
-						culture_group = west_slavic
-					}
-				}
-			}
-		}
-		name = OK
+#		character_event = { id = SoA.1130 }
+#	}
+#	option = { # Teutonic Order
+#		trigger = {
+#			OR = {
+#				religion = catholic
+#				religion = cathar
+#				religion = fraticelli
+#				religion = waldensian
+#				religion = lollard
+#				religion = adoptionist
+#				religion = arian
+#			}
+#			is_title_active = d_teutonic_order
+#		}
+#		ai_chance = {
+#			factor = 100
+#			modifier = {
+#				factor = 0.33 # Prefer the other Holy Orders
+#				NOT = {
+#					OR = {
+#						culture_group = north_germanic
+#						culture_group = central_germanic
+#						culture_group = magyar
+#						culture_group = south_slavic
+#						culture_group = west_slavic
+#					}
+#				}
+#			}
+#		}
+#		name = OK
 
-		character_event = { id = SoA.1330 }
-	}
-	option = { # The Order of Santiago
-		trigger = {
-			OR = {
-				religion = catholic
-				religion = cathar
-				religion = fraticelli
-				religion = waldensian
-				religion = lollard
-				religion = adoptionist
-				religion = arian
-			}
-			is_title_active = d_knights_santiago
-		}
-		ai_chance = {
-			factor = 100
-			modifier = {
-				factor = 3.0 # Prefer the Order of Santiago
-				OR = {
-					culture_group = iberian
-					culture = andalusian_arabic
-				}
-			}
-		}
-		name = OK
+#		character_event = { id = SoA.1330 }
+#	}
+#	option = { # The Order of Santiago
+#		trigger = {
+#			OR = {
+#				religion = catholic
+#				religion = cathar
+#				religion = fraticelli
+#				religion = waldensian
+#				religion = lollard
+#				religion = adoptionist
+#				religion = arian
+#			}
+#			is_title_active = d_knights_santiago
+#		}
+#		ai_chance = {
+#			factor = 100
+#			modifier = {
+#				factor = 3.0 # Prefer the Order of Santiago
+#				OR = {
+#					culture_group = iberian
+#					culture = andalusian_arabic
+#				}
+#			}
+#		}
+#		name = OK
 
-		character_event = { id = SoA.2630 }
-	}
-	option = { # The Order of Calatrava
-		trigger = {
-			OR = {
-				religion = catholic
-				religion = cathar
-				religion = fraticelli
-				religion = waldensian
-				religion = lollard
-				religion = adoptionist
-				religion = arian
-			}
-			is_title_active = d_knights_calatrava
-		}
-		ai_chance = {
-			factor = 100
-			modifier = {
-				factor = 3.0 # Prefer the Order of Calatrava
-				OR = {
-					culture_group = iberian
-					culture = andalusian_arabic
-				}
-			}
-		}
-		name = OK
+#		character_event = { id = SoA.2630 }
+#	}
+#	option = { # The Order of Calatrava
+#		trigger = {
+#			OR = {
+#				religion = catholic
+#				religion = cathar
+#				religion = fraticelli
+#				religion = waldensian
+#				religion = lollard
+#				religion = adoptionist
+#				religion = arian
+#			}
+#			is_title_active = d_knights_calatrava
+#		}
+#		ai_chance = {
+#			factor = 100
+#			modifier = {
+#				factor = 3.0 # Prefer the Order of Calatrava
+#				OR = {
+#					culture_group = iberian
+#					culture = andalusian_arabic
+#				}
+#			}
+#		}
+#		name = OK
 
-		character_event = { id = SoA.2730 }
-	}
-	# Christian - Orthodox
-	option = { # Brotherhood of the Holy Sepulchre
-		trigger = {
-			OR = {
-				religion = orthodox
-				religion = bogomilist
-				religion = monothelite
-				religion = iconoclast
-			}
-			is_title_active = d_holy_sepulchre
-		}
-		ai_chance = {
-			factor = 100
-		}
-		name = OK
+#		character_event = { id = SoA.2730 }
+#	}
+#	# Christian - Orthodox
+#	option = { # Brotherhood of the Holy Sepulchre
+#		trigger = {
+#			OR = {
+#				religion = orthodox
+#				religion = bogomilist
+#				religion = monothelite
+#				religion = iconoclast
+#			}
+#			is_title_active = d_holy_sepulchre
+#		}
+#		ai_chance = {
+#			factor = 100
+#		}
+#		name = OK
 
-		character_event = { id = SoA.1630 }
-	}
-	# Christian - Apostolic
-	option = { # The Order of Saint Blaise
-		trigger = {
-			OR = {
-				religion = apostolic
-				religion = paulician
-				religion = tondrakian
-			}
-			is_title_active = d_saint_blaise
-		}
-		ai_chance = {
-			factor = 100
-		}
-		name = OK
-		d_saint_blaise = { save_event_target_as = join_holy_order }
-		character_event = { id = emf_heresy.160 }
-	}
-	# Christian - Miaphysite
-	option = { # The Order of Saint Anthony
-		trigger = {
-			OR = {
-				religion = miaphysite
-				religion = monophysite
-			}
-			is_title_active = d_saint_anthony
-		}
-		ai_chance = {
-			factor = 100
-		}
-		name = OK
+#		character_event = { id = SoA.1630 }
+#	}
+#	# Christian - Apostolic
+#	option = { # The Order of Saint Blaise
+#		trigger = {
+#			OR = {
+#				religion = apostolic
+#				religion = paulician
+#				religion = tondrakian
+#			}
+#			is_title_active = d_saint_blaise
+#		}
+#		ai_chance = {
+#			factor = 100
+#		}
+#		name = OK
+#		d_saint_blaise = { save_event_target_as = join_holy_order }
+#		character_event = { id = emf_heresy.160 }
+#	}
+#	# Christian - Miaphysite
+#	option = { # The Order of Saint Anthony
+#		trigger = {
+#			OR = {
+#				religion = miaphysite
+#				religion = monophysite
+#			}
+#			is_title_active = d_saint_anthony
+#		}
+#		ai_chance = {
+#			factor = 100
+#		}
+#		name = OK
 
-		character_event = { id = SoA.1730 }
-	}
-	option = { # The Knights of Saint Mark
-		trigger = {
-			OR = {
-				religion = miaphysite
-				religion = monophysite
-			}
-			is_title_active = d_knights_saint_mark
-		}
-		ai_chance = {
-			factor = 100
-		}
-		name = OK
-		d_knights_saint_mark = { save_event_target_as = join_holy_order }
-		character_event = { id = emf_heresy.160 }
-	}
-	# Christian - Nestorian
-	option = { # The Order of Saint Addai
-		trigger = {
-			OR = {
-				religion = nestorian
-				religion = messalian
-			}
-			is_title_active = d_saint_addai
-		}
-		ai_chance = {
-			factor = 100
-			modifier = {
-				factor = 0.1
-				religion = messalian
-			}
-		}
-		name = OK
+#		character_event = { id = SoA.1730 }
+#	}
+#	option = { # The Knights of Saint Mark
+#		trigger = {
+#			OR = {
+#				religion = miaphysite
+#				religion = monophysite
+#			}
+#			is_title_active = d_knights_saint_mark
+#		}
+#		ai_chance = {
+#			factor = 100
+#		}
+#		name = OK
+#		d_knights_saint_mark = { save_event_target_as = join_holy_order }
+#		character_event = { id = emf_heresy.160 }
+#	}
+#	# Christian - Nestorian
+#	option = { # The Order of Saint Addai
+#		trigger = {
+#			OR = {
+#				religion = nestorian
+#				religion = messalian
+#			}
+#			is_title_active = d_saint_addai
+#		}
+#		ai_chance = {
+#			factor = 100
+#			modifier = {
+#				factor = 0.1
+#				religion = messalian
+#			}
+#		}
+#		name = OK
 
-		character_event = { id = SoA.2830 }
-	}
-	# Christian - Messalian
-	option = { # The Army of Lucifer
-		trigger = {
-			religion = messalian
-			is_title_active = d_army_lucifer
-		}
-		ai_chance = {
-			factor = 100
-		}
-		name = OK
-		d_army_lucifer = { save_event_target_as = join_holy_order }
-		character_event = { id = emf_heresy.160 }
-	}
-	# Muslim - Sunni
-	option = { # Bektashi Order
-		trigger = {
-			OR = {
-				religion = sunni
-				religion = zikri
-				religion = mahdiyya
-				religion = nabawiyya
-			}
-			is_title_active = d_bektashi
-		}
-		ai_chance = {
-			factor = 100
-		}
-		name = OK
+#		character_event = { id = SoA.2830 }
+#	}
+#	# Christian - Messalian
+#	option = { # The Army of Lucifer
+#		trigger = {
+#			religion = messalian
+#			is_title_active = d_army_lucifer
+#		}
+#		ai_chance = {
+#			factor = 100
+#		}
+#		name = OK
+#		d_army_lucifer = { save_event_target_as = join_holy_order }
+#		character_event = { id = emf_heresy.160 }
+#	}
+#	# Muslim - Sunni
+#	option = { # Bektashi Order
+#		trigger = {
+#			OR = {
+#				religion = sunni
+#				religion = zikri
+#				religion = mahdiyya
+#				religion = nabawiyya
+#			}
+#			is_title_active = d_bektashi
+#		}
+#		ai_chance = {
+#			factor = 100
+#		}
+#		name = OK
 
-		character_event = { id = SoA.1230 }
-	}
-	option = { # EMF: The Arsiyah
-		trigger = {
-			OR = {
-				religion = sunni
-				religion = zikri
-				religion = mahdiyya
-				religion = nabawiyya
-			}
-			is_title_active = d_arsiyah
-		}
-		ai_chance = {
-			factor = 100
-			modifier = {
-				factor = 3.0 # Preferred by Altaic cultures
-				culture_group = altaic
-			}
-		}
-		name = OK
+#		character_event = { id = SoA.1230 }
+#	}
+#	option = { # EMF: The Arsiyah
+#		trigger = {
+#			OR = {
+#				religion = sunni
+#				religion = zikri
+#				religion = mahdiyya
+#				religion = nabawiyya
+#			}
+#			is_title_active = d_arsiyah
+#		}
+#		ai_chance = {
+#			factor = 100
+#			modifier = {
+#				factor = 3.0 # Preferred by Altaic cultures
+#				culture_group = altaic
+#			}
+#		}
+#		name = OK
 
-		character_event = { id = emf_holy_order.1 }
-	}
-	# Muslim - Shiite
-	option = { # Hashshashins
-		trigger = {
-			OR = {
-				religion = ismaili
-				religion = druze
-				religion = qarmatian
-			}
-			is_title_active = d_hashshashin
-		}
-		ai_chance = {
-			factor = 100
-		}
-		name = OK
+#		character_event = { id = emf_holy_order.1 }
+#	}
+#	# Muslim - Shiite
+#	option = { # Hashshashins
+#		trigger = {
+#			OR = {
+#				religion = shiite
+#				religion = druze
+#				religion = qarmatian
+#			}
+#			is_title_active = d_hashshashin
+#		}
+#		ai_chance = {
+#			factor = 100
+#		}
+#		name = OK
 
-		character_event = { id = SoA.1430 }
-	}
-	option = { # EMF: The Saqaliba
-		trigger = {
-			OR = {
-				religion = ismaili
-				religion = druze
-				religion = qarmatian
-			}
-			is_title_active = d_saqaliba
-		}
-		ai_chance = {
-			factor = 100
-			modifier = {
-				factor = 3.0 # Preferred by Southern Slavs
-				culture_group = south_slavic
-			}
-		}
-		name = OK
+#		character_event = { id = SoA.1430 }
+#	}
+#	option = { # EMF: The Saqaliba
+#		trigger = {
+#			OR = {
+#				religion = shiite
+#				religion = druze
+#				religion = qarmatian
+#			}
+#			is_title_active = d_saqaliba
+#		}
+#		ai_chance = {
+#			factor = 100
+#			modifier = {
+#				factor = 3.0 # Preferred by Southern Slavs
+#				culture_group = south_slavic
+#			}
+#		}
+#		name = OK
 
-		character_event = { id = emf_holy_order.11 }
-	}
-	# Pagan - Norse
-	option = { # Jomsvikings
-		trigger = {
-			OR = {
-				religion = norse_pagan
-				religion = norse_pagan_reformed
-			}
-			is_title_active = d_jomsvikings
-		}
-		ai_chance = {
-			factor = 100
-		}
-		name = OK
+#		character_event = { id = emf_holy_order.11 }
+#	}
+#	# Pagan - Norse
+#	option = { # Jomsvikings
+#		trigger = {
+#			OR = {
+#				religion = norse_pagan
+#				religion = norse_pagan_reformed
+#			}
+#			is_title_active = d_jomsvikings
+#		}
+#		ai_chance = {
+#			factor = 100
+#		}
+#		name = OK
 
-		character_event = { id = SoA.1530 }
-	}
-	# Pagan - Tengri
-	option = { # The Lords of the Sky
-		trigger = {
-			religion = tengri_pagan_reformed
-			is_title_active = d_sky_lords
-		}
-		ai_chance = {
-			factor = 100
-		}
-		name = OK
+#		character_event = { id = SoA.1530 }
+#	}
+#	# Pagan - Tengri
+#	option = { # The Lords of the Sky
+#		trigger = {
+#			religion = tengri_pagan_reformed
+#			is_title_active = d_sky_lords
+#		}
+#		ai_chance = {
+#			factor = 100
+#		}
+#		name = OK
 
-		character_event = { id = SoA.2030 }
-	}
-	# Pagan - West African
-	option = { # The Spirit Guardians
-		trigger = {
-			religion = west_african_pagan_reformed
-			is_title_active = d_spirit_guardians
-		}
-		ai_chance = {
-			factor = 100
-		}
-		name = OK
+#		character_event = { id = SoA.2030 }
+#	}
+#	# Pagan - West African
+#	option = { # The Spirit Guardians
+#		trigger = {
+#			religion = west_african_pagan_reformed
+#			is_title_active = d_spirit_guardians
+#		}
+#		ai_chance = {
+#			factor = 100
+#		}
+#		name = OK
 
-		character_event = { id = SoA.2130 }
-	}
-	# Pagan - Slavic
-	option = { # The Warriors of Perun
-		trigger = {
-			religion = slavic_pagan_reformed
-			is_title_active = d_warriors_perun
-		}
-		ai_chance = {
-			factor = 100
-		}
-		name = OK
+#		character_event = { id = SoA.2130 }
+#	}
+#	# Pagan - Slavic
+#	option = { # The Warriors of Perun
+#		trigger = {
+#			religion = slavic_pagan_reformed
+#			is_title_active = d_warriors_perun
+#		}
+#		ai_chance = {
+#			factor = 100
+#		}
+#		name = OK
 
-		character_event = { id = SoA.2230 }
-	}
-	# Pagan - Baltic
-	option = { # The Chosen of Perkunas
-		trigger = {
-			religion = baltic_pagan_reformed
-			is_title_active = d_chosen_perkunas
-		}
-		ai_chance = {
-			factor = 100
-		}
-		name = OK
+#		character_event = { id = SoA.2230 }
+#	}
+#	# Pagan - Baltic
+#	option = { # The Chosen of Perkunas
+#		trigger = {
+#			religion = baltic_pagan_reformed
+#			is_title_active = d_chosen_perkunas
+#		}
+#		ai_chance = {
+#			factor = 100
+#		}
+#		name = OK
 
-		character_event = { id = SoA.2330 }
-	}
-	# Pagan - Finnish
-	option = { # The Sons of Kaleva
-		trigger = {
-			religion = finnish_pagan_reformed
-			is_title_active = d_sons_kaleva
-		}
-		ai_chance = {
-			factor = 100
-		}
-		name = OK
+#		character_event = { id = SoA.2330 }
+#	}
+#	# Pagan - Finnish
+#	option = { # The Sons of Kaleva
+#		trigger = {
+#			religion = finnish_pagan_reformed
+#			is_title_active = d_sons_kaleva
+#		}
+#		ai_chance = {
+#			factor = 100
+#		}
+#		name = OK
 
-		character_event = { id = SoA.2430 }
-	}
-	# Pagan - Aztec
-	option = { # The Cult of Huitzilopochtli
-		trigger = {
-			religion = aztec_reformed
-			is_title_active = d_huitzilopochtli
-		}
-		ai_chance = {
-			factor = 100
-		}
-		name = OK
+#		character_event = { id = SoA.2430 }
+#	}
+#	# Pagan - Aztec
+#	option = { # The Cult of Huitzilopochtli
+#		trigger = {
+#			religion = aztec_reformed
+#			is_title_active = d_huitzilopochtli
+#		}
+#		ai_chance = {
+#			factor = 100
+#		}
+#		name = OK
 
-		character_event = { id = SoA.2530 }
-	}
-	# Zoroastrian
-	option = { # The Immortals
-		trigger = {
-			religion_group = zoroastrian_group
-			is_title_active = d_immortals
-		}
-		ai_chance = {
-			factor = 100
-		}
-		name = OK
+#		character_event = { id = SoA.2530 }
+#	}
+#	# Zoroastrian
+#	option = { # The Immortals
+#		trigger = {
+#			religion_group = zoroastrian_group
+#			is_title_active = d_immortals
+#		}
+#		ai_chance = {
+#			factor = 100
+#		}
+#		name = OK
 
-		character_event = { id = SoA.1830 }
-	}
-	# Manichean
-	option = { # The Army of Light
-		trigger = {
-			religion = manichean
-			is_title_active = d_army_light
-		}
-		ai_chance = {
-			factor = 100
-		}
-		name = OK
-		d_army_light = { save_event_target_as = join_holy_order }
-		character_event = { id = emf_heresy.160 }
-	}
-	# Jewish
-	option = { # The Zealots
-		trigger = {
-			religion_group = jewish_group
-			is_title_active = d_zealots
-		}
-		ai_chance = {
-			factor = 100
-		}
-		name = OK
+#		character_event = { id = SoA.1830 }
+#	}
+#	# Manichean
+#	option = { # The Army of Light
+#		trigger = {
+#			religion = manichean
+#			is_title_active = d_army_light
+#		}
+#		ai_chance = {
+#			factor = 100
+#		}
+#		name = OK
+#		d_army_light = { save_event_target_as = join_holy_order }
+#		character_event = { id = emf_heresy.160 }
+#	}
+#	# Jewish
+#	option = { # The Zealots
+#		trigger = {
+#			religion_group = jewish_group
+#			is_title_active = d_zealots
+#		}
+#		ai_chance = {
+#			factor = 100
+#		}
+#		name = OK
 
-		character_event = { id = SoA.1930 }
-	}
-}
+#		character_event = { id = SoA.1930 }
+#	}
+#}
 
 
 ## Job notifications
@@ -1311,7 +1311,7 @@ character_event = {
 	id = emf_vanilla.51
 	hide_window = yes
 	is_triggered_only = yes
-	
+
 	immediate = {
 		if = {
 			limit = { has_earmarked_regiments = tribal_build_zeal }
@@ -1363,7 +1363,7 @@ character_event = {
 	id = emf_vanilla.52
 	hide_window = yes
 	is_triggered_only = yes
-	
+
 	immediate = {
 		if = {
 			limit = { has_earmarked_regiments = tribal_build_legend }

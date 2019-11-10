@@ -13,34 +13,23 @@ emf_revolt_clear_religion_title_flags = {
 	clr_title_flag = emf_revolt_religious_victory_title_fraticelli
 	clr_title_flag = emf_revolt_religious_victory_title_waldensian
 	clr_title_flag = emf_revolt_religious_victory_title_lollard
-	clr_title_flag = emf_revolt_religious_victory_title_adoptionist
-	clr_title_flag = emf_revolt_religious_victory_title_arian
 	clr_title_flag = emf_revolt_religious_victory_title_orthodox
+	clr_title_flag = emf_revolt_religious_victory_title_miaphysite
+	clr_title_flag = emf_revolt_religious_victory_title_monophysite
 	clr_title_flag = emf_revolt_religious_victory_title_bogomilist
 	clr_title_flag = emf_revolt_religious_victory_title_monothelite
 	clr_title_flag = emf_revolt_religious_victory_title_iconoclast
-	clr_title_flag = emf_revolt_religious_victory_title_syriac
-	clr_title_flag = emf_revolt_religious_victory_title_maronite
-	clr_title_flag = emf_revolt_religious_victory_title_miaphysite
-	clr_title_flag = emf_revolt_religious_victory_title_monophysite
-	clr_title_flag = emf_revolt_religious_victory_title_apostolic
 	clr_title_flag = emf_revolt_religious_victory_title_paulician
-	clr_title_flag = emf_revolt_religious_victory_title_tondrakian
 	clr_title_flag = emf_revolt_religious_victory_title_nestorian
 	clr_title_flag = emf_revolt_religious_victory_title_messalian
 	clr_title_flag = emf_revolt_religious_victory_title_sunni
 	clr_title_flag = emf_revolt_religious_victory_title_zikri
-	clr_title_flag = emf_revolt_religious_victory_title_mahdiyya
-	clr_title_flag = emf_revolt_religious_victory_title_nabawiyya
+	clr_title_flag = emf_revolt_religious_victory_title_yazidi
 	clr_title_flag = emf_revolt_religious_victory_title_ibadi
 	clr_title_flag = emf_revolt_religious_victory_title_kharijite
-	clr_title_flag = emf_revolt_religious_victory_title_haruri
 	clr_title_flag = emf_revolt_religious_victory_title_shiite
-	clr_title_flag = emf_revolt_religious_victory_title_waqifi
-	clr_title_flag = emf_revolt_religious_victory_title_zaydi
-	clr_title_flag = emf_revolt_religious_victory_title_hurufi
-	clr_title_flag = emf_revolt_religious_victory_title_ismaili
 	clr_title_flag = emf_revolt_religious_victory_title_druze
+	clr_title_flag = emf_revolt_religious_victory_title_hurufi
 	clr_title_flag = emf_revolt_religious_victory_title_qarmatian
 	clr_title_flag = emf_revolt_religious_victory_title_pagan
 	clr_title_flag = emf_revolt_religious_victory_title_norse_pagan_reformed
@@ -65,10 +54,7 @@ emf_revolt_clear_religion_title_flags = {
 	clr_title_flag = emf_revolt_religious_victory_title_bon
 	clr_title_flag = emf_revolt_religious_victory_title_zoroastrian
 	clr_title_flag = emf_revolt_religious_victory_title_mazdaki
-	clr_title_flag = emf_revolt_religious_victory_title_zurvanist
 	clr_title_flag = emf_revolt_religious_victory_title_manichean
-	clr_title_flag = emf_revolt_religious_victory_title_mandaean
-	clr_title_flag = emf_revolt_religious_victory_title_yazidi
 	clr_title_flag = emf_revolt_religious_victory_title_khurmazta
 	clr_title_flag = emf_revolt_religious_victory_title_jewish
 	clr_title_flag = emf_revolt_religious_victory_title_samaritan
@@ -102,16 +88,16 @@ emf_revolt_set_religion_title_flag = {
 		set_flag = emf_revolt_religious_victory_title_lollard
 	}
 	if = {
-		limit = { owner = { religion = adoptionist } }
-		set_flag = emf_revolt_religious_victory_title_adoptionist
-	}
-	if = {
-		limit = { owner = { religion = arian } }
-		set_flag = emf_revolt_religious_victory_title_arian
-	}
-	if = {
 		limit = { owner = { religion = orthodox } }
 		set_flag = emf_revolt_religious_victory_title_orthodox
+	}
+	if = {
+		limit = { owner = { religion = miaphysite } }
+		set_flag = emf_revolt_religious_victory_title_miaphysite
+	}
+	if = {
+		limit = { owner = { religion = monophysite } }
+		set_flag = emf_revolt_religious_victory_title_monophysite
 	}
 	if = {
 		limit = { owner = { religion = bogomilist } }
@@ -126,32 +112,8 @@ emf_revolt_set_religion_title_flag = {
 		set_flag = emf_revolt_religious_victory_title_iconoclast
 	}
 	if = {
-		limit = { owner = { religion = syriac } }
-		set_flag = emf_revolt_religious_victory_title_syriac
-	}
-	if = {
-		limit = { owner = { religion = maronite } }
-		set_flag = emf_revolt_religious_victory_title_maronite
-	}
-	if = {
-		limit = { owner = { religion = miaphysite } }
-		set_flag = emf_revolt_religious_victory_title_miaphysite
-	}
-	if = {
-		limit = { owner = { religion = monophysite } }
-		set_flag = emf_revolt_religious_victory_title_monophysite
-	}
-	if = {
-		limit = { owner = { religion = apostolic } }
-		set_flag = emf_revolt_religious_victory_title_apostolic
-	}
-	if = {
 		limit = { owner = { religion = paulician } }
 		set_flag = emf_revolt_religious_victory_title_paulician
-	}
-	if = {
-		limit = { owner = { religion = tondrakian } }
-		set_flag = emf_revolt_religious_victory_title_tondrakian
 	}
 	if = {
 		limit = { owner = { religion = nestorian } }
@@ -170,12 +132,8 @@ emf_revolt_set_religion_title_flag = {
 		set_flag = emf_revolt_religious_victory_title_zikri
 	}
 	if = {
-		limit = { owner = { religion = mahdiyya } }
-		set_flag = emf_revolt_religious_victory_title_mahdiyya
-	}
-	if = {
-		limit = { owner = { religion = nabawiyya } }
-		set_flag = emf_revolt_religious_victory_title_nabawiyya
+		limit = { owner = { religion = yazidi } }
+		set_flag = emf_revolt_religious_victory_title_yazidi
 	}
 	if = {
 		limit = { owner = { religion = ibadi } }
@@ -186,32 +144,16 @@ emf_revolt_set_religion_title_flag = {
 		set_flag = emf_revolt_religious_victory_title_kharijite
 	}
 	if = {
-		limit = { owner = { religion = haruri } }
-		set_flag = emf_revolt_religious_victory_title_haruri
-	}
-	if = {
 		limit = { owner = { religion = shiite } }
 		set_flag = emf_revolt_religious_victory_title_shiite
 	}
 	if = {
-		limit = { owner = { religion = waqifi } }
-		set_flag = emf_revolt_religious_victory_title_waqifi
-	}
-	if = {
-		limit = { owner = { religion = zaydi } }
-		set_flag = emf_revolt_religious_victory_title_zaydi
+		limit = { owner = { religion = druze } }
+		set_flag = emf_revolt_religious_victory_title_druze
 	}
 	if = {
 		limit = { owner = { religion = hurufi } }
 		set_flag = emf_revolt_religious_victory_title_hurufi
-	}
-	if = {
-		limit = { owner = { religion = ismaili } }
-		set_flag = emf_revolt_religious_victory_title_ismaili
-	}
-	if = {
-		limit = { owner = { religion = druze } }
-		set_flag = emf_revolt_religious_victory_title_druze
 	}
 	if = {
 		limit = { owner = { religion = qarmatian } }
@@ -310,20 +252,8 @@ emf_revolt_set_religion_title_flag = {
 		set_flag = emf_revolt_religious_victory_title_mazdaki
 	}
 	if = {
-		limit = { owner = { religion = zurvanist } }
-		set_flag = emf_revolt_religious_victory_title_zurvanist
-	}
-	if = {
 		limit = { owner = { religion = manichean } }
 		set_flag = emf_revolt_religious_victory_title_manichean
-	}
-	if = {
-		limit = { owner = { religion = mandaean } }
-		set_flag = emf_revolt_religious_victory_title_mandaean
-	}
-	if = {
-		limit = { owner = { religion = yazidi } }
-		set_flag = emf_revolt_religious_victory_title_yazidi
 	}
 	if = {
 		limit = { owner = { religion = khurmazta } }

@@ -793,8 +793,8 @@ plot_kill_character = {
 		OR = {
 			FROM = {
 				NOR = {
-					religion = ismaili
-					secret_religion = ismaili
+					religion = shiite
+					secret_religion = shiite
 				}
 			}
 			ROOT = {
@@ -1410,8 +1410,8 @@ plot_kill_spouse = {
 		OR = {
 			FROM = {
 				NOR = {
-					religion = ismaili
-					secret_religion = ismaili
+					religion = shiite
+					secret_religion = shiite
 				}
 			}
 			ROOT = {

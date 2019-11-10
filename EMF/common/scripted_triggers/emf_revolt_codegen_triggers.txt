@@ -31,16 +31,16 @@ emf_revolt_ROOT_religion_matches_rebel_victory_title = {
 			ROOT = { religion = lollard }
 		}
 		AND = {
-			has_flag = emf_revolt_religious_victory_title_adoptionist
-			ROOT = { religion = adoptionist }
-		}
-		AND = {
-			has_flag = emf_revolt_religious_victory_title_arian
-			ROOT = { religion = arian }
-		}
-		AND = {
 			has_flag = emf_revolt_religious_victory_title_orthodox
 			ROOT = { religion = orthodox }
+		}
+		AND = {
+			has_flag = emf_revolt_religious_victory_title_miaphysite
+			ROOT = { religion = miaphysite }
+		}
+		AND = {
+			has_flag = emf_revolt_religious_victory_title_monophysite
+			ROOT = { religion = monophysite }
 		}
 		AND = {
 			has_flag = emf_revolt_religious_victory_title_bogomilist
@@ -55,32 +55,8 @@ emf_revolt_ROOT_religion_matches_rebel_victory_title = {
 			ROOT = { religion = iconoclast }
 		}
 		AND = {
-			has_flag = emf_revolt_religious_victory_title_syriac
-			ROOT = { religion = syriac }
-		}
-		AND = {
-			has_flag = emf_revolt_religious_victory_title_maronite
-			ROOT = { religion = maronite }
-		}
-		AND = {
-			has_flag = emf_revolt_religious_victory_title_miaphysite
-			ROOT = { religion = miaphysite }
-		}
-		AND = {
-			has_flag = emf_revolt_religious_victory_title_monophysite
-			ROOT = { religion = monophysite }
-		}
-		AND = {
-			has_flag = emf_revolt_religious_victory_title_apostolic
-			ROOT = { religion = apostolic }
-		}
-		AND = {
 			has_flag = emf_revolt_religious_victory_title_paulician
 			ROOT = { religion = paulician }
-		}
-		AND = {
-			has_flag = emf_revolt_religious_victory_title_tondrakian
-			ROOT = { religion = tondrakian }
 		}
 		AND = {
 			has_flag = emf_revolt_religious_victory_title_nestorian
@@ -99,12 +75,8 @@ emf_revolt_ROOT_religion_matches_rebel_victory_title = {
 			ROOT = { religion = zikri }
 		}
 		AND = {
-			has_flag = emf_revolt_religious_victory_title_mahdiyya
-			ROOT = { religion = mahdiyya }
-		}
-		AND = {
-			has_flag = emf_revolt_religious_victory_title_nabawiyya
-			ROOT = { religion = nabawiyya }
+			has_flag = emf_revolt_religious_victory_title_yazidi
+			ROOT = { religion = yazidi }
 		}
 		AND = {
 			has_flag = emf_revolt_religious_victory_title_ibadi
@@ -115,32 +87,16 @@ emf_revolt_ROOT_religion_matches_rebel_victory_title = {
 			ROOT = { religion = kharijite }
 		}
 		AND = {
-			has_flag = emf_revolt_religious_victory_title_haruri
-			ROOT = { religion = haruri }
-		}
-		AND = {
 			has_flag = emf_revolt_religious_victory_title_shiite
 			ROOT = { religion = shiite }
 		}
 		AND = {
-			has_flag = emf_revolt_religious_victory_title_waqifi
-			ROOT = { religion = waqifi }
-		}
-		AND = {
-			has_flag = emf_revolt_religious_victory_title_zaydi
-			ROOT = { religion = zaydi }
+			has_flag = emf_revolt_religious_victory_title_druze
+			ROOT = { religion = druze }
 		}
 		AND = {
 			has_flag = emf_revolt_religious_victory_title_hurufi
 			ROOT = { religion = hurufi }
-		}
-		AND = {
-			has_flag = emf_revolt_religious_victory_title_ismaili
-			ROOT = { religion = ismaili }
-		}
-		AND = {
-			has_flag = emf_revolt_religious_victory_title_druze
-			ROOT = { religion = druze }
 		}
 		AND = {
 			has_flag = emf_revolt_religious_victory_title_qarmatian
@@ -239,20 +195,8 @@ emf_revolt_ROOT_religion_matches_rebel_victory_title = {
 			ROOT = { religion = mazdaki }
 		}
 		AND = {
-			has_flag = emf_revolt_religious_victory_title_zurvanist
-			ROOT = { religion = zurvanist }
-		}
-		AND = {
 			has_flag = emf_revolt_religious_victory_title_manichean
 			ROOT = { religion = manichean }
-		}
-		AND = {
-			has_flag = emf_revolt_religious_victory_title_mandaean
-			ROOT = { religion = mandaean }
-		}
-		AND = {
-			has_flag = emf_revolt_religious_victory_title_yazidi
-			ROOT = { religion = yazidi }
 		}
 		AND = {
 			has_flag = emf_revolt_religious_victory_title_khurmazta

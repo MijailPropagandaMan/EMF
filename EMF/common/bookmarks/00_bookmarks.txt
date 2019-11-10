@@ -264,7 +264,7 @@ bm_otto_the_first = {
 			properties = aj000a00000000000000000000000000000000
 			religion = catholic
 			culture = german
-			government = feudal_government 
+			government = feudal_government
 			dynasty = 669
 		}
 	}
@@ -283,7 +283,7 @@ bm_otto_the_first = {
 			dna = axgiowlnepj
 			properties = anm0ka00000000000000000000000000000000
 			government = muslim_government
-			religion = ismaili
+			religion = shiite
 			culture = bedouin_arabic
 			dynasty = 589
 		}
@@ -304,7 +304,7 @@ bm_otto_the_first = {
 			culture = saxon
 			dynasty = 100072
 		}
-	}	
+	}
 
 	selectable_character = {
 		id = 260976 # Abu Tahir of the Jannabid Emirate
@@ -452,7 +452,7 @@ bm_fate_of_england = {
 		character = {
 			dna = alhdhmkiaag
 			properties = ak00bc000000
-			religion="ismaili"
+			religion="shiite"
 			culture="egyptian_arabic"
 			government = muslim_government
 			dynasty=589

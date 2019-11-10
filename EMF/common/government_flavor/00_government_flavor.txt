@@ -1221,7 +1221,7 @@ government_flavor = {
 		has_law = succ_byzantine_elective
 		is_landed = yes
 		emf_has_roman_empire = yes
-	}	
+	}
 }
 government_flavor = {
 	name = gov_roman_imperial_government_decayed
@@ -1232,8 +1232,8 @@ government_flavor = {
 		NOT = {
 			is_landed = yes
 			emf_has_roman_empire = yes
-		}	
-	}	
+		}
+	}
 }
 
 government_flavor = {
@@ -2502,7 +2502,7 @@ government_flavor = {
 	priority = 3
 	trigger = {
 		has_law = succ_eldership
-		NOT = { 
+		NOT = {
 			OR = {
 			capital_scope = { region = world_africa }
 			religion = west_african_pagan
@@ -2710,7 +2710,7 @@ government_flavor = {
 	priority = 2
 	trigger = {
 		government = order_government
-		religion = ismaili
+		religion = shiite
 	}
 }
 
@@ -2721,7 +2721,7 @@ government_flavor = {
 	trigger = {
 		government = order_government
 		NOT = {
-			religion = ismaili
+			religion = shiite
 		}
 	}
 }
