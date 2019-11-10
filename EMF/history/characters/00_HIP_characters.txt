@@ -19,7 +19,7 @@
 	}
 	32.1.1 = {
 		trait = isis
-		immortal_age = 32
+		#immortal_age = 32
 		effect = {
 			emf_remove_all_traits = yes
 			add_trait = isis
@@ -28,7 +28,7 @@
 			# makes you within DIPLO_DISTANCE of everything rather than nothing.
 			#
 			# Also, give her a unique nickname.
-			character_event = { id = hip.6 }
+			#character_event = { id = hip.6 }
 		}
 	}
 	1517.1.1 = {

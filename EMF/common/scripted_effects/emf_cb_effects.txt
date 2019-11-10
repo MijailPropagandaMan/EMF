@@ -56,7 +56,7 @@ emf_cb_on_add = {
 		limit = { defender = { is_offmap_governor = offmap_china } }
 		attacker = {
 			sound_effect = china_angered_emperor
-			detract_grace_super_huge_effect = yes 
+			detract_grace_super_huge_effect = yes
 		}
 	}
 	# All CBs should automatically clear the can_use/can_use_title/can_use_gui bypass flag, emf_cb_pass_tmp, if it exists:
@@ -290,78 +290,78 @@ emf_cb_ROOT_ensure_feudal = {
 # anything if ROOT (receiver of title) is nomadic, as the rest are currently
 # handled by HL.4999.
 emf_cb_latb = {
-	hidden_tooltip = {
-		if = {
-			limit = {
-				NOT = { has_global_flag = emf_config_latb_disabled }
-				ROOT = { is_nomadic = yes }
-				tier = COUNT
-				location = {
-					NOT = { culture = ROOT }
-					NOR = {
-						any_province_holding = { NOT = { holding_type = nomad } }
-						has_settlement_construction = yes
-					}
-					has_empty_holding = yes
-				}
-			}
-			emf_cb_latb_build = yes
-		}
-		if = {
-			limit = {
-				NOT = { has_global_flag = emf_config_latb_disabled }
-				ROOT = { is_nomadic = yes }
-				higher_tier_than = COUNT
-			}
-			any_de_jure_vassal_title = {
-				limit = {
-					tier = COUNT
-					owner = {
-						OR = {
-							character = ROOT_FROM
-							is_liege_or_above = ROOT_FROM
-						}
-					}
-					location = {
-						NOT = { culture = ROOT }
-						NOR = {
-							any_province_holding = { NOT = { holding_type = nomad } }
-							has_settlement_construction = yes
-						}
-						has_empty_holding = yes
-					}
-				}
-				emf_cb_latb_build = yes
-			}
-		}
-	}
+	#hidden_tooltip = {
+	#	if = {
+	#		limit = {
+	#			NOT = { has_global_flag = emf_config_latb_disabled }
+	#			ROOT = { is_nomadic = yes }
+	#			tier = COUNT
+	#			location = {
+	#				NOT = { culture = ROOT }
+	#				NOR = {
+	#					any_province_holding = { NOT = { holding_type = nomad } }
+	#					has_settlement_construction = yes
+	#				}
+	#				has_empty_holding = yes
+	#			}
+	#		}
+	#		emf_cb_latb_build = yes
+	#	}
+	#	if = {
+	#		limit = {
+	#			NOT = { has_global_flag = emf_config_latb_disabled }
+	#			ROOT = { is_nomadic = yes }
+	#			higher_tier_than = COUNT
+	#		}
+	#		any_de_jure_vassal_title = {
+	#			limit = {
+	#				tier = COUNT
+	#				owner = {
+	#					OR = {
+	#						character = ROOT_FROM
+	#						is_liege_or_above = ROOT_FROM
+	#					}
+	#				}
+	#				location = {
+	#					NOT = { culture = ROOT }
+	#					NOR = {
+	#						any_province_holding = { NOT = { holding_type = nomad } }
+	#						has_settlement_construction = yes
+	#					}
+	#					has_empty_holding = yes
+	#				}
+	#			}
+	#			emf_cb_latb_build = yes
+	#		}
+	#	}
+	#}
 }
 
 emf_cb_latb_build = {
-	location = {
-		build_holding = { type = tribal }
-		random_province_holding = {
-			limit = {
-				holding_type = tribal
-				ROOT = { is_nomadic = yes }
-				is_capital = yes
-			}
-			revoke_capital_holding = yes
-		}
-		random_province_holding = {
-			limit = {
-				holding_type = tribal
-				ROOT = { is_nomadic = no }
-				is_capital = no
-			}
-			make_capital_holding = yes
-		}
-		random_province_holding = {
-			limit = { holding_type = tribal }
-			set_flag = emf_built_by_latb
-			log = "DEBUG: LATB: built tribal holding [This.GetID] ([This.GetBaseName]) in [Prev.GetName] ([PrevPrev.GetID])"
-		}
-	}
+	#location = {
+	#	build_holding = { type = tribal }
+	#	random_province_holding = {
+	#		limit = {
+	#			holding_type = tribal
+	#			ROOT = { is_nomadic = yes }
+	#			is_capital = yes
+	#		}
+	#		revoke_capital_holding = yes
+	#	}
+	#	random_province_holding = {
+	#		limit = {
+	#			holding_type = tribal
+	#			ROOT = { is_nomadic = no }
+	#			is_capital = no
+	#		}
+	#		make_capital_holding = yes
+	#	}
+	#	random_province_holding = {
+	#		limit = { holding_type = tribal }
+	#		set_flag = emf_built_by_latb
+	#		log = "DEBUG: LATB: built tribal holding [This.GetID] ([This.GetBaseName]) in [Prev.GetName] ([PrevPrev.GetID])"
+	#	}
+	#}
 }
 
 

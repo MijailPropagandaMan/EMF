@@ -218,3 +218,36 @@ Observe made it from 1066 to 1081 on E+V before it crashed:
 
 Exception thrown at 0x00007FF7C6B05D51 in CK2game.exe:
 0xC0000005: Access violation reading location 0x00000000000001E9. occurred
+
+
+====== AHAB X ======
+
+Removal / disable log (in addition to previous version):
+- on_actions (all)
+- emf_laws
+- emf_coronation + decisions
+- emf_imperial + decisions
+- emf_magyar_decisions
+- emf_decay
+- emf_specialization
+- emf_tournament
+- emf_startup (global flag EMF set in title history now)
+- emf_heresy (apparently I didn't actually blank it out in Ahab II)
+- emf_decadence + decisions
+- emf_nomad & codegen (antinomad) + decisions
+- nulled CB-related LATB effects (removal of emf_config on_actions makes this necessary now)
+- common/job_titles
+- common/job_actions
+- emf_empires
+- emf_hre
+- emf_intrigue
+- emf_marriage + decisions
+- emf_seljuk
+- emf_mongol
+- EMF+Vanilla/history/titles
+- DLCs:
+  + Charlemagne
+
+Results:
+--------
+Observe made it from 1066 to ?? on E+V before it ??
