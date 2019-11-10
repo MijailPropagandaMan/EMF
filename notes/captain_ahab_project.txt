@@ -152,3 +152,37 @@ Observe made it from 1066 to 1072 on E+S before:
 
 Exception thrown at 0x00007FF7C74284A1 in CK2game.exe:
 0xC0000005: Access violation reading location 0x000000000000001F. occurred
+
+
+====== AHAB VII ======
+
+Removal / disable log (in addition to previous version):
+- emf_mr
+- achievements
+- common/technology.txt
+- common/static_modifiers.txt (& E+S version)
+- common/minor_titles
+- common/opinion_modifiers/00_opinion_modifiers.txt
+- common/death/00_death.txt
+- common/00_game_rules.txt (& E+S version) -- EMF game rules moved to 000_emf_game_rules.txt
+- common/bloodlines (& E+S version) -- retained SWMH-unique bloodlines
+- common/offmap_powers
+- common/wonders & common/wonder_upgrades (vanilla files only)
+- common/holding_types
+- common/laws/succession_laws.txt
+- almost all entries in on_actions (and removed 00_on_actions.txt)
+- 02_emf_employment_decisions.txt
+- emf_siege_decisions.txt
+- emf_ir_decisions.txt
+- realm_decisions.txt
+- emf_revolt.40
+- emf_magyar
+
+Addition / (re-)enable log (in addition to previous version):
+- DLCs:
+  + Holy Fury
+
+Results:
+--------
+Observe made it from 1066 to [...] on E+V before:
+

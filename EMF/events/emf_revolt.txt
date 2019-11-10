@@ -1566,9 +1566,9 @@ character_event = {
 # declined our call
 #character_event = {
 #	id = emf_revolt.31
-	
+
 #	hide_window = yes
-	
+
 #	only_independent = yes
 #	has_flag = emf_revolt_religious_leader
 #	war = yes
@@ -1655,12 +1655,13 @@ character_event = {
 # emf_revolt.40 -- destroy rebel victory titles if the holder becomes non-independent
 character_event = {
 	id = emf_revolt.40
-	
+
 	hide_window = yes
 
 	only_playable = yes
 
 	trigger = {
+		always = no # FIXME AHAB
 		real_tier = DUKE
 		primary_title = { has_flag = emf_revolt_victory_title }
 		independent = no
@@ -1701,7 +1702,7 @@ character_event = {
 # TODO-2.8: just use set_name on the existing religious rebel victory title and use on_yearly_pulse.
 #character_event = {
 #	id = emf_revolt.41
-	
+
 #	hide_window = yes
 
 #	only_independent = yes
