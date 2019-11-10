@@ -279,4 +279,5 @@ Removal / disable log (in addition to previous version):
 
 Results:
 --------
-Observe made it from 1066 to ?? on E+V before it ??
+Observe made it from 1066 to 1087 on E+V before it crashed (didn't bother with debugger -- not too useful at
+this point).
