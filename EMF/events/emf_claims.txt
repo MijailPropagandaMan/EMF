@@ -300,6 +300,9 @@ character_event = {
 	is_triggered_only = yes
 	hide_window = yes
 
+	trigger = {
+
+
 	immediate = {
 		always = no # FIXME AHAB
 		any_character = {

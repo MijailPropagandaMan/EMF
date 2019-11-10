@@ -145,3 +145,10 @@ Removal / disable log (in addition to previous version):
 - virtually everything in emf_core.txt & emf_core_effects.zck (specifically fancy abdication for the ZCK)
 - most of the nonessential [to not crashing] parts of emf_startup
 - fixed a bug where set_graphical_culture could've been trying to use the culture of a seazone
+
+Results:
+--------
+Observe made it from 1066 to 1072 on E+S before:
+
+Exception thrown at 0x00007FF7C74284A1 in CK2game.exe:
+0xC0000005: Access violation reading location 0x000000000000001F. occurred
