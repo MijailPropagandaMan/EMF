@@ -200,5 +200,18 @@ Results:
 --------
 Observe made it from 1066 to 1087 on E+V before it crashed:
 
-Exception thrown at 0x00007FF7C69F1E18 in CK2game.exe: 0xC0000005:
-Access violation reading location 0xFFFFFFFFFFFFFFFF. occurred
+Exception thrown at 0x00007FF7C69F1E18 in CK2game.exe:
+0xC0000005: Access violation reading location 0xFFFFFFFFFFFFFFFF. occurred
+
+
+====== AHAB IX ======
+
+Removal / disable log (in addition to previous version):
+- common/laws
+- common/scripted_effects/ (vanilla files only)
+- common/scripted_triggers/ (vanilla files only)
+- 00_scripted_score_values.txt
+
+Results:
+--------
+Observe made it from 1066 to [...] on E+V before:
