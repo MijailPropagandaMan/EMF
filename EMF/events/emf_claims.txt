@@ -301,10 +301,10 @@ character_event = {
 	hide_window = yes
 
 	trigger = {
-
+		always = no # FIXME AHAB
+	}
 
 	immediate = {
-		always = no # FIXME AHAB
 		any_character = {
 			limit = {
 				any_claim = {
