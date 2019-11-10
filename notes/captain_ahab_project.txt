@@ -281,3 +281,7 @@ Results:
 --------
 Observe made it from 1066 to 1087 on E+V before it crashed (didn't bother with debugger -- not too useful at
 this point).
+
+Temporarily re-added DLCs of M&M, JD, and Conclave on same build:
+
+Observe made it from 1066 to 1091 on E+V before it crashed (no debugger).
