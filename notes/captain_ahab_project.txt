@@ -319,7 +319,6 @@ First, we revert all of the deletions from the previous version, and then:
 Removal / disable log (after revert of Ahab XII):
 - events/
   + emf_builder_events
-  + emf_building
   + emf_culture
   + emf_disease
   + emf_prisoner
@@ -346,7 +345,6 @@ Observe made it from 1066 to 1186 (120 years) on E+V before it was gracefully te
 Addition / re-enable log:
 - events/
   + emf_builder_events
-  + emf_building
   + emf_culture
 - decisions/
   + emf_elective_decisions
