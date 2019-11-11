@@ -380,3 +380,30 @@ Results:
 --------
 Observe made it from 1066 to 1101 (35 years) on E+V before crashing.
 
+
+====== AHAB XVI ======
+
+It appears that a define is causing at least one crash, we conclude from the results of Ahab XV. Thus, we must
+eliminate overridden defines until we do not crash.
+
+Define override removal log:
+- NCouncil.*
+- NInfamyy
+  + VASSAL_CHANGE_VALUE
+- NCharacter
+  + ASSIGN_ACTION_DAYS
+  + NON_AGGRESSION_PACT_BLOCKS_FACTIONS
+  + INFANT_DEATH_CHANCE
+- NTitle
+  + CROWN_LAW_CHANGE_TIMER
+  + EMPIRE_DE_JURE_ASSIMILATION_YEARS
+- NEconomy.*
+- NMilitary.*
+- NAI
+  + TRIBAL_VASSAL_EXTRA_CALL_CHANCE = 0 (the older 30 version is still there a few lines above apparently)
+- NRulerDesigner.*
+
+Results:
+--------
+Observe made it from 1066 to ?? (?? years) on E+V before ??
+
