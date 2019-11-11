@@ -360,3 +360,22 @@ Addition / re-enable log:
 Results:
 --------
 Observe made it from 1066 to 1224 (158 years) on E+V before it was gracefully terminated by Captain Ahab.
+
+
+====== AHAB XV ======
+
+Addition / re-enable log:
+- common/
+  + defines/
+
+NOTE: Since the removals of Ahab XIII and the additions of Ahab XIV, these other files remain disabled since
+Ahab XII (our first baseline no-crash case):
+- events/
+  + emf_disease
+  + emf_prisoner
+- decisions/
+  + emf_prisoner_decisions
+
+Results:
+--------
+Observe made it from 1066 to ?? (?? years) on E+V before ??
