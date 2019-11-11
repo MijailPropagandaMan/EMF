@@ -369,7 +369,7 @@ Addition / re-enable log:
   + defines/
 
 NOTE: Since the removals of Ahab XIII and the additions of Ahab XIV, these other files remain disabled since
-Ahab XII (our first baseline no-crash case):
+Ahab XI (the last crash iteration before our first no-crash iteration):
 - events/
   + emf_disease
   + emf_prisoner
@@ -378,4 +378,5 @@ Ahab XII (our first baseline no-crash case):
 
 Results:
 --------
-Observe made it from 1066 to ?? (?? years) on E+V before ??
+Observe made it from 1066 to 1101 (35 years) on E+V before crashing.
+
