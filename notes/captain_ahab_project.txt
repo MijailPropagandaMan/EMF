@@ -285,7 +285,6 @@ this point).
 Temporarily re-added DLCs of M&M, JD, and Conclave on same build:
 
 Observe made it from 1066 to 1091 on E+V before it crashed (no debugger).
-<<<<<<< HEAD
 
 
 ====== AHAB XII ======
@@ -310,9 +309,33 @@ hopefully succeeds at failing to crash, we'll still want it disabled as we put t
 
 Results:
 --------
-Observe made it from 1066 to 1217 on E+V before it was terminated gracefully by Captain Ahab.
+Observe made it from 1066 to 1217 (151 years) on E+V before it was terminated gracefully by Captain Ahab.
 
 
 ====== AHAB XIII ======
 
 First, we revert all of the deletions from the previous version, and then:
+
+Removal / disable log (after revert of Ahab XII):
+- events/
+  + emf_builder_events
+  + emf_building
+  + emf_culture
+  + emf_disease
+  + emf_prisoner
+- decisions/
+  + emf_elective_decisions
+  + emf_faction_decisions
+  + emf_formation(_map)?_decisions
+  + emf_prisoner_decisions
+  + emf_vassal_transfer_decisions
+- common/
+  + defines/
+  + artifact_spawns/
+  + artifacts/
+  + council_positions/
+  + council_voting/
+
+Results:
+--------
+Observe made it from 1066 to ?? on E+V before it ??
