@@ -339,3 +339,26 @@ Removal / disable log (after revert of Ahab XII):
 Results:
 --------
 Observe made it from 1066 to 1186 (120 years) on E+V before it was gracefully terminated by Captain Ahab.
+
+
+====== AHAB XIV ======
+
+Addition / re-enable log:
+- events/
+  + emf_builder_events
+  + emf_building
+  + emf_culture
+- decisions/
+  + emf_elective_decisions
+  + emf_faction_decisions
+  + emf_formation(_map)?_decisions
+  + emf_vassal_transfer_decisions
+- common/
+  + artifact_spawns/
+  + artifacts/
+  + council_positions/
+  + council_voting/
+
+Results:
+--------
+Observe made it from 1066 to ?? (?? years) on E+V before ??
