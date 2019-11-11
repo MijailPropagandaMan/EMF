@@ -1,0 +1,11 @@
+# -*- ck2.opinion_modifiers -*-
+
+emf_suspects_barren = {
+	opinion = 0
+	months = 12000
+}
+
+emf_tested_my_fertility = {
+	opinion = 0
+	months = 12000
+}

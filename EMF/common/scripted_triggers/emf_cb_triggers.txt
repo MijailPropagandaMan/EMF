@@ -1,0 +1,1075 @@
+# -*- ck2.scripted_triggers -*-
+# Audax Validator EnableCommentMetadata
+
+#### Standard global CB triggers ####
+
+emf_cb_can_use_gui = {
+	ROOT = {
+		show_scope_change = no
+		trigger_if = {
+			limit = { NOT = { has_flag = emf_cb_pass_tmp } }
+			check_if_crusader_trigger = yes
+			trigger_if = {
+				limit = { has_character_modifier = emf_peace_pledge }
+				custom_tooltip = {
+					text = emf_cb_ctt_no_peace_pledge
+					hidden_tooltip = { always = no }
+				}
+			}
+			trigger_if = {
+				limit = {
+					ai = no
+					OR = {
+						has_plot = plot_kidnap_liege
+						has_plot = plot_kidnapping
+					}
+					plot_target_char = { character = FROM }
+				}
+				custom_tooltip = {
+					text = emf_cb_ctt_target_must_not_be_kidnap_plot_target
+					hidden_tooltip = { always = no }
+				}
+			}
+		}
+	}
+}
+
+emf_cb_can_use = {
+	always = no
+	ROOT = {
+		emf_cb_lacks_main_war_block = yes
+		emf_cb_is_war_legal = yes
+	}
+}
+
+emf_cb_can_use_title = {
+	always = no
+	OR = {
+		FROM = { ai = no }
+		ROOT = { ai = no }
+		ROOT = { is_merchant_republic = yes }
+		FROM = {
+			NAND = {
+				is_merchant_republic = yes
+				OR = {
+					capital_scope = { county = { title = PREVPREVPREV } }
+					capital_holding = { title = PREVPREV }
+					primary_title = { title = PREVPREV }
+					succ_law_title = { title = PREVPREV }
+				}
+			}
+		}
+	}
+	FROM = { NOT = { family_palace = { title = PREVPREV } } }
+	FROM = {
+		NAND = {
+			is_nomadic = yes
+			OR = {
+				primary_title = { title = PREVPREV }
+				clan_title = { title = PREVPREV }
+			}
+		}
+	}
+	holy_order = no
+	mercenary = no
+	emf_cb_can_use_magyar_title = yes
+}
+
+emf_cb_can_use_de_jure_title = {
+	always = no
+	FROM = {
+		OR = {
+			ai = no
+			is_merchant_republic = no
+			ROOT = { is_patrician = yes }
+			ROOT = { ai = no }
+			NOT = { capital_holding = { de_jure_liege_or_above = PREVPREV } }
+		}
+	}
+	emf_cb_can_use_sahara_title = yes
+	emf_cb_can_use_magyar_title = yes
+}
+
+# Is this war legal according to the laws which affect the attacker and defender?
+#
+# NOTE: This is used in both regular and third-party CBs in the attacker scope (ROOT or FROMFROM, respectively), so if
+# referring to the defender, always use ROOT_FROM for safety (else it'd be a FROM nested inside of a FROMFROM for 3rd-party)
+# and refrain from using the ROOT scope (is the 3rd-party in those CBs, attacker otherwise), instead using PREV gymnastics to
+# refer to whatever scope is the scripted trigger's base scope.
+emf_cb_is_war_legal = {
+	OR = {
+		vassal_of = ROOT_FROM # Can always declare war on your de facto liege
+		NOT = {
+			crownlaw_title = {
+				owner = {
+					# To be affected, the attacker must be a vassal or below of their crown law title holder:
+					is_vassal_or_below = PREVPREV
+					OR = {
+						PREV = { has_law = king_peace_2 } # Blocks both internal & external wars
+						AND = {
+							PREV = { has_law = king_peace_1 } # Blocks internal wars
+							ROOT_FROM = {
+								is_liege_or_above = PREV # Under attacker's crown law title holder
+								crownlaw_title = {
+									OR = { # Defender's crown laws include at least Internal King's Peace, so he's covered
+										has_law = king_peace_1
+										has_law = king_peace_2
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+# Does the attacker NOT have a blanket blocker on declaring war?
+#
+# NOTE: This is used in both regular and third-party CBs in the attacker scope (ROOT or FROMFROM, respectively), so if
+# referring to the defender, always use ROOT_FROM for safety (else it'd be a FROM nested inside of a FROMFROM for 3rd-party)
+# and refrain from using the ROOT scope (is the 3rd-party in those CBs, attacker otherwise), instead using PREV gymnastics to
+# refer to whatever scope is the scripted trigger's base scope.
+emf_cb_lacks_main_war_block = {
+	OR = {
+		ai = no
+		has_flag = emf_cb_pass_tmp
+		NOR = {
+			OR = {
+				emf_mongol_invasion_mission = yes
+				emf_seljuk_invasion_mission = yes
+			}
+			has_flag = emf_planning_tournament
+			has_flag = emf_holding_tournament
+			has_flag = planning_coronation
+			# Prevent AI rulers from inappropriately declaring war before their coronation:
+			AND = {
+				emf_needs_coronation = yes
+				NAND = {
+					OR = {
+						trait = ambitious
+						trait = wroth
+					}
+					NOT = { trait = patient }
+				}
+				# HF coronation-for-war flags that obviously must exempt the needs-to-be-coronated ruler from DoWs:
+				NOR = {
+					has_flag = flag_antipope_for_coronation
+					has_flag = flag_excommunicated_for_coronation
+					has_flag = flag_pepin_for_coronation
+				}
+			}
+			# Prevent AI from declaring war if already in a war (even as an ally) unless scripted to do so (emf_cb_pass_tmp)
+			any_war = {
+				OR = {
+					any_attacker = { character = PREVPREV }
+					any_defender = { character = PREVPREV }
+				}
+			}
+		}
+	}
+}
+
+# Is THIS title inside the Sahara region?
+emf_cb_is_title_in_sahara = {
+	trigger_if = {
+		limit = { lower_tier_than = DUKE }
+		location = {
+			# Audax Validator "." Ignore_1006
+			region = emf_region_sahara
+		}
+	}
+	trigger_else = {
+		any_de_jure_vassal_title = {
+			lower_tier_than = DUKE
+			location = {
+				# Audax Validator "." Ignore_1006
+				region = emf_region_sahara
+			}
+		}
+	}
+}
+
+## Helper triggers for the above (used by some non-DJ-title CBs too, like county conquest)
+emf_cb_can_use_sahara_title = {
+	OR = {
+		ROOT = {
+			OR = {
+				ai = no
+				capital_scope = {
+					# Audax Validator "." Ignore_1006
+					region = emf_region_sahara
+				}
+			}
+		}
+		FROM = {
+			OR = {
+				ai = no
+				capital_scope = {
+					NOT = {
+						# Audax Validator "." Ignore_1006
+						region = emf_region_sahara
+					}
+				}
+			}
+		}
+		emf_cb_is_title_in_sahara = no
+	}
+}
+
+emf_cb_can_use_magyar_title = {
+	OR = {
+		emf_alternate_start = yes
+		AND = {
+			OR = {
+				ROOT = {
+					OR = {
+						ai = no
+						NOT = { culture = hungarian }
+						top_liege = { NOT = { culture = hungarian } }
+					}
+				}
+				title = k_hungary
+				de_jure_liege_or_above = k_hungary
+				capital_scope = { region = emf_region_carpathia }
+				has_global_flag = emf_conquest_hungary_completed
+				NOT = { has_global_flag = emf_magyar_migration_completed }
+			}
+			OR = {
+				ROOT = {
+					OR = {
+						ai = no
+						NOR = {
+							culture = hungarian
+							top_liege = { culture = hungarian }
+						}
+					}
+				}
+				location = { region = emf_region_etelkoz }
+				capital_scope = { region = emf_region_etelkoz }
+				has_global_flag = emf_magyar_migration_completed
+				year >= 920
+			}
+		}
+	}
+}
+
+emf_cb_can_use_thirdparty_magyar_title = {
+	OR = {
+		emf_alternate_start = yes
+		AND = {
+			OR = {
+				FROMFROM = {
+					OR = {
+						ai = no
+						NOT = { culture = hungarian }
+						top_liege = { NOT = { culture = hungarian } }
+					}
+				}
+				title = k_hungary
+				de_jure_liege_or_above = k_hungary
+				capital_scope = { region = emf_region_carpathia }
+				has_global_flag = emf_conquest_hungary_completed
+				NOT = { has_global_flag = emf_magyar_migration_completed }
+			}
+			OR = {
+				FROMFROM = {
+					OR = {
+						ai = no
+						NOR = {
+							culture = hungarian
+							top_liege = { culture = hungarian }
+						}
+					}
+				}
+				location = { region = emf_region_etelkoz }
+				capital_scope = { region = emf_region_etelkoz }
+				has_global_flag = emf_magyar_migration_completed
+				year = 920
+			}
+		}
+	}
+}
+
+#### Standard global CB triggers (third-party variants) ####
+
+emf_cb_thirdparty_can_use_gui = {
+	trigger_if = {
+		limit = { NOT = { has_flag = emf_cb_pass_tmp } }
+		check_if_crusader_thirdparty_trigger = yes
+		trigger_if = {
+			limit = { has_character_modifier = emf_peace_pledge }
+			custom_tooltip = {
+				text = emf_cb_ctt_no_peace_pledge
+				hidden_tooltip = { always = no }
+			}
+		}
+		trigger_if = {
+			limit = {
+				ai = no
+				OR = {
+					has_plot = plot_kidnap_liege
+					has_plot = plot_kidnapping
+				}
+				plot_target_char = { character = FROM }
+			}
+			custom_tooltip = {
+				text = emf_cb_ctt_target_must_not_be_kidnap_plot_target
+				hidden_tooltip = { always = no }
+			}
+		}
+	}
+}
+
+emf_cb_thirdparty_can_use = {
+	# WHY AM I COMMENTED-OUT: issue w/ FROMFROM scope in other_de_jure_county_claim being invalid in its can_use clause
+	#						 plus the fact that we don't really care about this case currently, so just disabling for
+	#						 all 3rd-party CBs for now and moving logic into can_use_title below.   -ziji [2016-07-04]
+	#FROMFROM = {
+	#	OR = {
+	#		ai = no
+	#		NOR = {
+	#			has_landed_title = e_mongol_empire
+	#			has_flag = planning_coronation
+	#		}
+	#	}
+	#}
+}
+
+emf_cb_thirdparty_can_use_title = {
+	always = no
+	FROMFROM = {
+		emf_cb_lacks_main_war_block = yes
+		emf_cb_is_war_legal = yes
+	}
+	OR = {
+		FROM = { ai = no }
+		FROMFROM = { ai = no }
+		FROMFROM = { is_merchant_republic = yes }
+		FROM = {
+			NAND = {
+				is_merchant_republic = yes
+				OR = {
+					capital_scope = { county = { title = PREVPREVPREV } }
+					capital_holding = { title = PREVPREV }
+					primary_title = { title = PREVPREV }
+					succ_law_title = { title = PREVPREV }
+				}
+			}
+		}
+	}
+	FROM = { NOT = { family_palace = { title = PREVPREV } } }
+	FROM = {
+		NAND = {
+			is_nomadic = yes
+			OR = {
+				primary_title = { title = PREVPREV }
+				clan_title = { title = PREVPREV }
+			}
+		}
+	}
+	holy_order = no
+	mercenary = no
+	emf_cb_can_use_thirdparty_magyar_title = yes
+}
+
+emf_cb_thirdparty_can_use_de_jure_title = {
+	always = no
+	FROMFROM = {
+		emf_cb_lacks_main_war_block = yes
+		emf_cb_is_war_legal = yes
+	}
+	OR = {
+		FROM = { ai = no }
+		FROM = { is_merchant_republic = no }
+		FROMFROM = { is_merchant_republic = yes }
+		FROMFROM = { ai = no }
+		NOT = { FROM = { capital_holding = { de_jure_liege_or_above = PREVPREV } } }
+	}
+	# Prevent vassal kings from bypassing Complete King's Peace
+	emf_cb_can_use_thirdparty_magyar_title = yes
+	emf_cb_thirdparty_can_use_sahara_title = yes
+}
+
+emf_cb_thirdparty_can_use_sahara_title = {
+	OR = {
+		FROMFROM = {
+			OR = {
+				ai = no
+				capital_scope = {
+					# Audax Validator "." Ignore_1006
+					region = emf_region_sahara
+				}
+			}
+		}
+		FROM = {
+			OR = {
+				ai = no
+				capital_scope = {
+					NOT = {
+						# Audax Validator "." Ignore_1006
+						region = emf_region_sahara
+					}
+				}
+			}
+		}
+		emf_cb_is_title_in_sahara = no
+	}
+}
+
+#### Other, specific triggers ####
+
+# ROOT = claimant, FROMFROM = attacker, THIS = target title
+emf_cb_other_claimant_will_be_attacker_vassal = {
+	FROMFROM = {
+		primary_title = { higher_tier_than = PREVPREV } # Presser can bind target title
+	}
+	OR = {
+		FROMFROM = {
+			OR = {
+				dynasty = ROOT # Presser is same dynasty as claimant
+				any_demesne_title = { # Presser is de jure liege of target title, or...
+					de_jure_vassal_or_below = PREVPREV
+				}
+			}
+		}
+		ROOT = { # Claimant is vassal ruler of presser and no less than one tier below target title
+			is_ruler = yes
+			is_liege_or_above = FROMFROM
+			OR = {
+				NOT = { lower_tier_than = PREV }
+				PREV = { tier = COUNT }
+				AND = {
+					PREV = { tier = DUKE }
+					tier = COUNT
+				}
+				AND = {
+					PREV = { tier = KING }
+					tier = DUKE
+				}
+			}
+		}
+	}
+}
+
+# ROOT = claimant, THIS = claimed title
+emf_cb_can_press_claim = {
+	ROOT = {
+		OR = {
+			is_ruler = no
+			primary_title = {
+				OR = {
+					is_primary_type_title = no # Static Mercs, the Pope, Holy Orders, etc
+					NOT = { lower_tier_than = PREVPREV }
+				}
+			}
+		}
+	}
+	OR = {
+		ROOT = { has_strong_claim = PREV }
+		AND = {
+			ROOT = { has_weak_claim = PREV }
+			emf_cb_is_weak_claim_pressable = yes
+		}
+	}
+}
+
+emf_cb_is_weak_claim_pressable = {
+	OR = {
+		is_pretender = yes # CAUTION: checks vs ROOT implicitly!
+		is_contested = yes
+		holder_scope = { has_regent = yes }
+		holder_scope = { emf_needs_coronation = yes }
+		AND = {
+			succ_law_title = { has_law = agnatic_succession }
+			ROOT = { is_female = no }
+			holder_scope = { is_female = yes }
+		}
+		AND = {
+			succ_law_title = { has_law = cognatic_succession }
+			holder_scope = { is_female = yes }
+		}
+		AND = {
+			succ_law_title = { has_law = enatic_succession }
+			ROOT = { is_female = yes }
+			holder_scope = { is_female = no }
+		}
+		AND = {
+			succ_law_title = { has_law = enatic_cognatic_succession }
+			holder_scope = { is_female = no }
+		}
+	}
+}
+
+# Shared `can_use` CB code for religious CBs
+emf_cb_can_use_religious = {
+	FROM = {
+		independent = yes # Don't declare holy war on revolters -- nothing would happen on_success_title
+		NOT = { is_vassal_or_below = ROOT } # Don't declare on ROOT's top liege either
+	}
+	ROOT = {
+		is_nomadic = no
+		NOR = {
+			mercenary = yes
+			pacifist = yes
+			religion = taoist
+		}
+		NAND = {
+			OR = {
+				has_landed_title = k_teutonic_state
+				has_landed_title = d_teutonic_order
+			}
+			has_global_flag = northern_crusades_active
+		}
+		# Commented-out: HF Reconquista is currently disabled in EMF due to being super OP
+		#NOR = {
+		#	has_flag = currently_reconquering_iberia
+		#	reconquista_check_trigger = yes
+		#}
+		emf_hostile_religion_to_FROM = yes
+		OR = { # Allow reformed pagans [only]
+			NOT = { religion_group = pagan_group }
+			AND = {
+				is_reformed_religion = yes
+				NOT = { has_religion_feature = religion_peaceful }
+			}
+		}
+		OR = { # Hindus can only wage holy war on non-Indian rulers
+			NOT = { religion = hindu }
+			FROM = {
+				has_dharmic_religion_trigger = no
+				emf_syncretized_religion_with_PREV = no
+			}
+			AND = {
+				OR = {
+					religion_group = FROM
+					emf_syncretized_religion_with_FROM = yes
+				}
+				FROM = { has_character_modifier = known_satanist }
+				NOT = { has_character_modifier = known_satanist }
+			}
+		}
+		top_liege = {
+			OR = {
+				religion_group = ROOT
+				emf_syncretized_religion_with_ROOT = yes
+			}
+			OR = {
+				emf_hostile_religion_to_FROM = yes
+				AND = {
+					OR = {
+						religion_group = FROM
+						emf_syncretized_religion_with_FROM = yes
+					}
+					FROM = { has_character_modifier = known_satanist }
+					NOT = { has_character_modifier = known_satanist }
+					NOT = { ROOT = { has_character_modifier = known_satanist } }
+				}
+			}
+			OR = {
+				religion = ROOT
+				AND = {
+					is_heretic = no
+					ROOT = { is_heretic = no }
+				}
+			}
+			OR = {
+				NOT = { religion_group = pagan_group }
+				religion = ROOT
+			}
+		}
+	}
+}
+
+emf_cb_religious_basic_can_use_title = {
+	# Can't holy war a duchy without at least one non-nomadic province in it. If attacking a nomad, tribal holdings also
+	# don't count toward settlements unless LATB or Antinomad are disabled.
+	any_direct_de_jure_vassal_title = {
+		owner_under_FROM = yes
+		location = { emf_nomadic_province = no }
+	}
+
+	# The attacker needs at least one county in the target duchy, or a land
+	# border, or to be within two sea zones from one of your counties (if
+	# crossing seazones is allowed). Seazones may only be traversed from
+	# provinces that are transitively connected to the top realm capital.
+	OR = {
+		any_direct_de_jure_vassal_title = {
+			OR = {
+				owner_under_ROOT = yes
+				location = {
+					owner_under_FROM = yes
+					any_neighbor_province = { owner_under_ROOT = yes }
+				}
+			}
+		}
+		AND = {
+			OR = { # Can they cross sea zones?
+				FROM = { religion_group = muslim }
+				ROOT = { religion_group = muslim }
+				AND = {
+					ROOT = { religion_group = pagan_group }
+					has_global_flag = pagan_ghws_unlocked
+				}
+				AND = {
+					ROOT = { religion_group = christian }
+					has_global_flag = christian_crusades_unlocked
+				}
+				AND = {
+					ROOT = { religion_group = jewish_group }
+					has_global_flag = jewish_ghws_unlocked
+				}
+				AND = {
+					ROOT = { religion_group = zoroastrian_group }
+					has_global_flag = zoroastrian_ghws_unlocked
+				}
+			}
+			any_direct_de_jure_vassal_title = {
+				owner_under_FROM = yes
+				location = {
+					any_neighbor_province = {
+						is_land = no
+						any_neighbor_province = {
+							OR = {
+								AND = {
+									owner_under_ROOT = yes
+									has_flag = emf_capital_connected
+								}
+								AND = {
+									is_land = no
+									any_neighbor_province = {
+										owner_under_ROOT = yes
+										has_flag = emf_capital_connected
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+# Standard `is_valid` CB code for religious CBs
+emf_cb_is_valid_religious = {
+	ROOT = {
+		NOT = { same_realm = FROM }
+		NOR = {
+			mercenary = yes
+			pacifist = yes
+		}
+		emf_hostile_religion_to_FROM = yes
+		top_liege = {
+			OR = {
+				religion_group = ROOT
+				emf_syncretized_religion_with_ROOT = yes
+			}
+			OR = {
+				emf_hostile_religion_to_FROM = yes
+				AND = {
+					OR = {
+						religion_group = FROM
+						emf_syncretized_religion_with_FROM = yes
+					}
+					FROM = { has_character_modifier = known_satanist }
+					NOT = { has_character_modifier = known_satanist }
+					NOT = { ROOT = { has_character_modifier = known_satanist } }
+				}
+			}
+			OR = {
+				religion = ROOT
+				AND = {
+					is_heretic = no
+					ROOT = { is_heretic = no }
+				}
+			}
+		}
+	}
+}
+
+emf_cb_special_religious_basic_can_use_title = {
+	ROOT = {
+		NOR = {
+			religion_group = FROM
+			emf_syncretized_religion_with_FROM = yes
+		}
+	}
+	OR = {
+		ROOT = { holy_order = yes }
+		AND = {
+			de_jure_liege = k_jerusalem
+			ROOT = {
+				has_landed_title = k_jerusalem
+				religion_group = christian
+			}
+		}
+		AND = {
+			FROM = { religion_group = pagan_group }
+			OR = {
+				de_jure_liege = k_pomerania
+				de_jure_liege = k_saxony
+				de_jure_liege = k_germany
+				de_jure_liege = k_bohemia
+				de_jure_liege = k_moravia
+			}
+			ROOT = {
+				is_heretic = no
+				emf_western_christian_religion = yes
+				NOT = { any_liege = { NOT = { religion = ROOT } } } # All lieges must have same religion
+			}
+		}
+	}
+}
+
+emf_cb_dejure_duchy_claim_basic_can_use_title = {
+	tier = DUKE
+	# Cannot fuck with your religious head's holy sites
+	NAND = {
+		ROOT = { rightful_religious_head = FROM }
+		any_de_jure_vassal_title = {
+			is_holy_site = FROM
+			owner_under_FROM = yes
+		}
+	}
+	# ROOT holds the de jure kingdom or empire of the target duchy,
+	# and at least one of the de jure liege titles has at least
+	# Medium CA.
+	any_de_jure_liege_title = {
+		holder = ROOT
+		emf_laws_has_medium_ca_plus = yes
+	}
+	# FROM controls at least 2 counties in this duchy
+	# Otherwise, use de_jure_county_claim.
+	FROM = { num_of_realm_counties = { title = PREV value = 2 } }
+}
+
+emf_cb_dejure_kingdom_claim_basic_can_use_title = {
+	tier = KING
+	NAND = {
+		ROOT = { rightful_religious_head = FROM }
+		any_de_jure_vassal_title = {
+			is_holy_site = FROM
+			owner_under_FROM = yes
+		}
+	}
+	empire = {
+		holder = ROOT
+		OR = {
+			has_law = crown_authority_4 # Always available at Absolute CA
+			# Also available on any [de jure] held empire when CB granted by event/decision
+			ROOT = { has_character_modifier = emf_cb_mod_dejure_kingdom_claim }
+		}
+	}
+	# FROM controls at least 2 counties in this kingdom
+	# Otherwise, use de_jure_county_claim.
+	FROM = { num_of_realm_counties = { title = PREV value = 2 } }
+}
+
+emf_cb_religious_reconquest_basic_can_use_title = {
+	# Muslim reconquest does not make much sense
+	NAND = {
+		FROM = { religion_group = muslim }
+		ROOT = { religion_group = muslim }
+	}
+	ROOT = {
+		NAND = {
+			religion_group = pagan_group
+			FROM = { is_reformed_religion = ROOT }
+		}
+	}
+	any_direct_de_jure_vassal_title = {
+		owner_under_FROM = yes
+		location = {
+			religion = ROOT
+			emf_nomadic_province = no
+		}
+	}
+}
+
+emf_cb_county_conquest_basic_can_use_title = {
+	tier = COUNT
+	owner_under_FROM = yes
+	OR = {
+		ROOT = { is_nomadic = yes }
+		location = { emf_nomadic_province = no }
+		ROOT = { ai = no }
+	}
+	emf_cb_can_use_sahara_title = yes
+}
+
+emf_cb_tributary_basic_can_use = {
+	OR = {
+		has_dlc = "Horse Lords"
+		has_dlc = "Jade Dragon"
+	}
+	FROM = { independent = yes }
+	ROOT = {
+		independent = yes
+		mercenary = no
+		NAND = {
+			holy_order = yes
+			religion = FROM
+		}
+		OR = {
+			is_tributary = no
+			is_tributary = { type = offmap }
+		}
+		NOT = { rightful_religious_head_scope = { character = FROM } }
+	}
+	FROM = {
+		mercenary = no
+		NAND = {
+			holy_order = yes
+			religion = ROOT
+		}
+		higher_tier_than = BARON
+		NOT = { is_offmap_governor = yes }
+		NOT = { suzerain = { under_ROOT = yes } }
+	}
+	# Need a "superrealm" direct border ("super" because we allow the chaining through the borders of our preexisting tributes)
+	FROM = {
+		any_realm_province = {
+			any_neighbor_province = {
+				owner = {
+					OR = {
+						under_ROOT = yes
+						top_liege = { suzerain = { under_ROOT = yes } }
+					}
+				}
+			}
+		}
+	}
+	# The defender is not in any tributary war
+	FROM = {
+		NOR = {
+			any_war = { using_cb = tributary_cb }
+			any_war = { using_cb = tributary_permanent_cb }
+			any_war = { using_cb = tributary_nomad_cb }
+		}
+	}
+	# Protect against prematurely making AI Magyars into tributes. Else, they
+	# will tend to survive on the Steppes and never migrate into the
+	# Carpathian Basion.
+	NAND = {
+		ROOT = { ai = yes }
+		FROM = {
+			culture = hungarian
+			ai = yes
+		}
+		NOR = {
+			year >= 920
+			has_global_flag = emf_magyar_migration_completed
+		}
+		emf_alternate_start = no
+	}
+}
+
+emf_cb_is_defending_against_major_revolt = {
+	any_war = {
+		defender = { character = PREVPREV }
+		OR = {
+			using_cb = claim_on_liege
+			using_cb = claim_on_liege_plot
+			using_cb = claim_on_vassal_plot
+			using_cb = other_claim_on_liege
+			using_cb = bid_for_independence
+			using_cb = overthrow_ruler
+			using_cb = overthrow_ruler_no_calls
+			using_cb = cb_faction_independence
+			using_cb = cb_install_antiking
+			using_cb = cb_install_khan
+			using_cb = increase_council_power_war
+			using_cb = truebelievers_bid_for_independence
+			using_cb = abrahamic_antihellenic_revolt
+			using_cb = emf_faction_gender_succ_agnatic
+			using_cb = emf_faction_gender_succ_cognatic
+			using_cb = emf_faction_gender_succ_true_cognatic
+			using_cb = emf_faction_gender_succ_enatic_cognatic
+			using_cb = emf_faction_gender_succ_enatic
+			using_cb = emf_faction_overthrow
+			using_cb = emf_faction_overthrow_CA
+			using_cb = emf_faction_overthrow_TO
+			using_cb = emf_faction_overthrow_obligations
+			using_cb = emf_faction_succ_aztec_elective
+			using_cb = emf_faction_succ_byzantine_elective
+			using_cb = emf_faction_succ_dynastic_elective
+			using_cb = emf_faction_succ_eldership
+			using_cb = emf_faction_succ_elective_gavelkind
+			using_cb = emf_faction_succ_feudal_elective
+			using_cb = emf_faction_succ_gavelkind
+			using_cb = emf_faction_succ_hre_elective
+			using_cb = emf_faction_succ_mirath
+			using_cb = emf_faction_succ_pictish_elective
+			using_cb = emf_faction_succ_primogeniture
+			using_cb = emf_faction_succ_seniority
+			using_cb = emf_faction_succ_tanistry
+			using_cb = emf_faction_succ_turkish_succession
+			using_cb = emf_faction_succ_ultimogeniture
+			using_cb = emf_resist_viceroy_revocation
+		}
+	}
+}
+
+emf_cb_is_leading_major_revolt_against_ROOT = {
+	any_war = {
+		attacker = { character = PREV }
+		defender = { character = ROOT }
+		OR = {
+			using_cb = claim_on_liege
+			using_cb = claim_on_liege_plot
+			using_cb = claim_on_vassal_plot
+			using_cb = other_claim_on_liege
+			using_cb = bid_for_independence
+			using_cb = overthrow_ruler
+			using_cb = overthrow_ruler_no_calls
+			using_cb = cb_faction_independence
+			using_cb = cb_install_antiking
+			using_cb = cb_install_khan
+			using_cb = increase_council_power_war
+			using_cb = truebelievers_bid_for_independence
+			using_cb = abrahamic_antihellenic_revolt
+			using_cb = emf_faction_gender_succ_agnatic
+			using_cb = emf_faction_gender_succ_cognatic
+			using_cb = emf_faction_gender_succ_true_cognatic
+			using_cb = emf_faction_gender_succ_enatic_cognatic
+			using_cb = emf_faction_gender_succ_enatic
+			using_cb = emf_faction_overthrow
+			using_cb = emf_faction_overthrow_CA
+			using_cb = emf_faction_overthrow_TO
+			using_cb = emf_faction_overthrow_obligations
+			using_cb = emf_faction_succ_aztec_elective
+			using_cb = emf_faction_succ_byzantine_elective
+			using_cb = emf_faction_succ_dynastic_elective
+			using_cb = emf_faction_succ_eldership
+			using_cb = emf_faction_succ_elective_gavelkind
+			using_cb = emf_faction_succ_feudal_elective
+			using_cb = emf_faction_succ_gavelkind
+			using_cb = emf_faction_succ_hre_elective
+			using_cb = emf_faction_succ_mirath
+			using_cb = emf_faction_succ_pictish_elective
+			using_cb = emf_faction_succ_primogeniture
+			using_cb = emf_faction_succ_seniority
+			using_cb = emf_faction_succ_tanistry
+			using_cb = emf_faction_succ_turkish_succession
+			using_cb = emf_faction_succ_ultimogeniture
+			using_cb = emf_resist_viceroy_revocation
+		}
+	}
+}
+
+emf_cb_unexpelled_holy_order = {
+	custom_tooltip = {
+		text = emf_cb_ctt_unexpelled_holy_order
+		hidden_tooltip = {
+			holy_order = yes
+			NOR = {
+				AND = {
+					primary_title = { title = d_knights_templar }
+					ROOT = { has_character_modifier = expelled_d_knights_templar }
+				}
+				AND = {
+					primary_title = { title = d_knights_hospitaler }
+					ROOT = { has_character_modifier = expelled_d_knights_hospitaler }
+				}
+				AND = {
+					primary_title = { title = d_teutonic_order }
+					ROOT = { has_character_modifier = expelled_d_teutonic_order }
+				}
+				AND = {
+					primary_title = { title = d_jomsvikings }
+					ROOT = { has_character_modifier = expelled_d_jomsvikings }
+				}
+				AND = {
+					primary_title = { title = d_hashshashin }
+					ROOT = { has_character_modifier = expelled_d_hashshashin }
+				}
+				AND = {
+					primary_title = { title = d_bektashi }
+					ROOT = { has_character_modifier = expelled_d_bektashi }
+				}
+				AND = {
+					primary_title = { title = d_haruriyyah }
+					ROOT = { has_character_modifier = expelled_d_haruriyyah }
+				}
+				AND = {
+					primary_title = { title = d_holy_sepulchre }
+					ROOT = { has_character_modifier = expelled_d_holy_sepulchre }
+				}
+				AND = {
+					primary_title = { title = d_saint_anthony }
+					ROOT = { has_character_modifier = expelled_d_saint_anthony }
+				}
+				AND = {
+					primary_title = { title = d_immortals }
+					ROOT = { has_character_modifier = expelled_d_immortals }
+				}
+				AND = {
+					primary_title = { title = d_zealots }
+					ROOT = { has_character_modifier = expelled_d_zealots }
+				}
+				AND = {
+					primary_title = { title = d_sky_lords }
+					ROOT = { has_character_modifier = expelled_d_sky_lords }
+				}
+				AND = {
+					primary_title = { title = d_spirit_guardians }
+					ROOT = { has_character_modifier = expelled_d_spirit_guardians }
+				}
+				AND = {
+					primary_title = { title = d_warriors_perun }
+					ROOT = { has_character_modifier = expelled_d_warriors_perun }
+				}
+				AND = {
+					primary_title = { title = d_chosen_perkunas }
+					ROOT = { has_character_modifier = expelled_d_chosen_perkunas }
+				}
+				AND = {
+					primary_title = { title = d_sons_kaleva }
+					ROOT = { has_character_modifier = expelled_d_sons_kaleva }
+				}
+				AND = {
+					primary_title = { title = d_huitzilopochtli }
+					ROOT = { has_character_modifier = expelled_d_huitzilopochtli }
+				}
+				AND = {
+					primary_title = { title = d_knights_santiago }
+					ROOT = { has_character_modifier = expelled_d_knights_santiago }
+				}
+				AND = {
+					primary_title = { title = d_knights_calatrava }
+					ROOT = { has_character_modifier = expelled_d_knights_calatrava }
+				}
+				AND = {
+					primary_title = { title = d_saint_addai }
+					ROOT = { has_character_modifier = expelled_d_saint_addai }
+				}
+				AND = {
+					primary_title = { title = d_zun_warriors }
+					ROOT = { has_character_modifier = expelled_d_zun_warriors }
+				}
+				AND = {
+					primary_title = { title = d_arsiyah }
+					ROOT = { has_character_modifier = expelled_d_arsiyah }
+				}
+				AND = {
+					primary_title = { title = d_saqaliba }
+					ROOT = { has_character_modifier = expelled_d_saqaliba }
+				}
+				AND = {
+					primary_title = { title = d_army_light }
+					ROOT = { has_character_modifier = expelled_d_army_light }
+				}
+				AND = {
+					primary_title = { title = d_knights_saint_mark }
+					ROOT = { has_character_modifier = expelled_d_knights_saint_mark }
+				}
+				AND = {
+					primary_title = { title = d_saint_blaise }
+					ROOT = { has_character_modifier = expelled_d_saint_blaise }
+				}
+			}
+		}
+	}
+}

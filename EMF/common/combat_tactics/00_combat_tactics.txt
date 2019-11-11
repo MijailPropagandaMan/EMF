@@ -1,0 +1,153 @@
+# -*- ck2.combat_tactics -*-
+
+### At the moment we have a pretty basic icon system for combat tactics showing
+### the uniticon which has the biggest bonus value in the tactic.
+### This is the sprite number for each unit:
+### Good 	 1=LI	 2=HI	 3=PIKE	 4=LC	 5=KNIGHTS	 6=ARCHERS	 7=HORSE ARCH.	 8=GALLEY	 9=ELEPHANT	10=CAMEL
+### Neutral 11=LI	12=HI	13=PIKE	14=LC	15=KNIGHTS	16=ARCHERS	17=HORSE ARCH.	18=GALLEY	19=ELEPHANT	20=CAMEL
+### Bad 	21=LI	22=HI	23=PIKE	24=LC	25=KNIGHTS	26=ARCHERS	27=HORSE ARCH.	28=GALLEY	29=ELEPHANT	30=CAMEL
+
+# This file only contains fallback and hardcoded tactics.
+# See emf_combat_tactics_codegen.txt for most other tactics.
+
+##########################################################################
+# Fallback tactics
+##########################################################################
+
+# Must be first in file. This tactic will be set if anything goes wrong
+no_tactic = {
+	days = 1 # tactic lasts one day
+	sprite = 21 # index of icon
+
+	trigger = {
+		always = no # never use unless set explicitly by code
+	}
+
+	light_infantry_offensive = -10.0
+	heavy_infantry_offensive = -10.0
+	pikemen_offensive = -10.0
+	light_cavalry_offensive = -10.0
+	camel_cavalry_offensive = -10.0
+	knights_offensive = -10.0
+	archers_offensive = -10.0
+	horse_archers_offensive = -10.0
+	war_elephants_offensive = -10.0
+
+	light_infantry_defensive = 0.0
+	heavy_infantry_defensive = 0.0
+	pikemen_defensive = 0.0
+	light_cavalry_defensive = 0.0
+	camel_cavalry_defensive = 0.0
+	knights_defensive = 0.0
+	archers_defensive = 0.0
+	horse_archers_defensive = 0.0
+	war_elephants_defensive = 0.0
+}
+
+generic_skirmish_tactic = {
+	days = 3 # tactic lasts one day
+	sprite = 11 # index of icon
+	group = skirmish
+
+	trigger = {
+		always = no # never use unless set explicitly by code
+	}
+
+	mean_time_to_happen = {
+		days = 0
+	}
+}
+
+##########################################################################
+# Siege offensive tactics
+##########################################################################
+
+# Must be first "siege = attacker"
+no_siege_offense_tactic = {
+	days = 3 # tactic lasts one day
+	sprite = 1 # index of icon
+
+	siege = attacker
+
+	trigger = {
+		always = no # never use unless set explicitly by code
+	}
+}
+
+default_siege_offense_tactic = {
+	days = 5
+	sprite = 1
+
+	siege = attacker
+
+	trigger = {
+		always = yes
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+}
+
+##########################################################################
+# Siege defensive tactics
+##########################################################################
+
+# Must be first "siege = defender"
+no_siege_defense_tactic = {
+	days = 3 # tactic lasts one day
+	sprite = 1 # index of icon
+	siege = defender
+	trigger = {
+		always = no # never use unless set explicitly by code
+	}
+}
+
+default_siege_defense_tactic = {
+	days = 5
+	sprite = 1
+
+	siege = defender
+
+	trigger = {
+		always = yes
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+}
+
+pursue_tactic = {
+	days = 15
+	sprite = 4
+	group = charge
+
+	trigger = {
+		phase = pursue
+	}
+
+	mean_time_to_happen = {
+		days = 10
+	}
+}
+
+##########################################################################
+# Combat MTTH definitions(do not remove)
+##########################################################################
+
+flank_retreat_odds =
+{
+	# MTTH range is 0-100, if flank morale is below MTTH, flank will retreat
+	mean_time_to_happen = {
+		days = 25
+	}
+}
+
+flank_pursue_odds =
+{
+	# MTTH range is 0-100, chance (in %) of pursuing a fleeing flank
+	mean_time_to_happen = {
+		days = 25
+	}
+}

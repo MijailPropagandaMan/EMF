@@ -1,0 +1,329 @@
+# -*- ck2.events -*-
+
+namespace = emf_claims
+
+# emf_claims.0 -- generate claims and justified claimants to feudal elective titles [on_death]
+character_event = {
+	id = emf_claims.0
+
+	is_triggered_only = yes
+	hide_window = yes
+
+	only_playable = yes
+
+	trigger = {
+		always = no # FIXME AHAB
+		any_demesne_title = {
+			succ_law_title = {
+				OR = {
+					has_law = succ_feudal_elective
+					has_law = succ_hre_elective
+					has_law = succ_dynastic_elective
+				}
+			}
+		}
+	}
+
+	immediate = {
+		log = "DEBUG: emf_claims.0: death of a holder of an Elective or Princely Elective title: [This.EMF_GetDebugName]"
+		# Progeny will get claims automatically, so simply setup justified claimants among them
+		log = " --> setting justified claimant status upon progeny that can inherit:"
+		any_demesne_title = {
+			limit = {
+				succ_law_title = {
+					current_heir = { NOT = { is_child_of = ROOT } }
+					OR = {
+						has_law = succ_feudal_elective
+						has_law = succ_hre_elective
+						has_law = succ_dynastic_elective
+					}
+					NOR = {
+						has_law = true_cognatic_succession
+						has_law = enatic_cognatic_succession
+						has_law = enatic_succession
+					}
+				}
+			}
+			log = " ----> title: [This.EMF_GetDebugNameWithDeJureLieges]"
+			ROOT = {
+				random_child = {
+					limit = {
+						is_female = no
+						emf_can_inherit = yes
+						NOT = {
+							any_sibling = {
+								is_female = no
+								emf_can_inherit = yes
+								is_older_than = PREV
+							}
+						}
+					}
+					set_flag = emf_justified_claimant_@PREVPREV
+					log = " ------> [This.EMF_GetDebugName]"
+				}
+			}
+		}
+		any_demesne_title = {
+			limit = {
+				succ_law_title = {
+					current_heir = { NOT = { is_child_of = ROOT } }
+					OR = {
+						has_law = succ_feudal_elective
+						has_law = succ_hre_elective
+						has_law = succ_dynastic_elective
+					}
+					has_law = true_cognatic_succession
+				}
+			}
+			log = " ----> title: [This.EMF_GetDebugNameWithDeJureLieges]"
+			ROOT = {
+				random_child = {
+					limit = {
+						emf_can_inherit = yes
+						NOT = {
+							any_sibling = {
+								emf_can_inherit = yes
+								is_older_than = PREV
+							}
+						}
+					}
+					set_flag = emf_justified_claimant_@PREVPREV
+					log = " ------> [This.EMF_GetDebugName]"
+				}
+			}
+		}
+		any_demesne_title = {
+			limit = {
+				succ_law_title = {
+					current_heir = { NOT = { is_child_of = ROOT } }
+					OR = {
+						has_law = succ_feudal_elective
+						has_law = succ_hre_elective
+						has_law = succ_dynastic_elective
+					}
+					OR = {
+						has_law = enatic_cognatic_succession
+						has_law = enatic_succession
+					}
+				}
+			}
+			log = " ----> title: [This.EMF_GetDebugNameWithDeJureLieges]"
+			ROOT = {
+				random_child = {
+					limit = {
+						is_female = yes
+						emf_can_inherit = yes
+						NOT = {
+							any_sibling = {
+								is_female = yes
+								emf_can_inherit = yes
+								is_older_than = PREV
+							}
+						}
+					}
+					set_flag = emf_justified_claimant_@PREVPREV
+					log = " ------> [This.EMF_GetDebugName]"
+				}
+			}
+		}
+		# Now, give weak claims to all pretenders of the feudal elective title(s), defer to emf_claims.1 for post-death delay
+		any_demesne_title = {
+			limit = {
+				succ_law_title = {
+					OR = {
+						has_law = succ_feudal_elective
+						has_law = succ_hre_elective
+						has_law = succ_dynastic_elective
+					}
+				}
+			}
+			succ_law_title = {
+				log = " --> pretenders will potentially get weak claims upon [This.GetID]:"
+				any_character = {
+					limit = { any_pretender_title = { title = PREVPREV } }
+					log = " ----> [This.EMF_GetDebugName]"
+					set_flag = emf_elective_pretender_to_@PREV
+					character_event = { id = emf_claims.1 days = 1 }
+				}
+			}
+		}
+	}
+}
+
+# emf_claims.1 -- Deferred continuation of emf_claims.0, post-death of feudal elective title holder, ROOT was a pretender
+#
+# NOTE: We don't assume all pretenders are actually justified claimants, so they just get weak claims. If we had scopes to
+# the ordered list of pretenders, then we'd make #2 and #3 justified claimants (perhaps with further qualifications).
+character_event = {
+	id = emf_claims.1
+
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		random_landed_title = {
+			limit = { ROOT = { has_flag = emf_elective_pretender_to_@PREV } }
+			ROOT = { clr_flag = emf_elective_pretender_to_@PREV }
+			if = {
+				limit = {
+					NOR = {
+						claimed_by = ROOT
+						holder = ROOT
+					}
+				}
+				add_weak_claim = ROOT
+				log = "DEBUG: emf_claims.1: added weak claim upon [This.GetID] to [Root.EMF_GetDebugName]"
+			}
+		}
+	}
+}
+
+# emf_claims.10 [Male That's Reached Adulthood]
+#
+# Pre-inherit any strong claims that mother may have on_adulthood as weak, uninheritable claims. This only applies
+# to male-dominated succession law types.
+character_event = {
+	id = emf_claims.10
+
+	is_triggered_only = yes
+	hide_window = yes
+
+	only_men = yes
+
+	trigger = {
+		always = no # FIXME AHAB
+		mother_even_if_dead = {
+			any_claim = {
+				has_holder = yes
+				higher_tier_than = BARON
+				ROOT = { mother_even_if_dead = { has_strong_claim = PREVPREV } }
+				NOR = {
+					claimed_by = ROOT
+					holder = ROOT
+				}
+				succ_law_title = {
+					OR = {
+						has_law = agnatic_succession
+						has_law = cognatic_succession
+					}
+				}
+			}
+		}
+	}
+
+	immediate = {
+		mother_even_if_dead = {
+			any_claim = {
+				limit = {
+					has_holder = yes
+					higher_tier_than = BARON
+					ROOT = { mother_even_if_dead = { has_strong_claim = PREVPREV } }
+					NOR = {
+						claimed_by = ROOT
+						holder = ROOT
+					}
+					succ_law_title = {
+						OR = {
+							has_law = agnatic_succession
+							has_law = cognatic_succession
+						}
+					}
+				}
+				add_weak_claim = ROOT
+			}
+		}
+	}
+}
+
+# emf_claims.11 [Female That's Reached Adulthood]
+#
+# Pre-inherit any strong claims that father may have on_adulthood as weak, uninheritable claims. This only applies
+# to female-dominated succession law types.
+character_event = {
+	id = emf_claims.11
+
+	is_triggered_only = yes
+	hide_window = yes
+
+	only_women = yes
+
+	trigger = {
+		always = no # FIXME AHAB
+		father_even_if_dead = {
+			any_claim = {
+				has_holder = yes
+				higher_tier_than = BARON
+				ROOT = { father_even_if_dead = { has_strong_claim = PREVPREV } }
+				NOR = {
+					claimed_by = ROOT
+					holder = ROOT
+				}
+				succ_law_title = {
+					OR = {
+						has_law = enatic_succession
+						has_law = enatic_cognatic_succession
+					}
+				}
+			}
+		}
+	}
+
+	immediate = {
+		father_even_if_dead = {
+			any_claim = {
+				limit = {
+					has_holder = yes
+					higher_tier_than = BARON
+					ROOT = { father_even_if_dead = { has_strong_claim = PREVPREV } }
+					NOR = {
+						claimed_by = ROOT
+						holder = ROOT
+					}
+					succ_law_title = {
+						OR = {
+							has_law = enatic_succession
+							has_law = enatic_cognatic_succession
+						}
+					}
+				}
+				add_weak_claim = ROOT
+			}
+		}
+	}
+}
+
+# emf_claims.15 -- clear extranneous claims from all characters (either claims on unheld titles or claims upon
+# titles they own); currently this is only invoked on campaign initialization.
+character_event = {
+	id = emf_claims.15
+
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		always = no # FIXME AHAB
+	}
+
+	immediate = {
+		any_character = {
+			limit = {
+				any_claim = {
+					OR = {
+						has_holder = no
+						holder = PREV
+					}
+				}
+			}
+			any_claim = {
+				limit = {
+					OR = {
+						has_holder = no
+						holder = PREV
+					}
+				}
+				remove_claim = PREV
+			}
+		}
+	}
+}
+

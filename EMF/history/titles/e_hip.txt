@@ -1,0 +1,14 @@
+# -*- ck2.history.titles -*-
+
+1.1.2 = {
+	set_global_flag = HIP
+	set_global_flag = EMF
+	holder = 606060
+}
+820.12.25 = {
+	set_global_flag = sergius_tychus
+}
+874.1.20 = {
+	set_global_flag = paulician_supress
+}
+

@@ -285,6 +285,7 @@ this point).
 Temporarily re-added DLCs of M&M, JD, and Conclave on same build:
 
 Observe made it from 1066 to 1091 on E+V before it crashed (no debugger).
+<<<<<<< HEAD
 
 
 ====== AHAB XII ======
@@ -311,3 +312,7 @@ Results:
 --------
 Observe made it from 1066 to 1217 on E+V before it was terminated gracefully by Captain Ahab.
 
+
+====== AHAB XIII ======
+
+First, we revert all of the deletions from the previous version, and then:

@@ -1,0 +1,1079 @@
+# -*- ck2.scripted_triggers -*-
+# Audax Validator EnableCommentMetadata
+
+# These triggers would ideally all be 1, but lack of parameterization of scripted triggers = several variants only in scope
+# context. They're in a separate file, because a) submodders may want to more easily be able to change the definition of
+# which religions are hostile to which (which is an asymmetric relationship in some cases), and b) their redundancy was
+# unwelcome in emf_core_triggers.
+
+# Remember, if you change the logic in one trigger, you must change them all to be identical (except for the reference scope).
+
+# THIS = Char considered for hostility to religion of FROM (may be character or province, effectively)
+emf_hostile_religion_to_FROM = {
+	OR = {
+		NOR = {
+			religion_group = FROM
+			emf_syncretized_religion_with_FROM = yes
+		}
+		is_heresy_of = FROM
+		is_parent_religion = FROM
+		AND = {
+			has_dharmic_religion_trigger = yes
+			FROM = { religion = taoist }
+		}
+		AND = { # Hostile within group (but for reformed religions, not hostile to unreformed version)
+			OR = {
+				religion_group = muslim
+				religion_group = pagan_group
+				religion = paulician
+				religion_scope = {
+					has_religion_feature = religion_syncretic_muslim
+				}
+			}
+			NOR = {
+				religion = FROM
+				is_reformed_religion = FROM
+			}
+		}
+		AND = { # Heresies of multiple parent religions
+			OR = {
+				AND = {
+					religion = bogomilist
+					FROM = { religion = catholic }
+					is_heretic = yes
+				}
+				AND = {
+					religion = catholic
+					FROM = {
+						religion = bogomilist
+						is_heretic = yes
+					}
+				}
+			}
+		}
+		AND = {
+			# If not in the same group, already marked as hostile
+			FROM = {
+				# Audax Validator "." Ignore_NEXT
+				has_character_modifier = known_satanist
+			}
+			NOT = {
+				# Audax Validator "." Ignore_NEXT
+				has_character_modifier = known_satanist
+			}
+		}
+	}
+}
+
+emf_hostile_religion_to_ROOT = {
+	OR = {
+		NOR = {
+			religion_group = ROOT
+			emf_syncretized_religion_with_ROOT = yes
+		}
+		is_heresy_of = ROOT
+		is_parent_religion = ROOT
+		AND = {
+			has_dharmic_religion_trigger = yes
+			FROM = { religion = taoist }
+		}
+		AND = { # Hostile within group (but for reformed religions, not hostile to unreformed version)
+			OR = {
+				religion_group = muslim
+				religion_group = pagan_group
+				religion = paulician
+				religion_scope = {
+					has_religion_feature = religion_syncretic_muslim
+				}
+			}
+			NOR = {
+				religion = ROOT
+				is_reformed_religion = ROOT
+			}
+		}
+		AND = { # Heresies of multiple parent religions
+			OR = {
+				AND = {
+					religion = bogomilist
+					ROOT = { religion = catholic }
+					is_heretic = yes
+				}
+				AND = {
+					religion = catholic
+					ROOT = {
+						religion = bogomilist
+						is_heretic = yes
+					}
+				}
+			}
+		}
+		AND = {
+			# If not in the same group, already marked as hostile
+			ROOT = {
+				# Audax Validator "." Ignore_NEXT
+				has_character_modifier = known_satanist
+			}
+			NOT = {
+				# Audax Validator "." Ignore_NEXT
+				has_character_modifier = known_satanist
+			}
+		}
+	}
+}
+
+emf_hostile_religion_to_PREV = {
+	OR = {
+		NOR = {
+			religion_group = PREV
+			emf_syncretized_religion_with_PREV = yes
+		}
+		is_heresy_of = PREV
+		is_parent_religion = PREV
+		AND = { # Hostile within group (but for reformed religions, not hostile to unreformed version)
+			OR = {
+				religion_group = muslim
+				religion_group = pagan_group
+				religion = paulician
+				religion_scope = {
+					has_religion_feature = religion_syncretic_muslim
+				}
+			}
+			NOR = {
+				religion = PREV
+				is_reformed_religion = PREV
+			}
+		}
+		AND = { # Heresies of multiple parent religions
+			OR = {
+				AND = {
+					religion = bogomilist
+					PREV = { religion = catholic }
+					is_heretic = yes
+				}
+				AND = {
+					religion = catholic
+					PREV = {
+						religion = bogomilist
+						is_heretic = yes
+					}
+				}
+			}
+		}
+		AND = {
+			# If not in the same group, already marked as hostile
+			PREV = {
+				# Audax Validator "." Ignore_NEXT
+				has_character_modifier = known_satanist
+			}
+			NOT = {
+				# Audax Validator "." Ignore_NEXT
+				has_character_modifier = known_satanist
+			}
+		}
+	}
+}
+
+emf_hostile_religion_to_target_ruler = {
+	OR = {
+		NOR = {
+			religion_group = event_target:target_ruler
+			event_target:target_ruler = { emf_PREV_is_syncretized_with_religion = yes }
+		}
+		is_heresy_of = event_target:target_ruler
+		is_parent_religion = event_target:target_ruler
+		AND = { # Hostile within group (but for reformed religions, not hostile to unreformed version)
+			OR = {
+				religion_group = muslim
+				religion_group = pagan_group
+				religion = paulician
+				religion_scope = {
+					has_religion_feature = religion_syncretic_muslim
+				}
+			}
+			NOR = {
+				religion = event_target:target_ruler
+				is_reformed_religion = event_target:target_ruler
+			}
+		}
+		AND = { # Heresies of multiple parent religions
+			OR = {
+				AND = {
+					religion = bogomilist
+					event_target:target_ruler = { religion = catholic }
+					is_heretic = yes
+				}
+				AND = {
+					religion = catholic
+					event_target:target_ruler = {
+						religion = bogomilist
+						is_heretic = yes
+					}
+				}
+			}
+		}
+		AND = {
+			# If not in the same group, already marked as hostile
+			event_target:target_ruler = {
+				# Audax Validator "." Ignore_NEXT
+				has_character_modifier = known_satanist
+			}
+			NOT = {
+				# Audax Validator "." Ignore_NEXT
+				has_character_modifier = known_satanist
+			}
+		}
+	}
+}
+
+# These triggers are similar to those above, but work off of THIS's true religion vs. what THIS knows about FROM's religion
+emf_hostile_true_religion_to_FROM = {
+	trigger_if = {
+		limit = { FROM = { character = yes } }
+		OR = {
+			NOT = {
+				trigger_if = {
+					limit = {
+						FROM = { has_secret_religion = yes }
+						can_see_secret_religion = FROM
+					}
+					OR = {
+						true_religion_group = FROM
+						emf_syncretized_true_religion_with_FROMs_true_religion = yes
+					}
+				}
+				trigger_else = {
+					OR = {
+						true_religion_group = { target = FROM target_type = public }
+						emf_syncretized_true_religion_with_FROM = yes
+					}
+				}
+			}
+			# Workarounds because is_heresy_of and is_parent_religion require character scopes and have no secret religion variant
+			trigger_if = {
+				limit = {
+					has_secret_religion = yes
+				}
+				trigger_if = {
+					limit = {
+						FROM = { has_secret_religion = yes }
+						can_see_secret_religion = FROM
+					}
+					OR = {
+						true_religion_is_heresy_of_FROM_true_religion = yes
+						true_religion_is_parent_religion_FROM_true_religion = yes
+					}
+				}
+				trigger_else = {
+					true_religion_scope = {
+						persistent_event_target:emf_religion_dummy_character = {
+							OR = {
+								is_heresy_of = FROM
+								is_parent_religion = FROM
+							}
+						}
+					}
+				}
+			}
+			trigger_else_if = {
+				limit = {
+					FROM = { has_secret_religion = yes }
+					can_see_secret_religion = FROM
+				}
+				FROM = {
+					true_religion_scope = {
+						persistent_event_target:emf_religion_dummy_character = {
+							OR = {
+								is_heresy_of = PREVPREVPREV
+								is_parent_religion = PREVPREVPREV
+							}
+						}
+					}
+				}
+			}
+			trigger_else = {
+				OR = {
+					is_heresy_of = FROM
+					is_parent_religion = FROM
+				}
+			}
+			AND = {
+				true_religion_scope = { has_dharmic_religion_trigger = yes }
+				trigger_if = {
+					limit = {
+						FROM = { has_secret_religion = yes }
+						can_see_secret_religion = FROM
+					}
+					FROM = { true_religion = taoist }
+				}
+				trigger_else = {
+					FROM = { religion = taoist }
+				}
+			}
+			AND = { # Hostile within group (but for reformed religions, not hostile to unreformed version)
+				OR = {
+					true_religion_group = muslim
+					true_religion_group = pagan_group
+					true_religion = paulician
+					true_religion_scope = {
+						has_religion_feature = religion_syncretic_muslim
+					}
+				}
+				trigger_if = {
+					limit = {
+						FROM = { has_secret_religion = yes }
+						can_see_secret_religion = FROM
+					}
+					NOR = {
+						true_religion = FROM
+						true_religion_is_reformed_religion_FROM_true_religion = yes
+					}
+				}
+				trigger_else = {
+					true_religion_scope = {
+						NOR = {
+							religion = FROM
+							persistent_event_target:emf_religion_dummy_character = { is_reformed_religion = FROM }
+						}
+					}
+				}
+			}
+			AND = { # Heresies of multiple parent religions
+				OR = {
+					AND = {
+						true_religion = bogomilist
+						bogomilist = { persistent_event_target:emf_religion_dummy_character = { is_heretic = yes } }
+						trigger_if = {
+							limit = {
+								FROM = { has_secret_religion = yes }
+								can_see_secret_religion = FROM
+							}
+							FROM = { true_religion = catholic }
+						}
+						trigger_else = {
+							FROM = { religion = catholic }
+						}
+					}
+					AND = {
+						true_religion = catholic
+						trigger_if = {
+							limit = {
+								FROM = { has_secret_religion = yes }
+								can_see_secret_religion = FROM
+							}
+							FROM = {
+								true_religion = bogomilist
+								bogomilist = { persistent_event_target:emf_religion_dummy_character = { is_heretic = yes } }
+							}
+						}
+						trigger_else = {
+							FROM = {
+								religion = bogomilist
+								is_heretic = yes
+							}
+						}
+					}
+				}
+			}
+			AND = {
+				# If not in the same group, already marked as hostile
+				FROM = {
+					# Audax Validator "." Ignore_NEXT
+					has_character_modifier = known_satanist
+				}
+				is_devil_worshiper_trigger = no
+			}
+		}
+	}
+	# FROM is a province
+	trigger_else = {
+		OR = {
+			NOR = {
+				true_religion_group = { target = FROM target_type = public }
+				emf_syncretized_true_religion_with_FROM = yes
+			}
+			true_religion_scope = {
+				persistent_event_target:emf_religion_dummy_character = {
+					OR = {
+						is_heresy_of = FROM
+						is_parent_religion = FROM
+					}
+				}
+			}
+			AND = {
+				true_religion_scope = { has_dharmic_religion_trigger = yes }
+				FROM = { religion = taoist }
+			}
+			AND = { # Hostile within group (but for reformed religions, not hostile to unreformed version)
+				OR = {
+					true_religion_group = muslim
+					true_religion_group = pagan_group
+					true_religion = paulician
+					true_religion_scope = {
+						has_religion_feature = religion_syncretic_muslim
+					}
+				}
+				true_religion_scope = {
+					NOR = {
+						religion = FROM
+						persistent_event_target:emf_religion_dummy_character = { is_reformed_religion = FROM }
+					}
+				}
+			}
+			AND = { # Heresies of multiple parent religions
+				OR = {
+					AND = {
+						true_religion = bogomilist
+						bogomilist = { persistent_event_target:emf_religion_dummy_character = { is_heretic = yes } }
+						FROM = { religion = catholic }
+					}
+					AND = {
+						true_religion = catholic
+						FROM = {
+							religion = bogomilist
+							is_heretic = yes
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+emf_hostile_true_religion_to_ROOT = {
+	trigger_if = {
+		limit = { ROOT = { character = yes } }
+		OR = {
+			NOT = {
+				trigger_if = {
+					limit = {
+						ROOT = { has_secret_religion = yes }
+						can_see_secret_religion = ROOT
+					}
+					OR = {
+						true_religion_group = ROOT
+						emf_syncretized_true_religion_with_ROOTs_true_religion = yes
+					}
+				}
+				trigger_else = {
+					OR = {
+						true_religion_group = { target = ROOT target_type = public }
+						emf_syncretized_true_religion_with_ROOT = yes
+					}
+				}
+			}
+			# Workarounds because is_heresy_of and is_parent_religion require character scopes and have no secret religion variant
+			trigger_if = {
+				limit = {
+					has_secret_religion = yes
+				}
+				trigger_if = {
+					limit = {
+						ROOT = { has_secret_religion = yes }
+						can_see_secret_religion = ROOT
+					}
+					OR = {
+						true_religion_is_heresy_of_ROOT_true_religion = yes
+						true_religion_is_parent_religion_ROOT_true_religion = yes
+					}
+				}
+				trigger_else = {
+					true_religion_scope = {
+						persistent_event_target:emf_religion_dummy_character = {
+							OR = {
+								is_heresy_of = ROOT
+								is_parent_religion = ROOT
+							}
+						}
+					}
+				}
+			}
+			trigger_else_if = {
+				limit = {
+					ROOT = { has_secret_religion = yes }
+					can_see_secret_religion = ROOT
+				}
+				ROOT = {
+					true_religion_scope = {
+						persistent_event_target:emf_religion_dummy_character = {
+							OR = {
+								is_heresy_of = PREVPREVPREV
+								is_parent_religion = PREVPREVPREV
+							}
+						}
+					}
+				}
+			}
+			trigger_else = {
+				OR = {
+					is_heresy_of = ROOT
+					is_parent_religion = ROOT
+				}
+			}
+			AND = {
+				true_religion_scope = { has_dharmic_religion_trigger = yes }
+				trigger_if = {
+					limit = {
+						ROOT = { has_secret_religion = yes }
+						can_see_secret_religion = ROOT
+					}
+					ROOT = { true_religion = taoist }
+				}
+				trigger_else = {
+					ROOT = { religion = taoist }
+				}
+			}
+			AND = { # Hostile within group (but for reformed religions, not hostile to unreformed version)
+				OR = {
+					true_religion_group = muslim
+					true_religion_group = pagan_group
+					true_religion = paulician
+					true_religion_scope = {
+						has_religion_feature = religion_syncretic_muslim
+					}
+				}
+				trigger_if = {
+					limit = {
+						ROOT = { has_secret_religion = yes }
+						can_see_secret_religion = ROOT
+					}
+					NOR = {
+						true_religion = ROOT
+						true_religion_is_reformed_religion_ROOT_true_religion = yes
+					}
+				}
+				trigger_else = {
+					true_religion_scope = {
+						NOR = {
+							religion = ROOT
+							persistent_event_target:emf_religion_dummy_character = { is_reformed_religion = ROOT }
+						}
+					}
+				}
+			}
+			AND = { # Heresies of multiple parent religions
+				OR = {
+					AND = {
+						true_religion = bogomilist
+						bogomilist = { persistent_event_target:emf_religion_dummy_character = { is_heretic = yes } }
+						trigger_if = {
+							limit = {
+								ROOT = { has_secret_religion = yes }
+								can_see_secret_religion = ROOT
+							}
+							ROOT = { true_religion = catholic }
+						}
+						trigger_else = {
+							ROOT = { religion = catholic }
+						}
+					}
+					AND = {
+						true_religion = catholic
+						trigger_if = {
+							limit = {
+								ROOT = { has_secret_religion = yes }
+								can_see_secret_religion = ROOT
+							}
+							ROOT = {
+								true_religion = bogomilist
+								bogomilist = { persistent_event_target:emf_religion_dummy_character = { is_heretic = yes } }
+							}
+						}
+						trigger_else = {
+							ROOT = {
+								religion = bogomilist
+								is_heretic = yes
+							}
+						}
+					}
+				}
+			}
+			AND = {
+				# If not in the same group, already marked as hostile
+				ROOT = {
+					# Audax Validator "." Ignore_NEXT
+					has_character_modifier = known_satanist
+				}
+				is_devil_worshiper_trigger = no
+			}
+		}
+	}
+	# ROOT is a province
+	trigger_else = {
+		OR = {
+			NOR = {
+				true_religion_group = { target = ROOT target_type = public }
+				emf_syncretized_true_religion_with_ROOT = yes
+			}
+			true_religion_scope = {
+				persistent_event_target:emf_religion_dummy_character = {
+					OR = {
+						is_heresy_of = ROOT
+						is_parent_religion = ROOT
+					}
+				}
+			}
+			AND = {
+				true_religion_scope = { has_dharmic_religion_trigger = yes }
+				ROOT = { religion = taoist }
+			}
+			AND = { # Hostile within group (but for reformed religions, not hostile to unreformed version)
+				OR = {
+					true_religion_group = muslim
+					true_religion_group = pagan_group
+					true_religion = paulician
+					true_religion_scope = {
+						has_religion_feature = religion_syncretic_muslim
+					}
+				}
+				true_religion_scope = {
+					NOR = {
+						religion = ROOT
+						persistent_event_target:emf_religion_dummy_character = { is_reformed_religion = ROOT }
+					}
+				}
+			}
+			AND = { # Heresies of multiple parent religions
+				OR = {
+					AND = {
+						true_religion = bogomilist
+						bogomilist = { persistent_event_target:emf_religion_dummy_character = { is_heretic = yes } }
+						ROOT = { religion = catholic }
+					}
+					AND = {
+						true_religion = catholic
+						ROOT = {
+							religion = bogomilist
+							is_heretic = yes
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+emf_hostile_true_religion_to_PREV = {
+	trigger_if = {
+		limit = { PREV = { character = yes } }
+		OR = {
+			NOT = {
+				trigger_if = {
+					limit = {
+						PREV = { has_secret_religion = yes }
+						can_see_secret_religion = PREV
+					}
+					OR = {
+						true_religion_group = PREV
+						emf_syncretized_true_religion_with_PREVs_true_religion = yes
+					}
+				}
+				trigger_else = {
+					OR = {
+						true_religion_group = { target = PREV target_type = public }
+						emf_syncretized_true_religion_with_PREV = yes
+					}
+				}
+			}
+			# Workarounds because is_heresy_of and is_parent_religion require character scopes and have no secret religion variant
+			trigger_if = {
+				limit = {
+					has_secret_religion = yes
+				}
+				trigger_if = {
+					limit = {
+						PREV = { has_secret_religion = yes }
+						can_see_secret_religion = PREV
+					}
+					OR = {
+						true_religion_is_heresy_of_PREV_true_religion = yes
+						true_religion_is_parent_religion_PREV_true_religion = yes
+					}
+				}
+				trigger_else = {
+					true_religion_scope = {
+						persistent_event_target:emf_religion_dummy_character = {
+							OR = {
+								is_heresy_of = PREVPREVPREV
+								is_parent_religion = PREVPREVPREV
+							}
+						}
+					}
+				}
+			}
+			trigger_else_if = {
+				limit = {
+					PREV = { has_secret_religion = yes }
+					can_see_secret_religion = PREV
+				}
+				PREV = {
+					true_religion_scope = {
+						persistent_event_target:emf_religion_dummy_character = {
+							OR = {
+								is_heresy_of = PREVPREVPREV
+								is_parent_religion = PREVPREVPREV
+							}
+						}
+					}
+				}
+			}
+			trigger_else = {
+				OR = {
+					is_heresy_of = PREV
+					is_parent_religion = PREV
+				}
+			}
+			AND = {
+				true_religion_scope = { has_dharmic_religion_trigger = yes }
+				trigger_if = {
+					limit = {
+						PREV = { has_secret_religion = yes }
+						can_see_secret_religion = PREV
+					}
+					PREV = { true_religion = taoist }
+				}
+				trigger_else = {
+					PREV = { religion = taoist }
+				}
+			}
+			AND = { # Hostile within group (but for reformed religions, not hostile to unreformed version)
+				OR = {
+					true_religion_group = muslim
+					true_religion_group = pagan_group
+					true_religion = paulician
+					true_religion_scope = {
+						has_religion_feature = religion_syncretic_muslim
+					}
+				}
+				trigger_if = {
+					limit = {
+						PREV = { has_secret_religion = yes }
+						can_see_secret_religion = PREV
+					}
+					NOR = {
+						true_religion = PREV
+						true_religion_is_reformed_religion_PREV_true_religion = yes
+					}
+				}
+				trigger_else = {
+					true_religion_scope = {
+						NOR = {
+							religion = PREVPREV
+							persistent_event_target:emf_religion_dummy_character = { is_reformed_religion = PREVPREVPREV }
+						}
+					}
+				}
+			}
+			AND = { # Heresies of multiple parent religions
+				OR = {
+					AND = {
+						true_religion = bogomilist
+						bogomilist = { persistent_event_target:emf_religion_dummy_character = { is_heretic = yes } }
+						trigger_if = {
+							limit = {
+								PREV = { has_secret_religion = yes }
+								can_see_secret_religion = PREV
+							}
+							PREV = { true_religion = catholic }
+						}
+						trigger_else = {
+							PREV = { religion = catholic }
+						}
+					}
+					AND = {
+						true_religion = catholic
+						trigger_if = {
+							limit = {
+								PREV = { has_secret_religion = yes }
+								can_see_secret_religion = PREV
+							}
+							PREV = {
+								true_religion = bogomilist
+								bogomilist = { persistent_event_target:emf_religion_dummy_character = { is_heretic = yes } }
+							}
+						}
+						trigger_else = {
+							PREV = {
+								religion = bogomilist
+								is_heretic = yes
+							}
+						}
+					}
+				}
+			}
+			AND = {
+				# If not in the same group, already marked as hostile
+				PREV = {
+					# Audax Validator "." Ignore_NEXT
+					has_character_modifier = known_satanist
+				}
+				is_devil_worshiper_trigger = no
+			}
+		}
+	}
+	# PREV is a province
+	trigger_else = {
+		OR = {
+			NOR = {
+				true_religion_group = { target = PREV target_type = public }
+				emf_syncretized_true_religion_with_PREV = yes
+			}
+			true_religion_scope = {
+				persistent_event_target:emf_religion_dummy_character = {
+					OR = {
+						is_heresy_of = PREVPREVPREV
+						is_parent_religion = PREVPREVPREV
+					}
+				}
+			}
+			AND = {
+				true_religion_scope = { has_dharmic_religion_trigger = yes }
+				PREV = { religion = taoist }
+			}
+			AND = { # Hostile within group (but for reformed religions, not hostile to unreformed version)
+				OR = {
+					true_religion_group = muslim
+					true_religion_group = pagan_group
+					true_religion = paulician
+					true_religion_scope = {
+						has_religion_feature = religion_syncretic_muslim
+					}
+				}
+				true_religion_scope = {
+					NOR = {
+						religion = PREVPREV
+						persistent_event_target:emf_religion_dummy_character = { is_reformed_religion = PREVPREVPREV }
+					}
+				}
+			}
+			AND = { # Heresies of multiple parent religions
+				OR = {
+					AND = {
+						true_religion = bogomilist
+						bogomilist = { persistent_event_target:emf_religion_dummy_character = { is_heretic = yes } }
+						PREV = { religion = catholic }
+					}
+					AND = {
+						true_religion = catholic
+						PREV = {
+							religion = bogomilist
+							is_heretic = yes
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+emf_hostile_true_religion_to_target_ruler = {
+	trigger_if = {
+		limit = { event_target:target_ruler = { character = yes } }
+		OR = {
+			NOT = {
+				trigger_if = {
+					limit = {
+						event_target:target_ruler = { has_secret_religion = yes }
+						can_see_secret_religion = event_target:target_ruler
+					}
+					OR = {
+						true_religion_group = event_target:target_ruler
+						event_target:target_ruler = { emf_PREV_true_religion_is_syncretized_with_true_religion = yes }
+					}
+				}
+				trigger_else = {
+					OR = {
+						true_religion_group = { target = event_target:target_ruler target_type = public }
+						event_target:target_ruler = { emf_PREV_true_religion_is_syncretized_with_religion = yes }
+					}
+				}
+			}
+			# Workarounds because is_heresy_of and is_parent_religion require character scopes and have no secret religion variant
+			trigger_if = {
+				limit = {
+					has_secret_religion = yes
+				}
+				trigger_if = {
+					limit = {
+						event_target:target_ruler = { has_secret_religion = yes }
+						can_see_secret_religion = event_target:target_ruler
+					}
+					OR = {
+						true_religion_is_heresy_of_target_ruler_true_religion = yes
+						true_religion_is_parent_religion_target_ruler_true_religion = yes
+					}
+				}
+				trigger_else = {
+					true_religion_scope = {
+						persistent_event_target:emf_religion_dummy_character = {
+							OR = {
+								is_heresy_of = event_target:target_ruler
+								is_parent_religion = event_target:target_ruler
+							}
+						}
+					}
+				}
+			}
+			trigger_else_if = {
+				limit = {
+					event_target:target_ruler = { has_secret_religion = yes }
+					can_see_secret_religion = event_target:target_ruler
+				}
+				event_target:target_ruler = {
+					true_religion_scope = {
+						persistent_event_target:emf_religion_dummy_character = {
+							OR = {
+								is_heresy_of = PREVPREVPREV
+								is_parent_religion = PREVPREVPREV
+							}
+						}
+					}
+				}
+			}
+			trigger_else = {
+				OR = {
+					is_heresy_of = event_target:target_ruler
+					is_parent_religion = event_target:target_ruler
+				}
+			}
+			AND = {
+				true_religion_scope = { has_dharmic_religion_trigger = yes }
+				trigger_if = {
+					limit = {
+						event_target:target_ruler = { has_secret_religion = yes }
+						can_see_secret_religion = event_target:target_ruler
+					}
+					event_target:target_ruler = { true_religion = taoist }
+				}
+				trigger_else = {
+					event_target:target_ruler = { religion = taoist }
+				}
+			}
+			AND = { # Hostile within group (but for reformed religions, not hostile to unreformed version)
+				OR = {
+					true_religion_group = muslim
+					true_religion_group = pagan_group
+					true_religion = paulician
+					true_religion_scope = {
+						has_religion_feature = religion_syncretic_muslim
+					}
+				}
+				trigger_if = {
+					limit = {
+						event_target:target_ruler = { has_secret_religion = yes }
+						can_see_secret_religion = event_target:target_ruler
+					}
+					NOR = {
+						true_religion = event_target:target_ruler
+						true_religion_is_reformed_religion_target_ruler_true_religion = yes
+					}
+				}
+				trigger_else = {
+					true_religion_scope = {
+						NOR = {
+							religion = event_target:target_ruler
+							persistent_event_target:emf_religion_dummy_character = { is_reformed_religion = event_target:target_ruler }
+						}
+					}
+				}
+			}
+			AND = { # Heresies of multiple parent religions
+				OR = {
+					AND = {
+						true_religion = bogomilist
+						bogomilist = { persistent_event_target:emf_religion_dummy_character = { is_heretic = yes } }
+						trigger_if = {
+							limit = {
+								event_target:target_ruler = { has_secret_religion = yes }
+								can_see_secret_religion = event_target:target_ruler
+							}
+							event_target:target_ruler = { true_religion = catholic }
+						}
+						trigger_else = {
+							event_target:target_ruler = { religion = catholic }
+						}
+					}
+					AND = {
+						true_religion = catholic
+						trigger_if = {
+							limit = {
+								event_target:target_ruler = { has_secret_religion = yes }
+								can_see_secret_religion = event_target:target_ruler
+							}
+							event_target:target_ruler = {
+								true_religion = bogomilist
+								bogomilist = { persistent_event_target:emf_religion_dummy_character = { is_heretic = yes } }
+							}
+						}
+						trigger_else = {
+							event_target:target_ruler = {
+								religion = bogomilist
+								is_heretic = yes
+							}
+						}
+					}
+				}
+			}
+			AND = {
+				# If not in the same group, already marked as hostile
+				event_target:target_ruler = {
+					# Audax Validator "." Ignore_NEXT
+					has_character_modifier = known_satanist
+				}
+				is_devil_worshiper_trigger = no
+			}
+		}
+	}
+	# event_target:target_ruler is a province
+	trigger_else = {
+		OR = {
+			NOR = {
+				true_religion_group = { target = event_target:target_ruler target_type = public }
+				event_target:target_ruler = { emf_PREV_true_religion_is_syncretized_with_religion = yes }
+			}
+			true_religion_scope = {
+				persistent_event_target:emf_religion_dummy_character = {
+					OR = {
+						is_heresy_of = event_target:target_ruler
+						is_parent_religion = event_target:target_ruler
+					}
+				}
+			}
+			AND = {
+				true_religion_scope = { has_dharmic_religion_trigger = yes }
+				event_target:target_ruler = { religion = taoist }
+			}
+			AND = { # Hostile within group (but for reformed religions, not hostile to unreformed version)
+				OR = {
+					true_religion_group = muslim
+					true_religion_group = pagan_group
+					true_religion = paulician
+					true_religion_scope = {
+						has_religion_feature = religion_syncretic_muslim
+					}
+				}
+				true_religion_scope = {
+					NOR = {
+						religion = event_target:target_ruler
+						persistent_event_target:emf_religion_dummy_character = { is_reformed_religion = event_target:target_ruler }
+					}
+				}
+			}
+			AND = { # Heresies of multiple parent religions
+				OR = {
+					AND = {
+						true_religion = bogomilist
+						bogomilist = { persistent_event_target:emf_religion_dummy_character = { is_heretic = yes } }
+						event_target:target_ruler = { religion = catholic }
+					}
+					AND = {
+						true_religion = catholic
+						event_target:target_ruler = {
+							religion = bogomilist
+							is_heretic = yes
+						}
+					}
+				}
+			}
+		}
+	}
+}

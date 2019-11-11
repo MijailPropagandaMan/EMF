@@ -1,0 +1,56 @@
+# -*- ck2.decisions -*-
+
+decisions = {
+	demand_liege_title = {
+		is_high_prio = yes
+		ai = no # The AI is limited to the similar event 63040
+
+		potential = {
+			real_tier = COUNT
+			NOT = { has_flag = requested_de_jure_title }
+			liege = {
+				NOT = { character = ROOT }
+				primary_title = { higher_tier_than = DUKE }
+				any_demesne_title = {
+					tier = DUKE
+					has_de_jure_pretension = ROOT
+					can_be_given_away = yes
+					NOT = {
+						holder_scope = {
+							any_demesne_province = {
+								duchy = { title = PREVPREVPREV }
+							}
+						}
+					}
+				}
+			}
+			has_regent = no
+			emf_hiprio_decision_basic_potential = yes
+		}
+		allow = {
+			reverse_opinion = { who = LIEGE value = 0 }
+		}
+		effect = {
+			set_flag = requested_de_jure_title
+			liege = {
+				set_flag = wants_duchy_title
+				random_demesne_title = {
+					limit = {
+						tier = DUKE
+						has_de_jure_pretension = ROOT
+						can_be_given_away = yes
+						NOT = {
+							holder_scope = {
+								any_demesne_province = {
+									duchy = { title = PREVPREVPREV }
+								}
+							}
+						}
+					}
+					save_event_target_as = vassal_wanted_title
+				}
+				letter_event = { id = 63041 days = 4 tooltip = "EVTTOOLTIP63041" } # "vassal_request_events.txt"
+			}
+		}
+	}
+}
