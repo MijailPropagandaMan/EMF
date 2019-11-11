@@ -285,3 +285,28 @@ this point).
 Temporarily re-added DLCs of M&M, JD, and Conclave on same build:
 
 Observe made it from 1066 to 1091 on E+V before it crashed (no debugger).
+
+
+====== AHAB XII ======
+
+Removal / disable log (in addition to previous version):
+- common
+- events
+- decisions
+- history/titles (e_hip)
+- history/characters (isis)
+- E+V/.../common
+
+Addition / re-enable log:
+- DLCs:
+  + Jade Dragon
+  + Monks & Mystics
+  + Conclave
+
+Note that Charlemagne DLC is still disabled. For this test, it doesn't matter, but EMF code assumes that there
+are no vanilla-style viceroyalty titles in the game (due to imperial government supplanting it), so when this
+hopefully succeeds at failing to crash, we'll still want it disabled as we put things back together.
+
+Results:
+--------
+Observe made it from 1066 to ?? on E+V before it ??
