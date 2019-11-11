@@ -309,4 +309,5 @@ hopefully succeeds at failing to crash, we'll still want it disabled as we put t
 
 Results:
 --------
-Observe made it from 1066 to ?? on E+V before it ??
+Observe made it from 1066 to 1217 on E+V before it was terminated gracefully by Captain Ahab.
+
