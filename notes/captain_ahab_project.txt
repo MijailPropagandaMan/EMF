@@ -338,4 +338,4 @@ Removal / disable log (after revert of Ahab XII):
 
 Results:
 --------
-Observe made it from 1066 to ?? on E+V before it ??
+Observe made it from 1066 to 1186 (120 years) on E+V before it was gracefully terminated by Captain Ahab.
