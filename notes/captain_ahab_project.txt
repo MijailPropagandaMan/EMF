@@ -458,4 +458,4 @@ such.
 
 Results:
 --------
-Observe made it from 1066 to ?? (?? years) on E+V before ??
+Observe made it from 1066 to 1096 (30 years) on E+V before it crashed.
