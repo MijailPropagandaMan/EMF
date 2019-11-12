@@ -407,3 +407,34 @@ Results:
 --------
 Observe made it from 1066 to 1174 (108 years) on E+V before it was gracefully terminated by Captain Ahab.
 
+
+====== AHAB XVII ======
+
+Define override re-enable log:
+- NCouncil.* (see note about REGENCY_VOTING below)
+- NInfamy
+  + VASSAL_CHANGE_VALUE
+- NCharacter
+  + ASSIGN_ACTION_DAYS
+- NTitle
+  + CROWN_LAW_CHANGE_TIMER
+- NEconomy.*
+- NMilitary.*
+- NRulerDesigner.*
+
+Since NCouncil.REGENCY_VOTING contained the names of decisions which are not currently defined for the last
+several iterations, I removed all those references which are not currently defined to be safe:
+
+lollard_revoke_temple
+emf_prisoner_house_arrest
+emf_prisoner_oubliette
+emf_prisoner_dungeon
+emf_prisoner_castration
+emf_prisoner_blinding
+emf_prisoner_zun_judgement
+kharijite_public_execution
+
+Results:
+--------
+Observe made it from 1066 to ?? (?? years) on E+V before ??
+
