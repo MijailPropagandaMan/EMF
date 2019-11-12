@@ -459,3 +459,18 @@ such.
 Results:
 --------
 Observe made it from 1066 to 1096 (30 years) on E+V before it crashed.
+
+
+====== AHAB XIX ======
+
+Define override removal log:
+- NCharacter.INFANT_DEATH_CHANCE
+
+Define override re-enable log:
+- NCharacter.NON_AGGRESSION_PACT_BLOCKS_FACTIONS (should be unused by the code since they turned it into a game rule -- want to remove it right now, but Science First™)
+- NAI.TRIBAL_VASSAL_EXTRA_CALL_CHANCE = 0 (and removing the override with 30 currently there as well)
+- NTitle.EMPIRE_DE_JURE_ASSIMILATION_YEARS
+
+Results:
+--------
+Observe made it from 1066 to ? (? years) on E+V before it ?

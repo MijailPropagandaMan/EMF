@@ -62,7 +62,7 @@ NDefines.NCharacter.AGE_VERY_OLD = 60
 NDefines.NCharacter.NATURAL_DEATH_CHANCE_AGE_60 = 600
 NDefines.NCharacter.NATURAL_DEATH_CHANCE_AGE_70 = 2100
 NDefines.NCharacter.SECONDARY_SPOUSE_FERTILITY_MULT = 0.33
-NDefines.NCharacter.INFANT_DEATH_CHANCE = 0.07
+-- NDefines.NCharacter.INFANT_DEATH_CHANCE = 0.07
 
 -- Title
 NDefines.NTitle.COUNT_TITLE_PRESTIGE = 0.05
@@ -82,7 +82,7 @@ NDefines.NTitle.NORMAL_LAW_CHANGE_COUNCIL_MONTHS = 48 -- from 60
 NDefines.NTitle.NORMAL_LAW_CHANGE_ABSOLUTISM_MONTHS = 120
 NDefines.NTitle.MAX_CROWN_LAW_CHANGES = 64  -- intention is "unlimited" due to the way EMF CA sub-laws are designed & existence of its soft-coded cooldowns
 NDefines.NTitle.CROWN_LAW_CHANGE_TIMER = 0  -- EMF crown laws assume that you will be able to change a CA sub-law after raising CA with same ruler
--- NDefines.NTitle.EMPIRE_DE_JURE_ASSIMILATION_YEARS = 50
+NDefines.NTitle.EMPIRE_DE_JURE_ASSIMILATION_YEARS = 50
 NDefines.NTitle.GAME_RULES_DEJURE_LONG = 200
 NDefines.NTitle.GAME_RULES_DEJURE_LONG_EMPIRE = 200
 NDefines.NTitle.GAME_RULES_DEJURE_SHORT = 40
@@ -251,11 +251,10 @@ NDefines.NAI.MARRIAGE_AI_PRESTIGE_VALUE = 0.1  -- vanilla is 0.33: worst-case, t
 NDefines.NAI.AI_EMPEROR_CREATES_KINGDOMS = 1   -- only a good idea after we creating the De Jure Vassal Kingdom Creation laws, else AI spams kingdom titles inappropriately
 NDefines.NAI.DESIRED_CONSORTS = 1              -- as of EMF v8.07, AI will actually try to get a concubine if they lack sons
 NDefines.NAI.AI_ASSAULT_RATIO = 15             -- +50% from vanilla
-NDefines.NAI.TRIBAL_VASSAL_EXTRA_CALL_CHANCE = 30 -- vanilla is 40
 NDefines.NAI.RAID_MAX_REALM_SIZE = 32          -- prior to EMF v9.06: 24; vanilla is 24
 NDefines.NAI.RAID_AGGRESSION = 15              -- prior to EMF v9.06: 18; prior to EMF v9.01: 12; vanilla is 18; lower means more frequent raiding, higher means less frequent
 NDefines.NAI.RAID_SPARE_ACCEPTED_RELIGIONS = 0	-- Intra-pagan raiding enabled to make pagan consolidation more difficult
--- NDefines.NAI.TRIBAL_VASSAL_EXTRA_CALL_CHANCE = 0	-- Disabled to make tribal consolidation harder (AI already honors alliances fairly often)
+NDefines.NAI.TRIBAL_VASSAL_EXTRA_CALL_CHANCE = 0	-- Disabled to make tribal consolidation harder (AI already honors alliances fairly often)
 
 NDefines.NAI.NOMAD_MARRIAGE_CLAN_MODIFIER = 40 -- vanilla is 20: "How much nomad AI will prefer inter-realm clan marriages"
 NDefines.NAI.NOMAD_MARRIAGE_KHAN_MODIFIER = 15 -- vanila is 5: "How much nomad AI will prefer marriages with their khan"
