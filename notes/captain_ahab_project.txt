@@ -473,4 +473,8 @@ Define override re-enable log:
 
 Results:
 --------
-Observe made it from 1066 to ? (? years) on E+V before it ?
+Observe made it from 1066 to 1188 (122 years) on E+V before it it was gracefully terminated by Captain Ahab.
+
+Ahab XIX, which didn't crash, was a full reversal of the out-comments in defines from XVIII, which gives us
+very strong evidence that allowing stillborns in EMF is at least one source of the crashes on CK2 v3.3.0
+(64-bit) and also concludes our foray into define-related crashing for now.
