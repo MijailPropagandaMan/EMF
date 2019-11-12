@@ -436,5 +436,4 @@ kharijite_public_execution
 
 Results:
 --------
-Observe made it from 1066 to ?? (?? years) on E+V before ??
-
+Observe made it from 1066 to 1191 (125 years) on E+V before it was gracefully terminated by Captain Ahab.
