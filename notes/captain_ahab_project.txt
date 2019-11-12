@@ -473,8 +473,23 @@ Define override re-enable log:
 
 Results:
 --------
-Observe made it from 1066 to 1188 (122 years) on E+V before it it was gracefully terminated by Captain Ahab.
+Observe made it from 1066 to 1188 (122 years) on E+V before it was gracefully terminated by Captain Ahab.
 
 Ahab XIX, which didn't crash, was a full reversal of the out-comments in defines from XVIII, which gives us
 very strong evidence that allowing stillborns in EMF is at least one source of the crashes on CK2 v3.3.0
 (64-bit) and also concludes our foray into define-related crashing for now.
+
+
+====== AHAB XX ======
+
+For this trial, we temporarily revert to the commit prior to Ahab I, i.e., the baseline commit for this
+isolation testing. I'll not actually revert in _this_ commit but simply test upon a modified version of that
+one. The goal is to see if our INFANT_DEATH_CHANCE lead from Ahab XIX is the only crash source on 64-bit. Goal
+of this run is to not crash.
+
+Define override removal log:
+- NCharacter.INFANT_DEATH_CHANCE
+
+Results:
+--------
+Observe made it from 1066 to ?? (?? years) on E+V before ??
