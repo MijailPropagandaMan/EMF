@@ -141,7 +141,7 @@ NDefines.NEconomy.DOGE_SUCC_RANDOM_FACTOR = 0
 NDefines.NNomad.MAX_POPULATION_EMPTY_HOLDING_MULTIPLIER = 1250
 NDefines.NNomad.STARTING_HORDE_MAX_FRACTION = 1
 
-Military
+-- Military
 NDefines.NMilitary.NUMBER_OF_TROOPS_PER_GALLEY = 100              -- prior to EMF v9.06: 200 (has been since the days of Project Balance); vanilla is 100
 NDefines.NMilitary.LEVY_MAINTENANCE_FACTOR = 2.3                  -- prior to EMF v10.0: 2.7; prior to EMF v9.06: 2.4; prior to EMF v9.01: 2.7
 NDefines.NMilitary.BATTLE_WARSCORE_DEFENDER_MULTIPLIER = 1.6
