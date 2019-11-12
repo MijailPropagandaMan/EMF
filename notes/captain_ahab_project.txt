@@ -437,3 +437,25 @@ kharijite_public_execution
 Results:
 --------
 Observe made it from 1066 to 1191 (125 years) on E+V before it was gracefully terminated by Captain Ahab.
+
+
+====== AHAB XVIII ======
+
+Define override re-enable log:
+- NCharacter.NON_AGGRESSION_PACT_BLOCKS_FACTIONS (should be unused by the code since they turned it into a game rule)
+- NCharacter.INFANT_DEATH_CHANCE
+
+If this doesn't crash, I can only see 3 possible conclusions:
+
+- NAI.TRIBAL_VASSAL_EXTRA_CALL_CHANCE shouldn't be 0, OR it leads to UB if you assign to the same define
+twice in the same LUA file for CK2 defines.
+
+- NTitle.EMPIRE_DE_JURE_ASSIMILATION_YEARS not being equal (specifically, less) than king-tier
+
+- The whole defines tangent was a false positive due to NCouncil.REGENCY_VOTING having contained undefined
+decision names until the previous iteration. In this case, we rollback & drill into emf_prisoner_decisions and
+such.
+
+Results:
+--------
+Observe made it from 1066 to ?? (?? years) on E+V before ??
